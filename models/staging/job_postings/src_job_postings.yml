@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: raw_jobs
+    database: raw
+    schema: public
+    tables:
+      - name: job_postings
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: url
+            tests:
+              - unique
+              - not_null
+          - name: title
+            tests:
+              - not_null
+          - name: company
+            tests:
+              - not_null 
+          - name: text
+            tests:
+              - not_null
+
