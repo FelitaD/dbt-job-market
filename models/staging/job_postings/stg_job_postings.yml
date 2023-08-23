@@ -34,7 +34,9 @@ models:
       - name: id
         description: the primary key for stg_remote_policies
       - name: remote
+        description: the original, raw remote policy
+      - name: simplified_remote
         description: remote policy simplified to one word
         tests:
           - accepted_values:
-              values: ['values']
+              values: ['total', 'partial', 'ponctual']
