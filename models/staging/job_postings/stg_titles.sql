@@ -7,28 +7,28 @@
 {%- set MW = 'M\s?\/?\s?W' %}
 {%- set HST = 'H\s?\/?\s?S\s?\/?\s?T' %}
 
-with source as (
+with job_postings as (
     select * from {{ source('raw_jobs', 'job_postings')}}
 ),
 
-stg_titles  as (
+stg_titles as (
 
     select
         id,
         title,
         REGEXP_REPLACE(
             title,
+            '[(].*[)]',
+            '', 
+            1, 0, 'im'
+            ) as minus_parenthesis,
+        REGEXP_REPLACE(
+            minus_parenthesis,
             '{{ HF }}|{{ FH }}|{{ HFX }}|{{ MFD }}|{{ FMD }}|{{ MWD }}|{{ MW }}|{{ HST }}',
             '', 
             1, 0, 'im'
-            ) as without_gender,
-        REGEXP_REPLACE(
-            without_gender,
-            '[()]',
-            '', 
-            1, 0, 'im'
-            ) as without_empty_parenthesis
-    from source
+            ) as minus_gender
+    from job_postings
 )
 
-select without_empty_parenthesis as title from stg_titles
+select * from stg_titles

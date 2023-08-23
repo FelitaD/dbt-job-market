@@ -5,7 +5,7 @@
 - [x] Add job_postings config file + tests + doc
 - [] Add stg_ids model + tests + doc
 - [x] Add stg_urls model + tests + doc
-- [] Add stg_titles model + tests + doc
+- [x] Add stg_titles model + tests + doc
 - [] Add stg_remote model + tests + doc
 - [] Add stg_company model + tests + doc
 - [] Add job_postings model + tests + doc
