@@ -2,7 +2,7 @@ with source as (
     select * from {{ source('raw_jobs', 'job_postings')}}
 ),
 
-truncated_urls as (
+stg_urls as (
 
     select
         case
@@ -13,4 +13,4 @@ truncated_urls as (
     from source
 )
 
-select * from truncated_urls
+select * from stg_urls
