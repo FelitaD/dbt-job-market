@@ -29,7 +29,7 @@ sources:
               - not_null 
           - name: location
             description: location of the job
-          - name: type
+          - name: contract
             description: contract type of the job
           - name: industry
             description: industry of the company
