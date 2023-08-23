@@ -11,6 +11,7 @@ models:
         tests:
           - unique
           - not_null
+  - name: stg_titles_without_gender
   - name: stg_titles
     description: title of the job posting
     columns:
