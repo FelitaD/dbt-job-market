@@ -1,15 +1,12 @@
-Welcome to your new dbt project!
+## Steps to modify Job Radar 1.0 Transformation
 
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](http://community.getbdt.com/) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+- [x] Set up Snowflake connection
+- [x] Add raw_jobs.job_postings source + tests + doc
+- [x] Add job_postings config file + tests + doc
+- [] Add stg_ids model + tests + doc
+- [x] Add stg_urls model + tests + doc
+- [] Add stg_titles model + tests + doc
+- [] Add stg_remote model + tests + doc
+- [] Add stg_company model + tests + doc
+- [] Add job_postings model + tests + doc
+- [] [Parsing keywords with regex](https://github.com/FelitaD/Learning-in-Public/blob/main/dbt/Parsing%20keywords%20with%20regex.md) (preprocess title and text columns)

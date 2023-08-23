@@ -2,10 +2,21 @@ version: 2
 
 models:
   - name: stg_urls
+    description: one unique url per row
     columns:
+      - name: id
+        description: the primary for stg_urls
       - name: cleaned_url
+        description: url without the part used when website (ie. welcometothejungle.com) reposts the same job posting
         tests:
           - unique
           - not_null
-
-
+  - name: stg_titles
+    description: title of the job posting
+    columns:
+      - name: id
+        description: the primary for stg_titles
+      - name: cleaned_title
+        description: title without the gender descriptions
+        tests:
+          - not_null

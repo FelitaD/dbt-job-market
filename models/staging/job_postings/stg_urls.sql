@@ -5,6 +5,7 @@ with source as (
 stg_urls as (
 
     select
+        id,
         case
             when url like '%?q=%' then split_part(url, '?q=', 1)
             else url

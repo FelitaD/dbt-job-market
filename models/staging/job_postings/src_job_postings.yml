@@ -2,26 +2,32 @@ version: 2
 
 sources:
   - name: raw_jobs
+    description: a clone of the Postgres table raw_jobs
     database: raw
     schema: public
     tables:
       - name: job_postings
+        description: the copy of original raw_jobs table without created_at, education, size, experience columns
         columns:
           - name: id
+            description: primary key of job_postings
             tests:
               - unique
               - not_null
           - name: url
+            description: url of the job posting
             tests:
               - unique
               - not_null
           - name: title
+            description: title of the job posting
             tests:
               - not_null
           - name: company
+            description: company of the job posting
             tests:
               - not_null 
           - name: text
+            description: description of the job posting
             tests:
               - not_null
-
