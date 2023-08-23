@@ -20,14 +20,22 @@ sources:
               - unique
               - not_null
           - name: title
-            description: title of the job posting
+            description: title of the job
             tests:
               - not_null
           - name: company
-            description: company of the job posting
+            description: company of the job
             tests:
               - not_null 
+          - name: location
+            description: location of the job
+          - name: type
+            description: contract type of the job
+          - name: industry
+            description: industry of the company
+          - name: remote
+            description: remote policy of the job
           - name: text
-            description: description of the job posting
+            description: description of the job
             tests:
               - not_null
