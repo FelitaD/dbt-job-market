@@ -1,47 +1,36 @@
 version: 2
 
 models:
-  - name: job_postings
+  - name: int_job_postings
     description: |
-      The `job_postings` model joins transformed fields and untransformed source fields.
+      The `int_job_postings` model joins transformed fields and untransformed source fields.
     columns:
       - name: id
-        description: |
-          The primary key for job_postings.
+        description: primary key
         tests:
           - unique
           - not_null
       - name: url
-        description: |
-          The url of the job posting.
         tests:
           - unique
           - not_null
       - name: title
-        description: |
-          The title of the job.
         tests:
           - not_null
       - name: company
-        description: |
-          The company of the job.
         tests:
           - not_null
       - name: location
-        description: |
-          The location of the job.
       - name: contract
-        description: |
-          The contract type of the job.
+        tests:
+          - accepted_values:
+              values: ['Full Time', 'Graduate program', 'Other', 'Freelance']
       - name: industry
-        description: |
-          The industry or sector of the company.
       - name: remote
-        description: |
-          The remote policy of the job.
+        tests:
+          - accepted_values:
+              values: ['total', 'partial', 'ponctual']
       - name: text
-        description: |
-          The text description of the job.
         tests:
           - not_null
 
@@ -50,14 +39,12 @@ models:
       The `stg_urls` model contains transformed urls.
     columns:
       - name: id
-        description: |
-          The primary key for stg_urls.
+        description: primary key
         tests:
           - unique
           - not_null
       - name: cleaned_url
-        description: |
-          The url without the part used when a website reposts the same job with a different url.
+        description: url without the part used when a website reposts the same job with a different url.
         tests:
           - unique
           - not_null
@@ -67,24 +54,19 @@ models:
       The `stg_titles` model contains transformed job titles.
     columns:
       - name: id
-        description: |
-          The primary key for stg_titles.
+        description: primary key
         tests:
           - unique
           - not_null
       - name: title
-        description: |
-          The original, raw title.
         tests:
           - not_null
       - name: minus_parenthesis
-        description: |
-          The title without any parenthesis (and what's inside).
+        description: title without any parenthesis (and what's inside).
         tests:
           - not_null
       - name: minus_gender
-        description: |
-          The title without gender info that wasn't inside parenthesis.
+        description: title without gender info that wasn't inside parenthesis.
         tests:
           - not_null
 
@@ -93,17 +75,13 @@ models:
       The `stg_contract_types` model contains uniform contract types.
     columns:
       - name: id
-        description: |
-          The primary key for stg_contract_types.
+        description: primary key
         tests:
           - unique
           - not_null
       - name: contract
-        description: |
-          The original, raw contract type.
       - name: simplified_contract
-        description: |
-          The contract types regrouped into uniform categories.
+        description: contract types regrouped into uniform categories.
         tests:
           - accepted_values:
               values: ['Full Time', 'Graduate program', 'Other', 'Freelance']
@@ -113,17 +91,13 @@ models:
       The `stg_remote_policies` model contains uniform remote policies.
     columns:
       - name: id
-        description: |
-          The primary key for stg_remote_policies.
+        description: primary key
         tests:
           - unique
           - not_null
       - name: remote
-        description: |
-          The original, raw remote policy.
       - name: simplified_remote
-        description: |
-          The remote policies regrouped into uniform categories.
+        description: remote policies regrouped into uniform categories.
         tests:
           - accepted_values:
               values: ['total', 'partial', 'ponctual']
@@ -133,17 +107,12 @@ models:
       The `stg_texts` model contains the description of jop postings.
     columns:
       - name: id
-        description: |
-          The primary key for stg_texts.
+        description: primary key
         tests:
           - unique
           - not_null
       - name: text
-        description: |
-          The original, raw text description.
-      - name: trimmed
       - name: cleaned_text
-        description: |
-          The text without newlines and leading or trailing whitespaces.
+        description: text without newlines and leading/trailing whitespaces.
         tests:
           - not_null
