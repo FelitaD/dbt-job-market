@@ -141,8 +141,9 @@ models:
       - name: text
         description: |
           The original, raw text description.
+      - name: trimmed
       - name: cleaned_text
         description: |
-          The text unique instead of multiple newlines.
+          The text without newlines and leading or trailing whitespaces.
         tests:
           - not_null
