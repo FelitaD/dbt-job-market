@@ -7,12 +7,8 @@ stg_texts as (
     select
         id,
         text,
-        REGEXP_REPLACE(
-            text,
-            '(\r?\n)+',
-            '\n', 
-            1, 0, 'm'
-        ) as cleaned_text
+        trim(text, '\n ') as trimmed,
+        replace(trimmed, '\n', ' ') as cleaned_text     
     from job_postings
 )
 
