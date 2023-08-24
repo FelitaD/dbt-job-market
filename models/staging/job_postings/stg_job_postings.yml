@@ -52,3 +52,14 @@ models:
         tests:
           - accepted_values:
               values: ['Full Time', 'Graduate program', 'Other', 'Freelance']
+  - name: stg_texts
+    description: text description of job posting
+    columns:
+      - name: id
+        description: the primary key for stg_texts
+      - name: text
+        description: the original, raw text description
+      - name: cleaned_text
+        description: the text with multiple newlines replaced with unique newline
+        tests:
+          - not_null

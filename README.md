@@ -6,6 +6,6 @@
 - [x] Add stg_urls model + tests + doc
 - [x] Add stg_titles model + tests + doc
 - [x] Add stg_remote_policies model + tests + doc
+- [x] Add stg_types model + tests + doc
 - [ ] Add stg_texts model + tests + doc
-- [ ] Add stg_types model + tests + doc
 - [ ] Add job_postings model + tests + doc
