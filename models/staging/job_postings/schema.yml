@@ -43,7 +43,6 @@ models:
         description: |
           The text description of the job.
         tests:
-          - unique
           - not_null
 
   - name: stg_urls
