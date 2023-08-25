@@ -15,7 +15,6 @@ renamed as (
     subcategory :: text as keyword_subcategory,
     location :: text as location,
     year :: number as founding_year,
-    funding :: text as funding,
     website :: text as website, 
     summary :: text as summary
 
