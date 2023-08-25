@@ -20,6 +20,13 @@ renamed as (
 
   from
     source
-)
+),
 
-select * from renamed
+renamed_numbered as (
+    select 
+        *, 
+        row_number() over(partition by keyword order by keyword) as rn 
+    from renamed)
+
+
+select * from renamed_numbered where rn = 1

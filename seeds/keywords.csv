@@ -134,7 +134,7 @@ Coiled,coiled,,Infrastructure,Compute,United States,2020,https://www.coiled.io/,
 "
 Colossyan,colossyan,,Applications - Horizontal,Video Generation,Germany,2020,https://www.colossyan.com/,"Colossyan is a technology company that aims to create personalized videos and software for marketing, sales and customer success.
 "
-Compose.ai,compose.ai,,Applications - Horizontal,Text,United States,2020,https://www.compose.ai/,"Compose is a free Chrome extension that enables users to automate writing using AI.
+Compose.ai,compose ai,,Applications - Horizontal,Text,United States,2020,https://www.compose.ai/,"Compose is a free Chrome extension that enables users to automate writing using AI.
 "
 Copy.ai,copy ai,,Applications - Enterprise,Marketing,United States,2020,https://www.copy.ai/,"Copy.AI develops an artificial intelligence copywriter that enables users to create marketing copy in seconds.
 "
@@ -466,7 +466,7 @@ Cresta,cresta,,Applications - Enterprise,Customer Experience,United States,2017,
 "
 Cribl,cribl,,Infrastructure,MGMT/Monitoring,United States,2017,https://cribl.io/,"Cribl is a company focusing on making open observability a reality for tech professionals. The Cribl product suite defies data gravity with choice and control by delivering the freedom and flexibility to make choices rather than compromises. With Cribl, companies have the power to control their data, get more out of existing investments, and shape the observability future. The Cribl product suite is used by clients across industries spanning financial services, healthcare, retail, manufacturing, and more. Cribl was founded in 2017 and is based in San Francisco, California."
 Crux Data,crux data,,Infrastructure,Data Integration,United States,2017,https://www.cruxdata.com/,"Crux Informatics offers data engineering and information supply chain operation services that aim to help companies reduce the effort and money spent acquiring, exploring, and processing data. It implements and operates the data processing pipelines they create for its customers' requirements. It delivers solutions such as cloud migration, supply chain, and data integration solutions. The company was founded in 2017 and is based in San Francisco, California."
-D-ID,d-id,,Applications - Horizontal,Video Generation,Israel,2017,https://www.d-id.com/,"D-ID's proprietary facial reenactment technology enables the creation of video footage, using any ""driver"" video to guide the movements, expressions, and speech of the target actor or still photo subject.
+D-ID,d id,,Applications - Horizontal,Video Generation,Israel,2017,https://www.d-id.com/,"D-ID's proprietary facial reenactment technology enables the creation of video footage, using any ""driver"" video to guide the movements, expressions, and speech of the target actor or still photo subject.
 "
 Databook,databook,,Applications - Enterprise,Sales,United States,2017,https://trydatabook.com/,"Databook's Customer Intelligence Platform accelerates enterprise sales performance at scale with three integrated products: Databook Intent Dashboard, Databook Insights Platform, and Databook Sales Decks. Databook Intent Dashboard improves Marketing-to-Sales performance while decreasing costs by helping customer-facing teams prioritize the companies most likely to buy. The Databook Insights Platform accelerates qualified pipeline and top-line growth by delivering strategic value and offering a hyper-personalized customer experience. Databook Sales Decks increase sales organization productivity at scale by enabling 1-click, dynamic, and empathic customer content that delivers to the customer's perspective."
 DataGrid,datagrid,,Applications - Horizontal,Animation & 3D,Japan,2017,https://datagrid.co.jp/,"DataGrid is an IT company that specializes in creative applications of AI, as well as developing or consulting on AI-related systems. The company develops Gene A.I.dols, an AI system capable of smoothly and automatically generating high-resolution, photorealistic Japanese idol faces. Using deep learning based on GANs (generative adversarial networks), the company's AI learns from a database of existing idol images and then generates entirely fictitious yet photorealistic idol faces.
@@ -541,7 +541,7 @@ Verana Health,verana health,,Applications - Industry,Life Sciences,United States
 Wallaroo,wallaroo,,Machine Learning & Artificial Intelligence,Enterprise ML Platforms,United States,2017,https://www.wallaroo.ai/,"Wallaroo is an enterprise ML & AI platform that turns data into business results faster, easier, and with lower investment. It is streamlining the ML lifecycle and giving data scientists the freedom to use the tools they love.
 "
 Wayve,wayve,,Applications - Industry,Transportation,United Kingdom,2017,https://www.wayve.ai/,"Wayve develops autonomous driving systems using artificial intelligence and machine learning. It focuses on building a data-driven learned driver that can scale, adapt and generalize its driving intelligence. The company was founded in 2017 and is based in London, U.K."
-Weights & Biases,weights & biases,,Machine Learning & Artificial Intelligence,MLOps,United States,2017,https://wandb.ai/site,"Weights & Biases provides a developer-first MLOps platform that offers performance visualization tools for machine learning. Weights & Biases customers are developers. Weights & Biases was founded in 2017 and is based in San Francisco, California."
+Weights & Biases,weights and biases,,Machine Learning & Artificial Intelligence,MLOps,United States,2017,https://wandb.ai/site,"Weights & Biases provides a developer-first MLOps platform that offers performance visualization tools for machine learning. Weights & Biases customers are developers. Weights & Biases was founded in 2017 and is based in San Francisco, California."
 Zilliz,zilliz,,Infrastructure,Vector Databases,United States,2017,https://zilliz.com/,"Zilliz provides an enterprise-ready vector database for AI applications. The company builds database technologies to help organizations rapidly create AI/ML applications, and unlock the potential of unstructured data. The company was founded in 2017 and is based in San Francisco, California."
 Ada,ada,,Applications - Enterprise,Customer Experience,Canada,2016,https://www.ada.cx/,"Ada offers an automated platform that integrates artificial intelligence and enables enterprise businesses around the world to automate customer service that saves time, reduces cost, and strengthens their support. It also offers different chatbots as per the need of the business. The company was founded in 2016 and is based in Toronto, Canada."
 Aidoc,aidoc,,Applications - Industry,Healthcare,Israel,2016,https://www.aidoc.com/,"Aidoc finds and flags critical findings in medical images. By automatically prioritizing urgent, life-threatening conditions like intracranial hemorrhage and pulmonary embolism, Aidoc saves lives, improves patient care and cuts waiting time for the must urgent patients down to only a few minutes. The always-on AI integrates into a radiologist's workflow, reprioritizing cases without forcing radiologists to change the way they work. Aidoc was founded in 2016 and is based in Tel Aviv, Israel."
@@ -1233,7 +1233,7 @@ LogicMonitor,logicmonitor,,Analytics,Log Analytics,United States,2008,https://ww
 MongoDB,mongodb,mongo db,Infrastructure,NoSQL Databases,United States,2008,https://www.mongodb.com/,"MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era.
 "
 New Relic,new relic,,Infrastructure,MGMT/Monitoring,United States,2008,https://newrelic.com/,"New Relic (NYSE: NEWR) develops cloud-based software to help website and application owners track the performance of their services. The company's SaaS-based solution provides an interface for web and native mobile applications and consolidates the performance monitoring data for any chosen technology in an environment. The firm was founded in 2008 and is based in San Francisco, California."
-PG-Strom,pg-strom,,Infrastructure,GPU Databases,United States,2008,https://github.com/heterodb/pg-strom,"GitHub is a social network to share code with friends, co-workers, classmates, and strangers. Users have access to free public repositories, collaborator management, issue tracking, wikis, downloads, code review, graphs and more. The hosted service GitHub.com is free for open source projects and according to much of the developer community, it has helped to improve open source collaboration. On October 26, 2018, GitHub was acquired by Microsoft at a valuation of $7.5B."
+PG-Strom,pg strom,,Infrastructure,GPU Databases,United States,2008,https://github.com/heterodb/pg-strom,"GitHub is a social network to share code with friends, co-workers, classmates, and strangers. Users have access to free public repositories, collaborator management, issue tracking, wikis, downloads, code review, graphs and more. The hosted service GitHub.com is free for open source projects and according to much of the developer community, it has helped to improve open source collaboration. On October 26, 2018, GitHub was acquired by Microsoft at a valuation of $7.5B."
 Reveal Data,reveal data,,Applications - Enterprise,Legal,United States,2008,https://revealdata.com/,"Reveal Data provides cloud-based eDiscovery software solutions and services. Its eDiscovery software platform offers the full range of processing, ECA, review and artificial intelligence capabilities.
 "
 Sama,sama,,Machine Learning & Artificial Intelligence,Data Generation & Labelling,United States,2008,https://www.sama.com/,"Sama provides accurate data for ambitious AI. Its training data platform develops accurate machine learning models specializing in image, video, and sensor data annotation and validation for machine learning algorithms in industries including transportation, retail and e-commerce, consumer and media, MedTech, manufacturing and robotics, and agriculture. The company was founded in 2008 and is based in San Francisco, California."
@@ -1369,7 +1369,7 @@ Talend,talend,,Infrastructure,ETL/ELT/Data Transformation,United States,2005,htt
 Talend,talend,,Infrastructure,Data Quality & Observability,United States,2005,https://www.talend.com/,"Talend provides integration that truly scales. From small projects to enterprise-wide implementations, Talend's highly-scalable data, application, and business process integration platform maximizes the value of an organization's information assets and optimizes return on investment through a usage-based subscription model.
 "
 UiPath,uipath,,Applications - Enterprise,Automation & Operations,United States,2005,https://www.uipath.com/,"UiPath (NYSE: PATH) is a New York-based, robotic process automation (RPA) company that helps in the training and collaboration of AI and machine learning. The technology is used by companies in document management, contact center, healthcare, finance and accounting, human resources, and supply chains, addressing major technical challenges, including data extraction and migration, process automation, application integration, and business process outsourcing. The company was founded in 2005 and is based in New York, New York."
-"Vertica, An OpenText Company","vertica, an opentext company",vertica,Infrastructure,MPP DBs,United States,2005,https://www.vertica.com/,"Vertica Systems is developing an analytics database management software company. Vertica makes SQL database management software designed to derive business intelligence from complex and large sets of data, in real-time.
+"Vertica, An OpenText Company",vertica,,Infrastructure,MPP DBs,United States,2005,https://www.vertica.com/,"Vertica Systems is developing an analytics database management software company. Vertica makes SQL database management software designed to derive business intelligence from complex and large sets of data, in real-time.
 "
 Enova,enova,,Applications - Industry,Finance & Insurance,United States,2004,https://www.enova.com/,"Enova International (NYSE: ENVA) a technology and analytics company, provides online financial services. The company offers short-term consumer loans; line of credit accounts; installment loans; receivables purchase agreements; CSO programs, including credit-related services, such as arranging loans with independent third-party lenders and assisting in the preparation of loan applications and loan documents; and bank programs comprising technology, loan servicing, unsecured consumer installment loans, and marketing services to the bank, as well as Enova Decisions, analytics as a service that enables companies to make decisions about their customers. The company was founded in 2004 and is based in Chicago, Illinois."
 HireVue,hirevue,,Applications - Enterprise,Human Capital,United States,2004,https://www.hirevue.com/,"HireVue provides an assessment and video interviewing platform that combines video, AI, game, and technical challenges for comprehensive hiring intelligence.
@@ -1534,7 +1534,7 @@ SAP HANA,sap hana,,Infrastructure,Streaming/In-Memory,Germany,1972,https://www.s
 "
 SAP Lumira,sap lumira,,Analytics,Analytics - Visualization,Germany,1972,https://www.sap.com/products/technology-platform/lumira.html,"SAP (FWB: SAP) (NYSE: SAP) is a multinational software corporation that makes enterprise software to manage business operations and customer relations.
 "
-SAP S/4 HANA,sap s/4 hana,,Applications - Enterprise,Finance,Germany,1972,https://www.sap.com/products/erp/s4hana.html,"SAP (FWB: SAP) (NYSE: SAP) is a multinational software corporation that makes enterprise software to manage business operations and customer relations.
+SAP S/4 HANA,sap s4 hana,,Applications - Enterprise,Finance,Germany,1972,https://www.sap.com/products/erp/s4hana.html,"SAP (FWB: SAP) (NYSE: SAP) is a multinational software corporation that makes enterprise software to manage business operations and customer relations.
 "
 Nasdaq Data Link,nasdaq data link,,Data Sources & APIs,Financial & Market Data,United States,1971,https://www.nasdaq.com/nasdaq-data-link,"NASDAQ (NASDAQ: NDAQ) is a provider of trading, clearing, exchange technology, listing, information, and public company services across six continents.
 "
@@ -1559,7 +1559,7 @@ The World Bank,the world bank,,Data Sources & APIs,Financial & Market Data,Unite
 SEC EDGAR,sec edgar,,Data Sources & APIs,Financial & Market Data,United States,1934,https://www.sec.gov/edgar/search-and-access,"U.S. Securities and Exchange Commission (SEC) is an independent federal government regulatory agency responsible for protecting investors, maintaining fair and orderly functioning of the securities markets, and facilitating capital formation. It is based in Washington, DC.
 "
 QuantumBlack AI by McKinsey,quantumblack ai by mckinsey,quantumblack,Data & AI Consulting,Data & AI Consulting,United States,1926,https://www.mckinsey.com/capabilities/quantumblack/how-we-help-clients,"McKinsey & Company is a global management consulting firm. It offers consultation to various industries such as electronic, aerospace, automotive, chemical, financial, oil and gas, public sector, and healthcare. The company was founded in 1926 and is based in New York, New York."
-S&P Global Market Intelligence,s&p global market intelligence,,Data Sources & APIs,Financial & Market Data,United States,1917,https://www.spglobal.com/marketintelligence/en/solutions/sp-capital-iq-pro,"S&P Global (NYSE: SPGI) provides transparent and independent ratings, benchmarks, analytics, and data to the capital and commodity markets worldwide. The Company's divisions include S&P Global Ratings, S&P Global Market Intelligence, S&P Dow Jones Indices, and S&P Global Platts. The company was founded in 1917 and is based in New York, New York."
+S&P Global Market Intelligence,s and p global market intelligence,,Data Sources & APIs,Financial & Market Data,United States,1917,https://www.spglobal.com/marketintelligence/en/solutions/sp-capital-iq-pro,"S&P Global (NYSE: SPGI) provides transparent and independent ratings, benchmarks, analytics, and data to the capital and commodity markets worldwide. The Company's divisions include S&P Global Ratings, S&P Global Market Intelligence, S&P Dow Jones Indices, and S&P Global Platts. The company was founded in 1917 and is based in New York, New York."
 IBM,ibm,,Infrastructure,Data Governance & Catalog,United States,1911,https://www.ibm.com/us-en/,"IBM (NYSE: IBM) manufactures and sells computer hardware and software, and offers infrastructure services, hosting services, and consulting services in areas ranging from mainframe computers to nanotechnology. The company was founded in 1911 and is based in Armonk, Newyork."
 IBM AI Consulting,ibm ai consulting,,Data & AI Consulting,Data & AI Consulting,United States,1911,https://www.ibm.com/consulting/artificial-intelligence,"IBM (NYSE: IBM) manufactures and sells computer hardware and software, and offers infrastructure services, hosting services, and consulting services in areas ranging from mainframe computers to nanotechnology. The company was founded in 1911 and is based in Armonk, Newyork."
 IBM Cognos Analytics,ibm cognos analytics,,Analytics,BI Platforms,United States,1911,https://www.ibm.com/products/cognos-analytics,"IBM (NYSE: IBM) manufactures and sells computer hardware and software, and offers infrastructure services, hosting services, and consulting services in areas ranging from mainframe computers to nanotechnology. The company was founded in 1911 and is based in Armonk, Newyork."
@@ -1578,7 +1578,7 @@ Johnson Controls,johnson controls,,Applications - Industry,Industrial & Logistic
 Dow Jones,dow jones,,Data Sources & APIs,Financial & Market Data,United States,1882,https://www.dowjones.com/,"Dow Jones & Company is a News Corporation company (NASDAQ: NWS) (NASDAQ: NWSA) (ASX: NWS) (ASX: NWSLV). Dow Jones is aprovider of global business news and information services. Its Consumer Media Group publishes The Wall Street Journal, Barron's and MarketWatch. Its Enterprise Media Group includes Dow Jones Newswires, Dow Jones Factiva, Dow Jones Client Solutions, Dow Jones Indexes and Dow Jones Financial Information Services. Its Local Media Group operates community-based information franchises.
 "
 Siemens,siemens,,Applications - Industry,Industrial & Logistics,Germany,1874,https://www.siemens.com/global/en.html,"Siemens (ETS:SIE) is an industrial manufacturing conglomerate whose principal divisions are industry, energy, healthcare, and infrastructure & cities. It offers smart township infrastructure, drive technology, financing, industrial automation, energy product, and others. The company was founded in 1874 and is based in Munich, Germany."
-Dun & bradstreet,dun & bradstreet,,Data Sources & APIs,People/Entities,United States,1841,https://www.dnb.com/,"Dun & Bradstreet (NYSE:DNB) provides business information and technology solutions. The Company's customers use these solutions in order to reduce credit risk, find profitable business partners, manage business relationships, and collect cash and receivables. Dun & Bradstreet's database contains information on public and private companies around the world.
+Dun & bradstreet,dun and bradstreet,,Data Sources & APIs,People/Entities,United States,1841,https://www.dnb.com/,"Dun & Bradstreet (NYSE:DNB) provides business information and technology solutions. The Company's customers use these solutions in order to reduce credit risk, find profitable business partners, manage business relationships, and collect cash and receivables. Dun & Bradstreet's database contains information on public and private companies around the world.
 "
 John Deere,john deere,,Applications - Industry,Agriculture,United States,1837,https://www.deere.com/en/index.html,"John Deere manufactures agricultural, construction, and forestry machinery, diesel engines, drivetrains used in heavy equipment and lawn care equipment. The company supplies replacement parts for its own products and for those of other manufacturers.
 "
@@ -1588,7 +1588,7 @@ Accumulo,accumulo,,Open Source Infrastructure,Databases,,,https://github.com/apa
 "
 Actian,actian,,Infrastructure,MPP DBs,United States,,https://www.actian.com/,"Actian is a computer software company that enables organizations to transform big data into business value with data management solutions to transact, connect, analyze and act on data. Actian helps customers worldwide take action on their big data with Vectorwise analytics database, RushAnalytics Hadoop accelerator, DataCloud for cloud and on-premises data integration, Action Apps, as well as Ingres, Versant and PSQL transactional mission-critical databases.
 "
-Adobe Real-Time CDP,adobe real-time cdp,,Analytics,Customer Data Platforms,,,https://business.adobe.com/products/real-time-customer-data-platform/RTCDP,"
+Adobe Real-Time CDP,adobe real time cdp,,Analytics,Customer Data Platforms,,,https://business.adobe.com/products/real-time-customer-data-platform/RTCDP,"
 "
 AI2sql,ai2sql,,Applications - Horizontal,Code & Documentation,United States,,https://www.ai2sql.io/,"AI2sql offers an AI-powered SQL query builder that enables users to build SQL queries without any knowledge of SQL for beginners. Users enter a few keywords about their data and the platform automatically builds an optimized SQL query for the data. The company is based in Jacksonville, Florida."
 Allen Institute,allen institute,,Machine Learning & Artificial Intelligence,Horizontal AI/AGI,United States,,https://allenai.org/,"Allen Institute for Artificial Intelligence (AI2) with the singular focus of conducting high-impact research and engineering in the field of artificial intelligence for the common good. AI2 is the creation of Paul Allen, Microsoft co-founder, and is led by Dr. Oren Etzioni, a world-renowned researcher and professor in the field of AI and computer science. In response to the COVID-19 pandemic, the Allen Institute for AI has partnered with leading research groups to prepare and distribute the COVID-19 Open Research Dataset (CORD-19), a free resource of over 44,000 scholarly articles, including over 29,000 with full text, about COVID-19 and the coronavirus family of viruses for use by the global research community."
@@ -1751,9 +1751,9 @@ Elementl,elementl,,Infrastructure,Infrastructure - Orchestration,United States,,
 "
 Eleuther AI,eleuther ai,,Machine Learning & Artificial Intelligence,Horizontal AI/AGI,,,https://www.eleuther.ai/,"
 "
-EleutherAI GPT-J-6B,eleutherai gpt-j-6b,,Open Source Infrastructure,AI Models & Architectures,,,https://huggingface.co/EleutherAI/gpt-j-6B,"
+EleutherAI GPT-J-6B,eleutherai gpt j 6b,,Open Source Infrastructure,AI Models & Architectures,,,https://huggingface.co/EleutherAI/gpt-j-6B,"
 "
-EleutherAI GPT-Neo-2.7B,eleutherai gpt-neo,,Open Source Infrastructure,AI Models & Architectures,,,https://huggingface.co/EleutherAI/gpt-neo-2.7B,"
+EleutherAI GPT-Neo-2.7B,eleutherai gpt neo,,Open Source Infrastructure,AI Models & Architectures,,,https://huggingface.co/EleutherAI/gpt-neo-2.7B,"
 "
 Estuary,estuary,,Infrastructure,Streaming/In-Memory,United States,,https://www.estuary.dev/,"Estuary is a database software company that specializes in linking to both internal and external systems, integrating real-time batch operations, and allowing clients to stream data, including internal services, apps, or external SaaS. It is based in New York, New York.
 "
@@ -1790,7 +1790,7 @@ Ghost,ghost,,Applications - Industry,Transportation,,,https://www.ghostautonomy.
 "
 GNU Octave,gnu octave,,Open Source Infrastructure,Stat Tools & Languages,,,https://github.com/gnu-octave/octave,"GNU Octave Mirror (<https://www.octave.org/hg/octave>).  Report bugs and submit pull requests (patches) at <https://bugs.octave.org>
 "
-Google AI Flan-T5,google ai flan-t5,,Open Source Infrastructure,AI Models & Architectures,,,https://huggingface.co/docs/transformers/model_doc/flan-t5,"
+Google AI Flan-T5,google ai flan t5,,Open Source Infrastructure,AI Models & Architectures,,,https://huggingface.co/docs/transformers/model_doc/flan-t5,"
 "
 Google Analytics,google analytics,,Analytics,Product Analytics,United States,,https://analytics.google.com/analytics/web/provision/#/provision,"Google Analytics is an American multinational technology company that specializes in Internet-related services and products. The company is based in Mountain View, California.
 "
@@ -1855,7 +1855,7 @@ InfluxDB,influxdb,,Open Source Infrastructure,Databases,,,https://github.com/inf
 "
 Infogram,infogram,,Analytics,Analytics - Visualization,United States,,https://infogram.com/,"Infogram is a data visualization platform solution company. The company offers infographics, data visualization, graphs, charts, data storytelling, maps, reports, presentation, data storytelling, and visual communication. It is based in San Francisco, California.
 "
-Institute for Ethical AI & Machine Learning,institute for ethical ai & machine learning,,Machine Learning & Artificial Intelligence,Horizontal AI/AGI,,,https://ethical.institute/,"
+Institute for Ethical AI & Machine Learning,institute for ethical ai and machine learning,,Machine Learning & Artificial Intelligence,Horizontal AI/AGI,,,https://ethical.institute/,"
 "
 Julia,julia,,Open Source Infrastructure,Stat Tools & Languages,,,https://github.com/JuliaLang/julia,"The Julia Programming Language
 "
@@ -1935,11 +1935,11 @@ Meta AI Diplomacy Cicero,meta ai diplomacy cicero,,Open Source Infrastructure,AI
 "
 Meta AI ESM,meta ai esm,,Open Source Infrastructure,AI Models & Architectures,,,https://github.com/facebookresearch/esm,"Evolutionary Scale Modeling (esm): Pretrained language models for proteins
 "
-Meta AI Make-a-video,meta ai make-a-video,,Machine Learning & Artificial Intelligence,Closed Source Models,,,https://makeavideo.studio/,"
+Meta AI Make-a-video,meta ai make a video,,Machine Learning & Artificial Intelligence,Closed Source Models,,,https://makeavideo.studio/,"
 "
-Meta AI Opt-175B,meta ai opt-175b,,Machine Learning & Artificial Intelligence,Closed Source Models,,,https://ai.facebook.com/blog/democratizing-access-to-large-scale-language-models-with-opt-175b/,"
+Meta AI Opt-175B,meta ai opt 175b,,Machine Learning & Artificial Intelligence,Closed Source Models,,,https://ai.facebook.com/blog/democratizing-access-to-large-scale-language-models-with-opt-175b/,"
 "
-Meta AI OPT-66B,meta ai opt-66b,,Open Source Infrastructure,AI Models & Architectures,,,https://huggingface.co/facebook/opt-66b,"
+Meta AI OPT-66B,meta ai opt 66b,,Open Source Infrastructure,AI Models & Architectures,,,https://huggingface.co/facebook/opt-66b,"
 "
 Meta Research,meta research,,Machine Learning & Artificial Intelligence,Horizontal AI/AGI,,,https://research.facebook.com/,"
 "
@@ -1984,7 +1984,7 @@ NumPy,numpy,,Open Source Infrastructure,Stat Tools & Languages,,,https://github.
 "
 Nvidia Megatron,nvidia megatron,,Open Source Infrastructure,AI Models & Architectures,,,https://github.com/NVIDIA/Megatron-LM,"Ongoing research training transformer models at scale
 "
-Nvidia Megatron-Turing,nvidia megatron-turing,,Machine Learning & Artificial Intelligence,Closed Source Models,,,https://developer.nvidia.com/megatron-turing-natural-language-generation,"
+Nvidia Megatron-Turing,nvidia megatron turing,,Machine Learning & Artificial Intelligence,Closed Source Models,,,https://developer.nvidia.com/megatron-turing-natural-language-generation,"
 "
 OFAI,ofai,,Machine Learning & Artificial Intelligence,Horizontal AI/AGI,,,https://www.ofai.at/,"
 "
@@ -2093,7 +2093,7 @@ Samza,samza,,Open Source Infrastructure,Streaming & Messaging,,,https://github.c
 Scala,scala,,Open Source Infrastructure,Stat Tools & Languages,,,https://github.com/scala/scala,"Scala 2 compiler and standard library. For bugs, see scala/bug"
 SciDB,scidb,,Open Source Infrastructure,Databases,,,https://github.com/Paradigm4/SciDB-Py,"Python wrapper for SciDB queries
 "
-Scikit-learn,scikit-learn,,Open Source Infrastructure,AI Frameworks & Libraries,,,https://github.com/scikit-learn/scikit-learn,"scikit-learn: machine learning in Python
+Scikit-learn,scikit learn,,Open Source Infrastructure,AI Frameworks & Libraries,,,https://github.com/scikit-learn/scikit-learn,"scikit-learn: machine learning in Python
 "
 SciPy,scipy,,Open Source Infrastructure,Stat Tools & Languages,,,https://github.com/scipy/scipy,"SciPy library main repository
 "
