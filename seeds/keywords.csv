@@ -1,0 +1,140 @@
+keyword,additional_regex,category
+apache spark,spark,analytics
+apache beam,beam,analytics
+apache flink,flink,analytics
+trino,,analytics
+prestosql,,analytics
+apache superset,superset,business intelligence
+hue,hadoop user interface | hui,business intelligence
+metabase,,business intelligence
+redash,,business intelligence
+debezium,,change data capture
+maxwell,,change data capture
+apache calcite,calcite,datastores
+apache cassandra,cassandra,datastores
+apache druid,druid,datastores
+apache hbase,hbase,datastores
+apache pinot,pinot,datastores
+clickhouse,,datastores
+influxdb,,datastores
+minio,,datastores
+postgres,,datastores
+amundsen,,data governance and registries
+apache atlas,atlas,data governance and registries
+datahub,,data governance and registries
+metacat,,data governance and registries
+apache drill,drill,data virtualization
+dremio,,data virtualization
+teiid,,data virtualization
+presto,,data virtualization
+alluxio,,file system
+hdfs,,file system
+aws s3,s3,file system
+ceph,,file system
+s3ql,,file system
+orangefs,,file system
+snackfs,,file system
+glusterfs,,file system
+xtreemfs,,file system
+seaweedfs,,file system
+lizardfs,,file system
+apache avro,avro,formats
+apache parquet,parquet,formats
+apache orc,\sorc\s,formats
+apache thrift,thrift,formats
+apache arrow,arrow,formats
+capn proto,captain proto,formats
+flatbuffers,flat buffers,formats
+messagepack,message pack,formats
+protocol buffers,,formats
+protobuf,,formats
+kryo,,formats
+apache camel,camel,integration
+kafka connect,,integration
+logstash,log stash,integration
+telegraf,,integration
+apache activemq,,data ingestion
+apache kafka,kafka,data ingestion
+apache pulsar,pulsar,data ingestion
+meltano,,data ingestion
+liiklus,,data ingestion
+nakadi,,data ingestion
+nats,,data ingestion
+rabbitmq,,data ingestion
+waltz,,data ingestion
+zeromq,,data ingestion
+kinesis,aws kinesis,data ingestion
+fluentd,,data ingestion
+embulk,,data ingestion
+apache sqoop,sqoop,data ingestion
+heka,,data ingestion
+gobblin,,data ingestion
+pravega,,data ingestion
+cloudevents,,specifications and standards
+apache heron,heron,stream processing
+apache kafka streams,kafka streams,stream processing
+apache samza,samza,stream processing
+apache spark structured streaming,spark structured streaming,stream processing
+apache storm,storm,stream processing
+voltdb,,stream processing
+pipelinedb,,stream processing
+great expectations,,testing
+dbt,data build tool,data transformation
+lakeFS,,versioning
+apache airflow,airflow,workflow management
+apache nifi,nifi,workflow management
+knime,,workflow management
+prefect,,workflow management
+dagster,,workflow management
+argo,,workflow management
+azkaban,,workflow management
+brigade,,workflow management
+cadence,,workflow management
+camunda,,workflow management
+cloudslang,,workflow management
+conductor,,workflow management
+copper,,workflow management
+couler,,workflow management
+cromwell,,workflow management
+cylc,,workflow management
+digdag,,workflow management
+elsaworkflows,elsa workflows,workflow management
+easyrules,easy rules,workflow management
+fireworks,,workflow management
+fission workflows,,workflow management
+flor,,workflow management
+flyte,,workflow management
+imixsworkflow,imixs workflow,workflow management
+kiba,,workflow management
+petri flow,,workflow management
+martian,,workflow management
+mass transit,,workflow management
+mistral,,workflow management
+n8nio,n8n io,workflow management
+nextflow,,workflow management
+oozie,,workflow management
+pallets,,workflow management
+pegasus,,workflow management
+piper,,workflow management
+plynx,,workflow management
+popper,,workflow management
+rundeck,,workflow management
+stackstorm,,workflow management
+temporal,,workflow management
+titanoboa,,workflow management
+utask,,workflow management
+wexflow,,workflow management
+yawl,,workflow management
+zeebe,,workflow management
+docker,,containerization
+gockerize,,containerization
+flocker,,containerization
+rancher,,containerization
+kontena,,containerization
+weave,,containerization
+zodiac,,containerization
+cadvisor,,containerization
+micro s3 persistence,,containerization
+rocker compose,rockercompose,containerization
+nomad,,containerization
+imagelayers,,containerization
