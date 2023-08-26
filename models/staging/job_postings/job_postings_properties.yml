@@ -1,0 +1,118 @@
+version: 2
+
+models:
+  - name: int_job_postings
+    description: |
+      The `int_job_postings` model joins transformed fields and untransformed source fields.
+    columns:
+      - name: id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: url
+        tests:
+          - unique
+          - not_null
+      - name: title
+        tests:
+          - not_null
+      - name: company
+        tests:
+          - not_null
+      - name: location
+      - name: contract
+        tests:
+          - accepted_values:
+              values: ['Full Time', 'Graduate program', 'Other', 'Freelance']
+      - name: industry
+      - name: remote
+        tests:
+          - accepted_values:
+              values: ['total', 'partial', 'ponctual']
+      - name: text
+        tests:
+          - not_null
+
+  - name: stg_urls
+    description: |
+      The `stg_urls` model contains transformed urls.
+    columns:
+      - name: id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: cleaned_url
+        description: url without the part used when a website reposts the same job with a different url.
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_titles
+    description: |
+      The `stg_titles` model contains transformed job titles.
+    columns:
+      - name: id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: title
+        tests:
+          - not_null
+      - name: minus_parenthesis
+        description: title without any parenthesis (and what's inside).
+        tests:
+          - not_null
+      - name: minus_gender
+        description: title without gender info that wasn't inside parenthesis.
+        tests:
+          - not_null
+
+  - name: stg_contract_types
+    description: |
+      The `stg_contract_types` model contains uniform contract types.
+    columns:
+      - name: id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: contract
+      - name: simplified_contract
+        description: contract types regrouped into uniform categories.
+        tests:
+          - accepted_values:
+              values: ['Full Time', 'Graduate program', 'Other', 'Freelance']
+
+  - name: stg_remote_policies
+    description: |
+      The `stg_remote_policies` model contains uniform remote policies.
+    columns:
+      - name: id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: remote
+      - name: simplified_remote
+        description: remote policies regrouped into uniform categories.
+        tests:
+          - accepted_values:
+              values: ['total', 'partial', 'ponctual']
+
+  - name: stg_texts
+    description: |
+      The `stg_texts` model contains the description of jop postings.
+    columns:
+      - name: id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: text
+      - name: cleaned_text
+        description: text without newlines and leading/trailing whitespaces.
+        tests:
+          - not_null
