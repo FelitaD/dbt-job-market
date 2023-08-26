@@ -18,7 +18,7 @@ mentions as (
         text,
         {%- for k in query_results['KEYWORD'] | list %}
         {%- set regex = query_results['KEYWORD_REGEX'][loop.index-1] %}
-        regexp_like(text, '.*({{ regex }}).*')
+        regexp_like(text, $$.*[\s,.\n]({{ regex }})[\s,.\n].*$$, 'i')
             as {{ k | replace(" ","_") | replace("|","_") | lower }} {{ "," if not loop.last}}
        {%- endfor %}
 

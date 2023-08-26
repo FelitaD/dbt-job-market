@@ -3,11 +3,10 @@ with unpivoted as ( {{
       ref('stg_pivoted_extraction'),
       cast_to='boolean',
       field_name='keyword',
-      value_name='details',
+      value_name='is_present',
       exclude=[
         'job_id',
-        'sentence_id',
-        'sentence_text'
+        'text'
       ],
       remove = []
     ) 
