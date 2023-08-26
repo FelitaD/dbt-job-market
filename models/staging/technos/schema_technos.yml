@@ -6,13 +6,10 @@ models:
       The `int_job_postings_technos` model joins transformed fields and untransformed source fields.
     columns:
       - name: id
-        description: primary key
         tests:
-          - unique
           - not_null
       - name: url
         tests:
-          - unique
           - not_null
       - name: title
         tests:

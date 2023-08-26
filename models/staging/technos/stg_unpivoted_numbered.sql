@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 with unpivoted_matching as (
     select * from {{ ref('stg_unpivoted_matching') }}
 ),

@@ -1,5 +1,6 @@
-with unpivoted as (
-  {{ 
+{{ config(materialized='table') }}
+
+with unpivoted as ( {{ 
     dbt_utils.unpivot(
       ref('stg_pivoted_extraction'),
       cast_to='variant',
@@ -14,6 +15,6 @@ with unpivoted as (
       ],
       remove = []
     ) 
-  }}
-)
+  }} )
+  
 select * from unpivoted
