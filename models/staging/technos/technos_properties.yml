@@ -26,34 +26,6 @@ models:
       - name: website
       - name: summary
 
-  - name: stg_base_sentences
-    description: |
-      The `stg_base_sentences` model creates an array containing the text split into sentences.
-    config:
-      materialized: table
-    columns:
-      - name: sentence_text_list
-        tests:
-          - not_null
-
-  - name: stg_base_sentences_flatten
-    description: |
-      The `stg_base_sentences_flatten` model explodes the sentence_text_list into multiple rows.
-    config:
-      materialized: table
-    columns:
-      - name: job_id
-        tests:
-          - not_null
-      - name: sentence_text
-        tests:
-          - not_null
-          - unique
-      - name: sentence_id
-        tests:
-          - not_null
-          - unique
-
   - name: stg_pivoted_extraction
     description: |
       The `stg_pivoted_extraction` model creates over a thousand columns, each being a techno and indicating if it's present in the sentence_text.
