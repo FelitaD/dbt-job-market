@@ -1,4 +1,18 @@
-{%- set query_results = dbt_utils.get_query_results_as_dict('select keyword, keyword_regex, keyword_category from ' ~ ref('stg_base_keywords')) -%}
+{{ config(materialized='table') }}
+
+{% set sql_statement %}
+    select 
+        keyword, 
+        keyword_regex, 
+        keyword_category 
+    from {{ ref('stg_base_keywords') }}
+    where keyword_category not like 'Applications - Enterprise'
+        and keyword_category not like 'Data Sources & APIs' 
+        and keyword_category not like 'Data & AI Consulting'
+{% endset %}
+
+{%- set query_results = dbt_utils.get_query_results_as_dict(sql_statement) -%}
+
 
 with base_flatten_sentences as(
     select * from {{ ref('stg_base_sentences_flatten') }}
