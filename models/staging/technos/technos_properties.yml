@@ -1,0 +1,123 @@
+version: 2
+
+models:
+
+  - name: stg_base_keywords
+    description: |
+      The `stg_base_keywords` model processes the seed table `base_keywords` by building a keyword_regex for each techno, 
+      excludes some categories and eliminate duplicates (when techno have multiple categories).
+    config:
+      materialized: table
+    columns:
+      - name: name
+      - name: keyword
+        tests:
+          - unique
+          - not_null
+      - name: additional_regex
+      - name: keyword_regex
+        tests:
+          - unique
+          - not_null
+      - name: keyword_category
+      - name: keyword_subcategory
+      - name: location
+      - name: founding_year
+      - name: website
+      - name: summary
+
+  - name: stg_pivoted_extraction
+    description: |
+      The `stg_pivoted_extraction` model creates over a thousand columns, each being a techno and indicating if it's present in the job description.
+    config:
+      materialized: table
+      full_refresh: false
+    columns:
+      - name: job_id
+      - name: text
+          
+  - name: stg_unpivoted_extraction
+    description: |
+      The `stg_unpivoted_extraction` model unpivots techno columns into one column and another column describing if they are present.
+    config:
+      materialized: table
+      full_refresh: false
+    columns:
+      - name: job_id
+      - name: text
+      - name: keyword
+        tests:
+          - not_null
+      - name: is_present
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 'true'
+                - 'false'
+
+  - name: stg_unpivoted_matching
+    description: |
+      The `stg_unpivoted_matching` model keeps rows where techno are present (keyword = 'true').
+    config:
+      materialized: table
+      full_refresh: false
+    columns:
+      - name: keyword_text_id
+        tests:
+          - unique
+          - not_null
+      - name: job_id
+      - name: keyword
+      - name: text
+      - name: is_present
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 'true'
+      
+  - name: stg_unpivoted_numbered
+    description: |
+      The `` model .
+    config:
+      materialized: table
+      full_refresh: false
+
+  - name: int_job_postings_technos
+    description: |
+      The `int_job_postings_technos` model joins transformed fields and untransformed source fields.
+    config:
+      materialized: table
+    columns:
+      - name: id
+        tests:
+          - not_null
+      - name: title
+        tests:
+          - not_null
+      - name: company
+        tests:
+          - not_null
+      - name: techno
+        tests:
+          - not_null
+      - name: category
+      - name: subcategory
+      - name: techno_desc
+      - name: location
+      - name: remote
+        tests:
+          - accepted_values:
+              values: ['total', 'partial', 'ponctual']
+      - name: contract
+        tests:
+          - accepted_values:
+              values: ['Full Time', 'Graduate program', 'Other', 'Freelance']
+      - name: industry
+      - name: text
+        tests:
+          - not_null
+      - name: url
+        tests:
+          - not_null

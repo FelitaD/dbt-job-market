@@ -1,19 +1,15 @@
-with unpivoted as (
-  {{ 
+with unpivoted as ( {{ 
     dbt_utils.unpivot(
       ref('stg_pivoted_extraction'),
-      cast_to='variant',
+      cast_to='boolean',
       field_name='keyword',
-      value_name='details',
+      value_name='is_present',
       exclude=[
         'job_id',
-        'url',
-        'title',
-        'company',
-        'sentence_text'
+        'text'
       ],
       remove = []
     ) 
-  }}
-)
+  }} )
+  
 select * from unpivoted

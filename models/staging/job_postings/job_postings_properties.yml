@@ -4,6 +4,8 @@ models:
   - name: int_job_postings
     description: |
       The `int_job_postings` model joins transformed fields and untransformed source fields.
+    config:
+      +materialized: table
     columns:
       - name: id
         description: primary key
@@ -37,6 +39,8 @@ models:
   - name: stg_urls
     description: |
       The `stg_urls` model contains transformed urls.
+    config:
+      +materialized: ephemeral
     columns:
       - name: id
         description: primary key
@@ -52,6 +56,8 @@ models:
   - name: stg_titles
     description: |
       The `stg_titles` model contains transformed job titles.
+    config:
+      +materialized: ephemeral
     columns:
       - name: id
         description: primary key
@@ -73,6 +79,8 @@ models:
   - name: stg_contract_types
     description: |
       The `stg_contract_types` model contains uniform contract types.
+    config:
+      +materialized: ephemeral
     columns:
       - name: id
         description: primary key
@@ -89,6 +97,8 @@ models:
   - name: stg_remote_policies
     description: |
       The `stg_remote_policies` model contains uniform remote policies.
+    config:
+      +materialized: ephemeral
     columns:
       - name: id
         description: primary key
@@ -105,6 +115,8 @@ models:
   - name: stg_texts
     description: |
       The `stg_texts` model contains the description of jop postings.
+    config:
+      +materialized: ephemeral
     columns:
       - name: id
         description: primary key

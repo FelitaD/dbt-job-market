@@ -1,23 +1,35 @@
 with source as (
-  select * from {{ ref('keywords') }}
+    select * from {{ ref('base_keywords') }}
+    where category not like 'Applications - Enterprise'
+    and category not like 'Data Sources & APIs' 
+    and category not like 'Data & AI Consulting'
 ),
 
 renamed as (
   select
-
-    -- keys
+    name :: text as name,
     keyword :: text as keyword,
-
-    -- details
     additional_regex :: text as additional_regex,
-    category :: text as keyword_category,
     case when additional_regex is not null
       then keyword || '|' || additional_regex
       else keyword
-    end as keyword_regex
+    end as keyword_regex,
+    category :: text as keyword_category,
+    subcategory :: text as keyword_subcategory,
+    location :: text as location,
+    year :: number as founding_year,
+    website :: text as website, 
+    summary :: text as summary
 
   from
     source
-)
+),
 
-select * from renamed
+renamed_numbered as (
+    select 
+        *, 
+        row_number() over(partition by keyword order by keyword) as rn 
+    from renamed)
+
+
+select * from renamed_numbered where rn = 1

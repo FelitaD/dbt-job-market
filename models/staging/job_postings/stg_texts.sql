@@ -7,9 +7,10 @@ stg_texts as (
     select
         id,
         text,
-        trim(text, '\n ') as trimmed,
+        translate(text, chr(160), ' ') as with_breaking_spaces,
+        trim(with_breaking_spaces, '\n ') as trimmed,
         replace(trimmed, '\n', ' ') as cleaned_text     
     from job_postings
 )
 
-select * from stg_texts
+select id, text, cleaned_text from stg_texts

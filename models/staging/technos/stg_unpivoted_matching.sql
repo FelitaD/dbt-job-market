@@ -6,19 +6,14 @@ with unpivoted as (
 
 extracted_keywords as (
     select 
-
-    {{ dbt_utils.generate_surrogate_key(['job_id', 'sentence_text', 'keyword']) }}
-        as keyword_sentence_id,
-    job_id,
-    url,
-    title,
-    company,
-    keyword,
-    details:category :: text as keyword_category,
-    sentence_text,
-    details:substring :: text as match_substring
+        {{ dbt_utils.generate_surrogate_key(['job_id', 'text', 'keyword']) }}
+            as keyword_text_id,
+        job_id,
+        keyword,
+        text,
+        is_present
     from unpivoted
-    where match_substring is not null
+    where is_present like 'true'
 )
 
 select * from extracted_keywords

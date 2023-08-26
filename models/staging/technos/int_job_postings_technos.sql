@@ -1,29 +1,34 @@
 {{ config(materialized='table') }}
 
 with unpivoted_numbered as (
-    select * from {{ ref('stg_unpivoted_numbered') }}
+    select job_id, keyword, text from {{ ref('stg_unpivoted_numbered') }}
 ),
 
 job_postings as (
-    select * from {{ ref('int_job_postings') }}
+    select id, url, title, company, location, contract, industry, remote from {{ ref('int_job_postings') }}
 ),
 
-job_postings_technos as (
-    select  j.id,
-            j.url,
-            j.title,
-            j.company,
-            initcap(replace(u.keyword, '_', ' ')) as techno,
-            initcap(u.keyword_category) as techno_category,
-            j.location,
-            j.remote,
-            j.contract,
-            j.industry,
-            u.sentence_text,
-            j.text
+base_keywords as (
+    select name as techno, keyword, keyword_category as category, keyword_subcategory as subcategory, summary as techno_desc 
+    from {{ ref('stg_base_keywords') }}
+),
+
+join_job_postings as (
+    select  
+        *,
+        lower(replace(u.keyword, '_', ' ')) as keyword
     from unpivoted_numbered u
     join job_postings j
     on u.job_id = j.id
+),
+
+job_postings_technos as (
+    select *
+    from join_job_postings j
+    join base_keywords b
+    using(keyword)
 )
 
-select * from job_postings_technos
+select id, title, company, techno, category, subcategory, techno_desc, 
+        location, remote, contract, industry, text, url
+from job_postings_technos
