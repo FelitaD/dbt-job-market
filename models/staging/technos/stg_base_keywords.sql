@@ -1,5 +1,8 @@
 with source as (
-  select * from {{ ref('keywords') }}
+    select * from {{ ref('base_keywords') }}
+    where category not like 'Applications - Enterprise'
+    and category not like 'Data Sources & APIs' 
+    and category not like 'Data & AI Consulting'
 ),
 
 renamed as (

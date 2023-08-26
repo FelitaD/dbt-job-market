@@ -1,16 +1,12 @@
-{{ config(materialized='table') }}
-
 with unpivoted as ( {{ 
     dbt_utils.unpivot(
       ref('stg_pivoted_extraction'),
-      cast_to='variant',
+      cast_to='boolean',
       field_name='keyword',
       value_name='details',
       exclude=[
         'job_id',
-        'url',
-        'title',
-        'company',
+        'sentence_id',
         'sentence_text'
       ],
       remove = []

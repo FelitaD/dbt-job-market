@@ -35,7 +35,6 @@ models:
   job_radar:
     staging:
       +schema: staging
-      +materialized: view
       job_postings:
           +schema: job_postings
       technos:
