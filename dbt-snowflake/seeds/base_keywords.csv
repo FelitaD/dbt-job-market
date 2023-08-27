@@ -1620,7 +1620,7 @@ Apache Giraph,apache giraph,giraph,Open Source Infrastructure,Frameworks,,,https
 "
 Apache HBase,apache hbase,hbase,Open Source Infrastructure,Databases,,,https://github.com/apache/hbase,"Apache HBase
 "
-Apache Kafka,apache kafka,kafka,Open Source Infrastructure,,,,,
+Apache Kafka,apache kafka,kafka,Open Source Infrastructure,Streaming & Messaging,,,,
 Apache Kylin,apache kylin,kylin,Open Source Infrastructure,OLAP,,,https://github.com/apache/kylin,"Apache Kylin
 "
 Apache Mesos,apache mesos,mesos,Open Source Infrastructure,Infrastructure,,,https://github.com/apache/mesos,"Apache Mesos
@@ -1862,8 +1862,6 @@ Julia,julia,,Open Source Infrastructure,Stat Tools & Languages,,,https://github.
 Jupyter,jupyter,,Machine Learning & Artificial Intelligence,Data Science Notebooks,,,https://jupyter.org/,"
 "
 Jupyter,jupyter,,Open Source Infrastructure,Collaboration,,,https://github.com/jupyter/notebook,"Jupyter Interactive Notebook
-"
-Kafka,kafka,,Open Source Infrastructure,Streaming & Messaging,,,https://github.com/apache/kafka,"Mirror of Apache Kafka
 "
 Kedro,kedro,,Open Source Infrastructure,AI Frameworks & Libraries,,,https://github.com/kedro-org/kedro,"A Python framework for creating reproducible, maintainable and modular data science code.
 "
