@@ -1,13 +1,15 @@
 import scrapy
+import warnings
 import re
 from datetime import datetime
 
-from scrapy.crawler import CrawlerProcess
+from scrapy.crawler import CrawlerRunner
+from scrapy.utils.log import configure_logging
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Join
 
-from data_job_crawler.helpers.s3_helper import S3Helper
-from data_job_crawler.crawler.items import JobsCrawlerItem
+from helpers.s3_helper import S3Helper
+from crawler.crawler.items import JobsCrawlerItem
 
 
 class WttjSpider(scrapy.Spider):
@@ -20,7 +22,7 @@ class WttjSpider(scrapy.Spider):
 
     def start_requests(self):
         helper = S3Helper()
-        links = helper.extract_links_from_s3('today')
+        links = helper.extract_links_from_s3()
         for link in links:
             yield scrapy.Request(link, self.yield_job_item)
 
@@ -83,7 +85,13 @@ class WttjSpider(scrapy.Spider):
 
 
 if __name__ == "__main__":
-    process = CrawlerProcess(
+    warnings.filterwarnings("ignore", category=scrapy.exceptions.ScrapyDeprecationWarning)
+    configure_logging({"LOG_FORMAT": "%(levelname)s: %(message)s"})
+
+    scrapy.utils.reactor.install_reactor('twisted.internet.asyncioreactor.AsyncioSelectorReactor')
+    from twisted.internet import reactor
+
+    runner = CrawlerRunner(
         settings={
             "ROBOTSTXT_OBEY": False,
             "ITEM_PIPELINES": {
@@ -95,5 +103,7 @@ if __name__ == "__main__":
             "AUTOTHROTTLE_MAX_DELAY": 60,
         }
     )
-    process.crawl(WttjSpider)
-    process.start()
+    crawlers = runner.create_crawler(WttjSpider)
+    d = crawlers.crawl()
+    d.addBoth(lambda _: reactor.stop())
+    reactor.run()

@@ -1,0 +1,6 @@
+psycopg2-binary
+Scrapy
+scrapy-playwright
+asyncio
+Twisted
+boto3

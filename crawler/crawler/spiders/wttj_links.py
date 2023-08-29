@@ -1,8 +1,12 @@
+import warnings
 import scrapy
-from scrapy.crawler import CrawlerProcess
-from datetime import datetime
 
-PROJECT_PATH = '/Users/donor/Library/Mobile Documents/com~apple~CloudDocs/PycharmProjects'
+from datetime import datetime
+from scrapy.crawler import CrawlerRunner
+from scrapy.utils.log import configure_logging
+
+from config.definitions import PROJECT_PATH
+from helpers.s3_helper import S3Helper
 
 
 class WttjLinksSpider(scrapy.Spider):
@@ -14,17 +18,16 @@ class WttjLinksSpider(scrapy.Spider):
     start_urls = [
         "https://www.welcometothejungle.com/fr/jobs?query=data%20engineer&page=1"
     ]
+    links = set()
 
     BASE_URL = "https://www.welcometothejungle.com"
 
-    links = set()
-
-    # Bad practice but website has dynamic attribute and aria roles
-    # XPath to update when spider breaks (changes regularly)
+    # XPath to regularly update when spider breaks
     next_page_xpath = '//*[@aria-label="Pagination"]//li[last()]'
     job_links_xpath = '//ol[@data-testid="search-results"]/div/li/div/div/div[2]/a'
 
     def start_requests(self):
+
         yield scrapy.Request(
             self.start_urls[0],
             self.parse_jobs_list,
@@ -49,7 +52,7 @@ class WttjLinksSpider(scrapy.Spider):
                     # print('job_link', job_link)
                     # print('job_url', job_url)
                     # print('links', self.links)
-                    print('\nScraped links count:', len(self.links), '\n')
+                    # print('\nScraped links count:', len(self.links), '\n')
 
                 next_locator = page.locator(self.next_page_xpath)
                 async with page.expect_navigation():
@@ -58,17 +61,24 @@ class WttjLinksSpider(scrapy.Spider):
             except TimeoutError:
                 print("Cannot find a next button on ", page.url)
                 break
+
             finally:
                 now = datetime.now().strftime('%d-%m-%y')
-                with open(f'{PROJECT_PATH}/data-job-crawler/data_job_crawler/crawler/data'
-                          f'/wttj_links_{now}.txt', "w+") as f:
+                with open(f'{PROJECT_PATH}/crawler/playwright_links/wttj_links_{now}.txt', "w+") as f:
                     f.write(str(self.links))
+                S3Helper().upload_to_s3()
 
         await page.close()
 
 
 if __name__ == "__main__":
-    process = CrawlerProcess(
+    warnings.filterwarnings("ignore", category=scrapy.exceptions.ScrapyDeprecationWarning)
+    configure_logging({"LOG_FORMAT": "%(levelname)s: %(message)s"})
+
+    scrapy.utils.reactor.install_reactor('twisted.internet.asyncioreactor.AsyncioSelectorReactor')
+    from twisted.internet import reactor
+
+    runner = CrawlerRunner(
         settings={
             "TWISTED_REACTOR": "twisted.internet.asyncioreactor.AsyncioSelectorReactor",
             "DOWNLOAD_HANDLERS": {
@@ -84,8 +94,9 @@ if __name__ == "__main__":
                 # "headless": False,  # For debugging
                 "timeout": 20 * 1000,  # 20 seconds
                 "slow_mo": 10 * 1000  # slow down by 10 seconds to allow dynamic elements to load
-            }
-        }
-    )
-    process.crawl(WttjLinksSpider)
-    process.start()
+            }})
+
+    crawlers = runner.create_crawler(WttjLinksSpider)
+    d = crawlers.crawl()
+    d.addBoth(lambda _: reactor.stop())
+    reactor.run()
