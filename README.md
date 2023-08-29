@@ -2,7 +2,7 @@
 
 Version 2 of [Job Radar 1.0](https://github.com/FelitaD/job-radar-1.0) by modifying technologies used.
 <br>Focus is emphasized on analytics engineering using [Snowflake](https://www.snowflake.com/en/) coupled with [dbt](https://www.getdbt.com/) 
-and visualisations in Looker Studio and Streamlit.
+and visualisations in Looker Studio and Streamlit. Orchestration with Prefect. Data modeling with Data Vault.
 
 ## Overview
 
@@ -13,6 +13,7 @@ Add platform architecture.
 ### Scrapy crawler - Postgres
 
 - [x] Create crawler container with Docker -> commits on old branch `revamp-crawler`
+- [ ] Create glassdoor spider
 
 ### Postgres - Snowflake
 
@@ -25,4 +26,13 @@ Add platform architecture.
 ### Snowflake - Looker Studio / Streamlit
 
 - [x] Looker report
+- [ ] Streamlit app
+
+### Prefect
+
+- [ ] Orchestrate project
+
+### Data Vault 2.0
+
+- [ ] Create data model
 
