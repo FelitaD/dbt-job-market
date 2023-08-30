@@ -16,7 +16,8 @@ class WttjLinksSpider(scrapy.Spider):
 
     name = "wttj_links"
     start_urls = [
-        "https://www.welcometothejungle.com/fr/jobs?query=data%20engineer&page=1"
+        "https://www.welcometothejungle.com/fr/jobs?query=data%20engineer&page=1",
+        "https://www.welcometothejungle.com/fr/jobs?query=analytics%20engineer&page=1"
     ]
     links = set()
 
@@ -27,12 +28,12 @@ class WttjLinksSpider(scrapy.Spider):
     job_links_xpath = '//ol[@data-testid="search-results"]/div/li/div/div/div[2]/a'
 
     def start_requests(self):
-
-        yield scrapy.Request(
-            self.start_urls[0],
-            self.parse_jobs_list,
-            meta={"playwright": True, "playwright_include_page": True},
-        )
+        for url in self.start_urls:
+            yield scrapy.Request(
+                url,
+                self.parse_jobs_list,
+                meta={"playwright": True, "playwright_include_page": True},
+            )
 
     async def parse_jobs_list(self, response):
         """Parse javascript rendered results page and obtain individual job page links."""
