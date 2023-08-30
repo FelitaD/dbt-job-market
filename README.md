@@ -13,15 +13,19 @@ Add platform architecture.
 ### Scrapy crawler - Postgres
 
 - [x] Create crawler container with Docker -> commits on old branch `revamp-crawler`
-- [ ] Create glassdoor spider
+- [ ] Scrape glassdoor companies details
+- [ ] Add analytics engineer research term to wttj spider
 
 ### Postgres - Snowflake
 
 - [x] [Migrate Postgres to Snowflake](https://github.com/FelitaD/Learning-in-Public/blob/main/Databases/Data%20Lakes%20%26%20Data%20Warehouses/Snowflake/Migrate%20Postgres%20to%20Snowflake.md)
+- [ ] Add created_at
 
 ### dbt - Snowflake
 
 - [x] Processing in Snowflake with dbt
+- [ ] Add production deployment
+- [ ] Process location
 
 ### Snowflake - Looker Studio / Streamlit
 
