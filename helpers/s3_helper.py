@@ -23,7 +23,7 @@ class S3Helper:
         latest_links = self.extract_links_from_s3('latest')
 
         # Get local file that we wish to add to S3
-        today_links = self.extract_links_from_file()
+        today_links = self.extract_links_from_file(self.today_filepath)
 
         # Prepare urls for comparison
         today_links_constant = self.extract_constant_url(today_links)
@@ -70,8 +70,8 @@ class S3Helper:
                 latest_file = file
         return latest_file.key
 
-    def extract_links_from_file(self):
-        with open(self.today_filepath, 'r') as f:
+    def extract_links_from_file(self, filepath):
+        with open(filepath, 'r') as f:
             links = f.read()
         return ast.literal_eval(links)
 
