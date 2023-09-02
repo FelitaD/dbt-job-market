@@ -38,9 +38,9 @@ Add platform architecture.
 ### dbt
 
 - [x] Process technos
-- [ ] Add production deployment
+- [ ] Create table for streamlit: techno stack, rename columns
 - [ ] Process location
-- [ ] Extract keywords flat hierarchy, flexible hours
+- [ ] Add production deployment
 
 ### Looker Studio
 
@@ -49,7 +49,7 @@ Add platform architecture.
 
 ### Streamlit
 
-
+- [ ] Search for keywords flat hierarchy, flexible hours
 
 ### Prefect
 

@@ -4,6 +4,3 @@ scrapy-playwright
 asyncio
 Twisted
 boto3
-streamlit
-snowflake-sqlalchemy
-pandas
