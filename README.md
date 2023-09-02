@@ -8,29 +8,48 @@ and visualisations in Looker Studio and Streamlit. Orchestration with Prefect. D
 
 Add platform architecture.
 
-## Pipelines
+## Components
 
-### Scrapy crawler - Postgres
+### Scrapy crawler
 
 - [x] Create crawler container with Docker -> commits on old branch `revamp-crawler`
-- [ ] Scrape glassdoor companies details
-- [ ] Add analytics engineer research term to wttj spider
+- [x] Add analytics engineer research term to wttj spider
 
-### Postgres - Snowflake
+### Octoparse
+
+- [x] Linkedin eu remote
+- [ ] Linkedin fr hybrid
+- [ ] Glassdoor companies
+
+### Postgres
+
+- [x] Add table companies
+
+### Fivetran
+
+- [ ] Set up Postgres connector with reverse SSH on ec2 instance
+- [ ] Add other connectors
+ 
+### Snowflake
 
 - [x] [Migrate Postgres to Snowflake](https://github.com/FelitaD/Learning-in-Public/blob/main/Databases/Data%20Lakes%20%26%20Data%20Warehouses/Snowflake/Migrate%20Postgres%20to%20Snowflake.md)
-- [ ] Add created_at
+- [ ] Add created_at in stage
 
-### dbt - Snowflake
+### dbt
 
-- [x] Processing in Snowflake with dbt
+- [x] Process technos
 - [ ] Add production deployment
 - [ ] Process location
+- [ ] Extract keywords flat hierarchy, flexible hours
 
-### Snowflake - Looker Studio / Streamlit
+### Looker Studio
 
 - [x] Looker report
 - [ ] Streamlit app
+
+### Streamlit
+
+
 
 ### Prefect
 
