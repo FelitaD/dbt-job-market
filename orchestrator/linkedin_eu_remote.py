@@ -12,7 +12,7 @@ from snowflake.connector.pandas_tools import write_pandas
 
 
 
-from config.definitions import DB_STRING, PROJECT_PATH, SNOWFLAKE_ACCOUNT, SNOWFLAKE_ROLE, SNOWFLAKE_USER, SNOWSQL_PWD, WAREHOUSE
+from config.definitions import PROJECT_PATH, SNOWFLAKE_ACCOUNT, SNOWFLAKE_ROLE, SNOWFLAKE_USER, SNOWSQL_PWD, WAREHOUSE
 
 
 def extract_latest_crawl(spider: str = 'linkedin_eu_remote'):
@@ -22,7 +22,7 @@ def extract_latest_crawl(spider: str = 'linkedin_eu_remote'):
 
 def transform_data(data: pd.DataFrame = None):
     """
-    Processes raw data before inserting into database.
+    Raw data is preprocessed before inserting into database.
     """
     # Rename columns to small letters
     data = data.rename(str.lower, axis='columns')
@@ -34,14 +34,16 @@ def transform_data(data: pd.DataFrame = None):
     df_obj = data.select_dtypes(['object'])
     data[df_obj.columns] = df_obj.apply(lambda x: x.str.strip())
 
-    # Change column with date information (eg. "1 week ago") to datetime objects
+    # Change column with date information to datetime objects
     data['created_at'] = data['date_posted'].apply(lambda x: parse_created_at(x))
     data['created_at'] = pd.to_datetime(data['created_at']).apply(lambda x: x.strftime('%Y-%m-%d'))
 
     return data[['url', 'title', 'company', 'location', 'text', 'created_at']]
 
-@staticmethod
 def parse_created_at(series):
+    """
+    Modifies information such as '1 week ago' to an actual date.
+    """
     now = datetime.now()
     if 'hours' in series:
         return now
