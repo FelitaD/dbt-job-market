@@ -65,9 +65,8 @@ class WttjLinksSpider(scrapy.Spider):
 
             finally:
                 now = datetime.now().strftime('%d-%m-%y')
-                with open(f'{PROJECT_PATH}/crawler/playwright_links/wttj_links_{now}.txt', "w+") as f:
+                with open(f'{PROJECT_PATH}/crawler/data/wttj_links_{now}.txt', "w+") as f:
                     f.write(str(self.links))
-                S3Helper().upload_to_s3()
 
         await page.close()
 

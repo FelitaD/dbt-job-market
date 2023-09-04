@@ -78,13 +78,9 @@ class S3Helper:
     def upload_to_s3(self):
         s3 = boto3.resource('s3')
         s3.Bucket("crawler-job-links").upload_file(self.today_filepath, self.today_filename)
-
     def get_filename_today(self):
         return f'wttj_links_{self.today}.txt'
 
     def get_today_filepath(self):
-        return PROJECT_PATH / 'crawler' / 'playwright_links' / self.today_filename
+        return PROJECT_PATH / 'crawler' / 'scrapy-crawler' / 'data' / self.today_filename
 
-
-if __name__ == '__main__':
-    S3Helper().upload_new_links()

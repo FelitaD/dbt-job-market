@@ -4,3 +4,5 @@ scrapy-playwright
 asyncio
 Twisted
 boto3
+prefect
+snowflake-connector-python[pandas]

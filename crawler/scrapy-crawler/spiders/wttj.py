@@ -65,8 +65,6 @@ class WttjSpider(scrapy.Spider):
             ).get(),
         )
         l.add_value('size', response.xpath('//*[@name="department"]/parent::span/following-sibling::span/text()').get())
-        l.add_value('experience', response.xpath('//i[@name="suitcase"]/following-sibling::span/text()').get())
-        l.add_value('education', response.xpath('//i[@name="education_level"]/following-sibling::span/text()').get())
         l.add_value(
             "text",
             response.xpath("//h2/following-sibling::div//text()").getall(),
