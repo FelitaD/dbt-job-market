@@ -65,7 +65,7 @@ class WttjLinksSpider(scrapy.Spider):
 
             finally:
                 now = datetime.now().strftime('%d-%m-%y')
-                with open(f'{PROJECT_PATH}/crawler/data/wttj_links_{now}.txt', "w+") as f:
+                with open(f'{PROJECT_PATH}/crawler/scrapy/data/wttj_links_{now}.txt', "w+") as f:
                     f.write(str(self.links))
 
         await page.close()

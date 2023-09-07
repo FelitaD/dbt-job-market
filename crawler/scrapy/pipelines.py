@@ -4,7 +4,7 @@ import logging
 import snowflake.connector
 from snowflake.connector.pandas_tools import write_pandas
 
-from data_job_crawler.config.definitions import JOB_MARKET_DB_PWD, JOB_MARKET_DB_USER
+from config.definitions import JOB_MARKET_DB_PWD, JOB_MARKET_DB_USER
 
 from config.definitions import SNOWFLAKE_ACCOUNT, SNOWFLAKE_ROLE, SNOWFLAKE_USER, SNOWSQL_PWD, WAREHOUSE
 
@@ -40,11 +40,9 @@ class JobsCrawlerPipeline:
         cur = self.conn.cursor()
         try:
             cur.execute(
-                "INSERT INTO raw_jobs(url, title, company, location, type, industry, text, remote, created_at) "
-                "VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s) "
-                "ON CONFLICT (url) DO UPDATE "
-                "SET title=EXCLUDED.title, company=EXCLUDED.company, location=EXCLUDED.location, "
-                "type=EXCLUDED.type, text=EXCLUDED.text, remote=EXCLUDED.remote, created_at=EXCLUDED.created_at;",
+                "INSERT INTO job_postings "
+                "(URL, TITLE, COMPANY, LOCATION, CONTRACT, INDUSTRY, TEXT, REMOTE, CREATED_AT) "
+                "VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s);",
                 (item['url'][0], item['title'][0], item['company'][0], item['location'][0], item['type'][0],
                  item['industry'][0], item['text'][0], item['remote'][0], item['created_at'][0]))
         except snowflake.connector.errors.ProgrammingError as e:

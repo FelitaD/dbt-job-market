@@ -10,15 +10,15 @@ import psycopg2
 import snowflake.connector
 from snowflake.connector.pandas_tools import write_pandas
 
-
-
 from config.definitions import PROJECT_PATH, SNOWFLAKE_ACCOUNT, SNOWFLAKE_ROLE, SNOWFLAKE_USER, SNOWSQL_PWD, WAREHOUSE
 
 
 def extract_latest_crawl(spider: str = 'linkedin_eu_remote'):
-    list_of_files = glob.glob(f'{PROJECT_PATH}/octoparse-data/{spider}/*')  # * means all if need specific format then *.csv
+    list_of_files = glob.glob(
+        f'{PROJECT_PATH}/octoparse-data/{spider}/*')  # * means all if need specific format then *.csv
     latest_file = max(list_of_files, key=os.path.getctime)
     return latest_file, pd.read_csv(latest_file)
+
 
 def transform_data(data: pd.DataFrame = None):
     """
@@ -40,6 +40,7 @@ def transform_data(data: pd.DataFrame = None):
 
     return data[['url', 'title', 'company', 'location', 'text', 'created_at']]
 
+
 def parse_created_at(series):
     """
     Modifies information such as '1 week ago' to an actual date.
@@ -48,11 +49,11 @@ def parse_created_at(series):
     if 'hours' in series:
         return now
     if 'day' in series:
-        for n in range(1,8):
+        for n in range(1, 8):
             if str(n) in series:
                 return now - timedelta(days=n)
     if 'week' in series:
-        for n in range(1,5):
+        for n in range(1, 5):
             if str(n) in series:
                 return now - timedelta(weeks=n)
 
@@ -89,6 +90,7 @@ def linkedin_eu_remote():
 
     # logger.info('\n  ------- Inserted data: ------- \n')
     insert_data_snowflake(transformed)
+
 
 if __name__ == '__main__':
     linkedin_eu_remote()
