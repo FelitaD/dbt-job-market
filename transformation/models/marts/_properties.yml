@@ -1,0 +1,35 @@
+version: 2
+
+models:
+
+  - name: jobs_technos_agg
+    description: |
+      The `jobs_technos_agg` aggreagates technos previously on different rows into a single row in the column `stack`.
+    config:
+      +materialized: table
+    columns:
+      - name: id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: title
+        tests:
+          - not_null
+      - name: company
+        tests: 
+          - not_null
+      - name: stack
+        tests:
+          - not_null
+      - name: location
+      - name: remote
+      - name: industry
+      - name: contract
+      - name: url
+        tests:
+          - unique
+          - not_null
+      - name: text
+        tests:
+          - not_null

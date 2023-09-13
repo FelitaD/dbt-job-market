@@ -34,11 +34,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   job_radar:
     staging:
-      +schema: staging
       job_postings:
-          +schema: job_postings
+          +schema: staging
       technos:
-          +schema: technos
+          +schema: staging
+    intermediate:
+      +schema: intermediate
+    marts:
+      +schema: marts
 
 seeds:
   +schema: seeds

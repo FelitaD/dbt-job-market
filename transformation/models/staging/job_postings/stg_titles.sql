@@ -27,7 +27,8 @@ stg_titles as (
             '{{ HF }}|{{ FH }}|{{ HFX }}|{{ MFD }}|{{ FMD }}|{{ MWD }}|{{ MW }}|{{ HST }}',
             '', 
             1, 0, 'im'
-            ) as minus_gender
+            ) as minus_gender,
+        trim(minus_gender) as trimmed
     from job_postings
 )
 
