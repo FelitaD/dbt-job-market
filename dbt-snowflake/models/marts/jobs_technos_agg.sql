@@ -15,7 +15,7 @@ jobs_technos_agg as (
         contract, 
         url, 
         text
-    from int_job_postings_technos
+    from job_postings_technos
     group by id, title, company, location, remote, industry, contract, url, text
 )
 
