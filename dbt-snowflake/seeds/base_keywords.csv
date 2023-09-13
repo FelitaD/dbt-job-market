@@ -1270,19 +1270,19 @@ Zeta Global,zeta global,,Applications - Enterprise,Marketing,United States,2007,
 Afiniti,afiniti,,Applications - Enterprise,Customer Experience,Bermuda,2006,https://www.afiniti.com/,"Afiniti is a multinational applied artificial intelligence company. Afiniti uses AI to identify and predict subtle, valuable patterns of human behavior to better pair customers and employees. Pairing in this way results in higher quality interpersonal interactions and drives measurable increases in revenue and customer lifetime value for enterprises.
 "
 AirSlate,airslate,,Applications - Enterprise,Automation & Operations,United States,2006,https://www.airslate.com/,"airSlate is a global SaaS technology company that serves users worldwide with its no-code business process automation and document management solutions. The company's PDF editing, e-signature workflow, and business process automation solutions empower users to digitally transform their businesses to run faster and easier. airSlate, pdfFiller, signNow, and USLegal make up the company's portfolio of products. airSlate's customers span various industries, such as insurance, healthcare, finance, sports, and more. airSlate was founded in 2006 and is based in Brookline, Massachusetts."
-Amazon Athena,amazon athena,athena,Analytics,Query Engine,United States,2006,https://aws.amazon.com/athena/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
+Athena,amazon athena,athena,Analytics,Query Engine,United States,2006,https://aws.amazon.com/athena/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
-Amazon Aurora,amazon aurora,aurora,Infrastructure,NewSQL Databases,United States,2006,https://aws.amazon.com/rds/aurora/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
+Aurora,amazon aurora,aurora,Infrastructure,NewSQL Databases,United States,2006,https://aws.amazon.com/rds/aurora/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
-Amazon CloudSearch,amazon cloudsearch,cloudsearch,Analytics,Enterprise Search,United States,2006,https://aws.amazon.com/cloudsearch/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
+CloudSearch,amazon cloudsearch,cloudsearch,Analytics,Enterprise Search,United States,2006,https://aws.amazon.com/cloudsearch/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
-Amazon Cloudwatch,amazon cloudwatch,cloudwatch,Infrastructure,MGMT/Monitoring,United States,2006,https://aws.amazon.com/cloudwatch/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
+Cloudwatch,amazon cloudwatch,cloudwatch,Infrastructure,MGMT/Monitoring,United States,2006,https://aws.amazon.com/cloudwatch/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
 Amazon Comprehend,amazon comprehend,comprehend,Machine Learning & Artificial Intelligence,NLP,United States,2006,https://aws.amazon.com/comprehend/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
-Amazon DocumentDB,amazon documentdb,documentdb,Infrastructure,NoSQL Databases,United States,2006,https://aws.amazon.com/documentdb/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
+DocumentDB,amazon documentdb,documentdb,Infrastructure,NoSQL Databases,United States,2006,https://aws.amazon.com/documentdb/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
-Amazon DynamoDB,amazon dynamodb,dynamodb,Infrastructure,NoSQL Databases,United States,2006,https://aws.amazon.com/dynamodb/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
+DynamoDB,amazon dynamodb,dynamodb,Infrastructure,NoSQL Databases,United States,2006,https://aws.amazon.com/dynamodb/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
 Amazon ECS,amazon ecs,ecs,Infrastructure,Compute,United States,2006,https://aws.amazon.com/ecs/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
@@ -1302,15 +1302,15 @@ Amazon QuickSight,amazon quicksight,quicksight,Analytics,BI Platforms,United Sta
 "
 Amazon RDS,amazon rds,rds,Infrastructure,RDBMs,United States,2006,https://aws.amazon.com/rds/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
-Amazon RedShift,amazon redshift,redshift,Infrastructure,Data Warehouses,United States,2006,https://aws.amazon.com/redshift/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
+RedShift,amazon redshift,redshift,Infrastructure,Data Warehouses,United States,2006,https://aws.amazon.com/redshift/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
-Amazon S3,amazon s3,s3,Infrastructure,Storage,United States,2006,https://aws.amazon.com/s3/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
+S3,amazon s3,s3,Infrastructure,Storage,United States,2006,https://aws.amazon.com/s3/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
-Amazon SageMaker,amazon sagemaker,sagemaker,Machine Learning & Artificial Intelligence,Data Science Notebooks,United States,2006,https://aws.amazon.com/pm/sagemaker/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
+SageMaker,amazon sagemaker,sagemaker,Machine Learning & Artificial Intelligence,Data Science Notebooks,United States,2006,https://aws.amazon.com/pm/sagemaker/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
-Amazon SageMaker,amazon sagemaker,sagemaker,Machine Learning & Artificial Intelligence,Enterprise ML Platforms,United States,2006,https://aws.amazon.com/pm/sagemaker/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
+SageMaker,amazon sagemaker,sagemaker,Machine Learning & Artificial Intelligence,Enterprise ML Platforms,United States,2006,https://aws.amazon.com/pm/sagemaker/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
-Amazon SageMaker,amazon sagemaker,sagemaker,Machine Learning & Artificial Intelligence,MLOps,United States,2006,https://aws.amazon.com/sagemaker/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
+SageMaker,amazon sagemaker,sagemaker,Machine Learning & Artificial Intelligence,MLOps,United States,2006,https://aws.amazon.com/sagemaker/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
 Amazon Transcribe,amazon transcribe,,Machine Learning & Artificial Intelligence,Speech,United States,2006,https://aws.amazon.com/transcribe/,"Amazon Web Services (AWS) is a business unit within Amazon.com that provides an infrastructure platform for businesses in the form of cloud computing.
 "
@@ -1496,7 +1496,7 @@ Siri,siri,,Machine Learning & Artificial Intelligence,Speech,United States,1976,
 "
 Azure Cognitive Services,azure cognitive services,,Machine Learning & Artificial Intelligence,Speech,United States,1975,https://azure.microsoft.com/en-us/products/cognitive-services/,"Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.
 "
-Azure CosmosDB,azure cosmosdb,cosmosdb,Infrastructure,NoSQL Databases,United States,1975,https://azure.microsoft.com/en-ca/products/cosmos-db/,"Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.
+CosmosDB,azure cosmosdb,cosmosdb,Infrastructure,NoSQL Databases,United States,1975,https://azure.microsoft.com/en-ca/products/cosmos-db/,"Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.
 "
 Azure Data Factory,azure data factory,,Infrastructure,ETL/ELT/Data Transformation,United States,1975,https://azure.microsoft.com/en-us/products/data-factory/,"Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.
 "
@@ -1534,7 +1534,7 @@ SAP HANA,sap hana,,Infrastructure,Streaming/In-Memory,Germany,1972,https://www.s
 "
 SAP Lumira,sap lumira,,Analytics,Analytics - Visualization,Germany,1972,https://www.sap.com/products/technology-platform/lumira.html,"SAP (FWB: SAP) (NYSE: SAP) is a multinational software corporation that makes enterprise software to manage business operations and customer relations.
 "
-SAP S/4 HANA,sap s/4 hana,,Applications - Enterprise,Finance,Germany,1972,https://www.sap.com/products/erp/s4hana.html,"SAP (FWB: SAP) (NYSE: SAP) is a multinational software corporation that makes enterprise software to manage business operations and customer relations.
+SAP S/4 HANA,sap s4 hana,,Applications - Enterprise,Finance,Germany,1972,https://www.sap.com/products/erp/s4hana.html,"SAP (FWB: SAP) (NYSE: SAP) is a multinational software corporation that makes enterprise software to manage business operations and customer relations.
 "
 Nasdaq Data Link,nasdaq data link,,Data Sources & APIs,Financial & Market Data,United States,1971,https://www.nasdaq.com/nasdaq-data-link,"NASDAQ (NASDAQ: NDAQ) is a provider of trading, clearing, exchange technology, listing, information, and public company services across six continents.
 "
@@ -1594,9 +1594,9 @@ AI2sql,ai2sql,,Applications - Horizontal,Code & Documentation,United States,,htt
 Allen Institute,allen institute,,Machine Learning & Artificial Intelligence,Horizontal AI/AGI,United States,,https://allenai.org/,"Allen Institute for Artificial Intelligence (AI2) with the singular focus of conducting high-impact research and engineering in the field of artificial intelligence for the common good. AI2 is the creation of Paul Allen, Microsoft co-founder, and is led by Dr. Oren Etzioni, a world-renowned researcher and professor in the field of AI and computer science. In response to the COVID-19 pandemic, the Allen Institute for AI has partnered with leading research groups to prepare and distribute the COVID-19 Open Research Dataset (CORD-19), a free resource of over 44,000 scholarly articles, including over 29,000 with full text, about COVID-19 and the coronavirus family of viruses for use by the global research community."
 Alpaca,alpaca,,Applications - Horizontal,Image,United States,,https://www.getalpaca.io/,"alpaca is a photoshop plugin that combines AI image generation power with human skill. The company is based in California, United States.
 "
-Amazon Alexa,amazon alexa,alexa,Machine Learning & Artificial Intelligence,Speech,,,https://alexa.amazon.com/,"
+Alexa,amazon alexa,alexa,Machine Learning & Artificial Intelligence,Speech,,,https://alexa.amazon.com/,"
 "
-Amazon MechanicalTurk,amazon mechanicalturk,mechanicalturk,Machine Learning & Artificial Intelligence,Data Generation & Labelling,United States,,https://www.mturk.com/,"Amazon Mechanical Turk (MTurk) is a crowdsourcing marketplace that makes it easier for individuals and businesses to outsource their processes and jobs to a distributed workforce who can perform these tasks virtually. The company is based in Seattle, Washington.
+MechanicalTurk,amazon mechanicalturk,mechanicalturk,Machine Learning & Artificial Intelligence,Data Generation & Labelling,United States,,https://www.mturk.com/,"Amazon Mechanical Turk (MTurk) is a crowdsourcing marketplace that makes it easier for individuals and businesses to outsource their processes and jobs to a distributed workforce who can perform these tasks virtually. The company is based in Seattle, Washington.
 "
 Amazon Rekognition,amazon rekognition,rekognition,Machine Learning & Artificial Intelligence,Computer Vision,,,https://docs.aws.amazon.com/managedservices/latest/userguide/rekognition.html,"
 "
@@ -1608,11 +1608,11 @@ Apache Ambari,apache ambari,ambari,Open Source Infrastructure,Infrastructure,,,h
 "
 Apache Arrow,apache arrow,arrow,Open Source Infrastructure,Format,,,https://github.com/apache/arrow,"Apache Arrow is a multi-language toolbox for accelerated data interchange and in-memory processing
 "
-Apache Beam,apache beam,beam,Open Source Infrastructure,Query/Dataflow,,,https://github.com/apache/beam,"Apache Beam is a unified programming model for Batch and Streaming data processing.
+Beam,apache beam,beam,Open Source Infrastructure,Query/Dataflow,,,https://github.com/apache/beam,"Apache Beam is a unified programming model for Batch and Streaming data processing.
 "
-Apache Beam,apache beam,beam,Open Source Infrastructure,Streaming & Messaging,,,https://github.com/apache/beam,"Apache Beam is a unified programming model for Batch and Streaming data processing.
+Beam,apache beam,beam,Open Source Infrastructure,Streaming & Messaging,,,https://github.com/apache/beam,"Apache Beam is a unified programming model for Batch and Streaming data processing.
 "
-Apache Cassandra,apache cassandra,cassandra,Open Source Infrastructure,Databases,,,https://github.com/apache/cassandra,"Mirror of Apache Cassandra
+Cassandra,apache cassandra,cassandra,Open Source Infrastructure,Databases,,,https://github.com/apache/cassandra,"Mirror of Apache Cassandra
 "
 Apache Drill,apache drill,drill,Open Source Infrastructure,Query/Dataflow,,,https://github.com/apache/drill,"Apache Drill is a distributed MPP query layer for self describing data
 "
@@ -1620,7 +1620,7 @@ Apache Giraph,apache giraph,giraph,Open Source Infrastructure,Frameworks,,,https
 "
 HBase,apache hbase,hbase,Open Source Infrastructure,Databases,,,https://github.com/apache/hbase,"Apache HBase
 "
-Kafka,apache kafka,kafka,Open Source Infrastructure,Streaming & Messaging,,,,
+Kafka,kafka,,Open Source Infrastructure,Streaming & Messaging,,,,
 Apache Kylin,apache kylin,kylin,Open Source Infrastructure,OLAP,,,https://github.com/apache/kylin,"Apache Kylin
 "
 Apache Mesos,apache mesos,mesos,Open Source Infrastructure,Infrastructure,,,https://github.com/apache/mesos,"Apache Mesos
@@ -1633,7 +1633,7 @@ apache Singa,apache singa,singa,Open Source Infrastructure,AI Frameworks & Libra
 "
 Spark,apache spark,spark,Open Source Infrastructure,Frameworks,,,https://github.com/apache/spark,"Apache Spark - A unified analytics engine for large-scale data processing
 "
-Apache Zookeeper,apache zookeeper,zookeeper,Open Source Infrastructure,Infrastructure,,,https://github.com/apache/zookeeper,"Apache ZooKeeper
+Zookeeper,apache zookeeper,zookeeper,Open Source Infrastructure,Infrastructure,,,https://github.com/apache/zookeeper,"Apache ZooKeeper
 "
 Apollo,apollo,,Infrastructure,Database Abstraction,,,https://www.apollographql.com/,"
 "
@@ -1645,8 +1645,8 @@ Artbreeder,artbreeder,,Applications - Horizontal,Image,,,https://www.artbreeder.
 "
 Astrato,astrato,,Analytics,Analytics - Visualization,,,https://astrato.io/,"
 "
-AWS,aws,,,,,,,
-AWS Kinesis,aws kinesis,kinesis,,,,,,
+AWS,amazon web service,,,,,,,
+Kinesis,aws kinesis,kinesis,,,,,,
 Azati,azati,,Data & AI Consulting,Data & AI Consulting,United States,,https://azati.ai/,"Azati designs and develops software for clients in a diverse set of industries including entertainment, education, finance, insurance, medical services and biotechnology. The company provides services including web development, mobile development, big data, machine learning, business intelligence, enterprise content management, and additional services. It is based in Livingston, New Jersey.
 "
 Azure Notebooks,azure notebooks,,Machine Learning & Artificial Intelligence,Data Science Notebooks,,,https://visualstudio.microsoft.com/vs/features/notebooks-at-microsoft/,"
