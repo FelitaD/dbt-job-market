@@ -13,9 +13,9 @@ def wttj_flow(name='Wttj Flow'):
     The spiders tasks call the script directly from command line.
     """
     # Scrape dynamic pages for job postings' links
-    # scrape_wttj_links()
+    scrape_wttj_links()
     # Stores links to S3
-    # upload_links_to_s3()
+    upload_links_to_s3()
     # Scrape static pages
     scrape_wttj_job_details()
 
@@ -24,7 +24,7 @@ def wttj_flow(name='Wttj Flow'):
 def scrape_wttj_links():
     ShellOperation(
         commands=[
-            "python3 crawler/scrapy/spiders/wttj_links.py"
+            "python3 ingestion/scrapy/spiders/wttj_links.py"
         ],
         working_dir=f"{PROJECT_PATH}"
     ).run()
@@ -38,7 +38,7 @@ def upload_links_to_s3():
 def scrape_wttj_job_details():
     ShellOperation(
         commands=[
-            "python3 crawler/scrapy/spiders/wttj.py"
+            "python3 ingestion/scrapy/spiders/wttj.py"
         ],
         working_dir=f"{PROJECT_PATH}"
     ).run()

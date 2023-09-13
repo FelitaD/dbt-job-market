@@ -82,5 +82,5 @@ class S3Helper:
         return f'wttj_links_{self.today}.txt'
 
     def get_today_filepath(self):
-        return PROJECT_PATH / 'crawler' / 'scrapy-crawler' / 'data' / self.today_filename
+        return PROJECT_PATH / 'ingestion' / 'scrapy' / 'data' / self.today_filename
 

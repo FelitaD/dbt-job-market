@@ -40,10 +40,17 @@ class JobsCrawlerPipeline:
         cur = self.conn.cursor()
         try:
             cur.execute(
-                "INSERT INTO job_postings "
-                "(URL, TITLE, COMPANY, LOCATION, CONTRACT, INDUSTRY, TEXT, REMOTE, CREATED_AT) "
-                "VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s);",
-                (item['url'][0], item['title'][0], item['company'][0], item['location'][0], item['type'][0],
+                "MERGE INTO job_postings AS target "
+                "USING ("
+                    "SELECT %s AS NEW_URL, %s AS NEW_CREATED_AT" 
+                    ") AS source "
+                "ON target.URL = source.NEW_URL "
+                "WHEN MATCHED THEN " 
+                    "UPDATE SET target.CREATED_AT = source.NEW_CREATED_AT "
+                "WHEN NOT MATCHED THEN "
+                    "INSERT (URL, TITLE, COMPANY, LOCATION, CONTRACT, INDUSTRY, TEXT, REMOTE, CREATED_AT) "
+                    "VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);",
+                (item['url'][0], item['created_at'][0], item['url'][0],  item['title'][0], item['company'][0], item['location'][0], item['type'][0],
                  item['industry'][0], item['text'][0], item['remote'][0], item['created_at'][0]))
         except snowflake.connector.errors.ProgrammingError as e:
             # default error message

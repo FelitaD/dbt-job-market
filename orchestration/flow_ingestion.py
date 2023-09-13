@@ -15,8 +15,3 @@ if __name__ == "__main__":
 
     ingestion_flow.serve(name="ingestion-deployment")
 
-# dbt deployment
-# - Check dbt deployment
-
-# Streamlit
-# - Run streamlit app

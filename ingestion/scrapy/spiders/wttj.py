@@ -9,7 +9,7 @@ from scrapy.loader import ItemLoader
 from itemloaders.processors import Join
 
 from helpers.s3_helper import S3Helper
-from crawler.scrapy.items import JobsCrawlerItem
+from ingestion.scrapy.items import JobsCrawlerItem
 
 
 class WttjSpider(scrapy.Spider):
@@ -86,7 +86,7 @@ if __name__ == "__main__":
         settings={
             "ROBOTSTXT_OBEY": False,
             "ITEM_PIPELINES": {
-                "crawler.scrapy.pipelines.JobsCrawlerPipeline": 300,
+                "ingestion.scrapy.pipelines.JobsCrawlerPipeline": 300,
             },
             "AUTOTHROTTLE_ENABLED": True,
             "AUTOTHROTTLE_TARGET_CONCURRENCY": 1,
