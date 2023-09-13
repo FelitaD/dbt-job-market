@@ -1514,9 +1514,9 @@ Azure Synapse Analytics,azure synapse analytics,,Infrastructure,Data Warehouses,
 "
 Microsoft,microsoft,,Analytics,Data Analyst Platforms,United States,1975,https://www.microsoft.com/,"Microsoft (NASDAQ: MSFT) provides, develops, and licenses consumer and enterprise software. The company develops, manufactures, and sells computer software, consumer electronics, and personal computers and services. It is known for its Windows operating systems, Office productivity suite, cloud-based Azure platforms, and many more. The company was founded in 1975 and is based in Redmond, Washington."
 Microsoft Access,microsoft access,,Infrastructure,RDBMs,United States,1975,https://www.microsoft.com/en-us/microsoft-365/access,"Microsoft (NASDAQ: MSFT) provides, develops, and licenses consumer and enterprise software. The company develops, manufactures, and sells computer software, consumer electronics, and personal computers and services. It is known for its Windows operating systems, Office productivity suite, cloud-based Azure platforms, and many more. The company was founded in 1975 and is based in Redmond, Washington."
-Microsoft Azure,microsoft azure,azure,Infrastructure,Compute,United States,1975,https://azure.microsoft.com/en-us,"Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.
+Azure,microsoft azure,azure,Infrastructure,Compute,United States,1975,https://azure.microsoft.com/en-us,"Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.
 "
-Microsoft Azure,microsoft azure,azure,Machine Learning & Artificial Intelligence,Computer Vision,United States,1975,https://azure.microsoft.com/en-us,"Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.
+Azure,microsoft azure,azure,Machine Learning & Artificial Intelligence,Computer Vision,United States,1975,https://azure.microsoft.com/en-us,"Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.
 "
 Microsoft Azure Cognitive Search,microsoft azure cognitive search,,Analytics,Enterprise Search,United States,1975,https://azure.microsoft.com/en-us/products/cognitive-services/,"Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.
 "
@@ -1602,7 +1602,7 @@ Amazon Rekognition,amazon rekognition,rekognition,Machine Learning & Artificial 
 "
 Amundsen,amundsen,,Open Source Infrastructure,Data Access,,,https://github.com/amundsen-io/amundsen,"Amundsen is a metadata driven application for improving the productivity of data analysts, data scientists and engineers when interacting with data.
 "
-Apache Airflow,apache airflow,airflow,Open Source Infrastructure,Open Source - Orchestration,,,https://github.com/apache/airflow,"Apache Airflow - A platform to programmatically author, schedule, and monitor workflows
+Airflow,apache airflow,airflow,Open Source Infrastructure,Open Source - Orchestration,,,https://github.com/apache/airflow,"Apache Airflow - A platform to programmatically author, schedule, and monitor workflows
 "
 Apache Ambari,apache ambari,ambari,Open Source Infrastructure,Infrastructure,,,https://github.com/apache/ambari,"Apache Ambari simplifies provisioning, managing, and monitoring of Apache Hadoop clusters.
 "
@@ -1618,9 +1618,9 @@ Apache Drill,apache drill,drill,Open Source Infrastructure,Query/Dataflow,,,http
 "
 Apache Giraph,apache giraph,giraph,Open Source Infrastructure,Frameworks,,,https://github.com/apache/giraph,"Mirror of Apache Giraph
 "
-Apache HBase,apache hbase,hbase,Open Source Infrastructure,Databases,,,https://github.com/apache/hbase,"Apache HBase
+HBase,apache hbase,hbase,Open Source Infrastructure,Databases,,,https://github.com/apache/hbase,"Apache HBase
 "
-Apache Kafka,apache kafka,kafka,Open Source Infrastructure,Streaming & Messaging,,,,
+Kafka,apache kafka,kafka,Open Source Infrastructure,Streaming & Messaging,,,,
 Apache Kylin,apache kylin,kylin,Open Source Infrastructure,OLAP,,,https://github.com/apache/kylin,"Apache Kylin
 "
 Apache Mesos,apache mesos,mesos,Open Source Infrastructure,Infrastructure,,,https://github.com/apache/mesos,"Apache Mesos
@@ -1631,7 +1631,7 @@ Apache RocketMQ,apache rocketmq,rocketmq,Open Source Infrastructure,Streaming & 
 "
 apache Singa,apache singa,singa,Open Source Infrastructure,AI Frameworks & Libraries,,,https://github.com/apache/singa,"a distributed deep learning platform
 "
-Apache Spark,apache spark,spark,Open Source Infrastructure,Frameworks,,,https://github.com/apache/spark,"Apache Spark - A unified analytics engine for large-scale data processing
+Spark,apache spark,spark,Open Source Infrastructure,Frameworks,,,https://github.com/apache/spark,"Apache Spark - A unified analytics engine for large-scale data processing
 "
 Apache Zookeeper,apache zookeeper,zookeeper,Open Source Infrastructure,Infrastructure,,,https://github.com/apache/zookeeper,"Apache ZooKeeper
 "
@@ -1945,7 +1945,7 @@ Metaflow,metaflow,,Open Source Infrastructure,Open Source - Orchestration,,,http
 "
 Microsoft Azure CycleCloud,microsoft azure cyclecloud,,Infrastructure,Compute,,,https://learn.microsoft.com/en-us/azure/cyclecloud/overview?view=cyclecloud-8,"
 "
-Microsoft Power BI,microsoft power bi,power bi|powerbi,Analytics,Analytics - Visualization,,,https://powerbi.microsoft.com/en-us/,"
+Power BI,microsoft power bi,power bi|powerbi,Analytics,Analytics - Visualization,,,https://powerbi.microsoft.com/en-us/,"
 "
 Midjourney,midjourney,,Machine Learning & Artificial Intelligence,Horizontal AI/AGI,United States,,https://midjourney.com/home/?callbackUrl=%2Fapp%2F,"Midjourney is an independent research lab. It produces a proprietary artificial intelligence program that creates images from textual descriptions. It is based in San Francisco, California.
 "
@@ -2117,7 +2117,7 @@ Sonic,sonic,,Open Source Infrastructure,Open Source Infra - Search,,,https://git
 "
 Spark SQL,spark sql,spark,Open Source Infrastructure,Query/Dataflow,,,https://github.com/apache/spark,"Apache Spark - A unified analytics engine for large-scale data processing
 "
-Spark Streaming,spark streaming,,Open Source Infrastructure,Streaming & Messaging,,,https://spark.apache.org/docs/latest/streaming-programming-guide.html,"
+fpower,spark streaming,,Open Source Infrastructure,Streaming & Messaging,,,https://spark.apache.org/docs/latest/streaming-programming-guide.html,"
 "
 Spellbook,spellbook,,Applications - Enterprise,Legal,,,https://www.spellbook.legal/,
 Stable Diffusion,stable diffusion,,Open Source Infrastructure,AI Models & Architectures,,,https://github.com/CompVis/stable-diffusion,"A latent text-to-image diffusion model
