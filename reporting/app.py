@@ -1,6 +1,6 @@
 # streamlit_app.py
 
-import streamlit as st
+import reporting as st
 
 # Initialize connection.
 conn = st.experimental_connection('snowflake', type='sql')
