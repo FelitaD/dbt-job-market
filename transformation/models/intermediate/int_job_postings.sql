@@ -13,7 +13,8 @@ job_postings as (
         contracts.simplified_contract as contract,
         source.industry as industry,
         remote_policies.simplified_remote as remote,
-        texts.cleaned_text as text
+        texts.cleaned_text as text,
+        source.created_at as created_at
 
     from source
     join {{ ref('stg_urls') }} as urls on source.id = urls.id
