@@ -7,7 +7,7 @@ job_postings as (
     select 
         source.id as id,
         urls.cleaned_url as url,
-        titles.minus_gender as title,
+        titles.trimmed as title,
         source.company as company,
         source.location as location,
         contracts.simplified_contract as contract,
