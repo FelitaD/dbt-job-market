@@ -39,3 +39,5 @@ sources:
             description: description of the job
             tests:
               - not_null
+          - name: created_at
+  

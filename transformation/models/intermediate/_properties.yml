@@ -36,6 +36,7 @@ models:
       - name: text
         tests:
           - not_null
+      - name: created_at
     
   - name: int_job_postings_technos
     description: |
@@ -74,3 +75,4 @@ models:
       - name: url
         tests:
           - not_null
+      - name: created_at

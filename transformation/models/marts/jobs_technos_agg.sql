@@ -6,6 +6,7 @@ with job_postings_technos as (
 
 jobs_technos_agg as (
     select 
+        id,
         title, 
         company,
         listagg(techno, ', ') as stack,
@@ -14,9 +15,10 @@ jobs_technos_agg as (
         industry, 
         contract, 
         url, 
-        text
+        text, 
+        created_at
     from job_postings_technos
-    group by id, title, company, location, remote, industry, contract, url, text
+    group by id, title, company, location, remote, industry, contract, url, text, created_at
 )
 
 select * from jobs_technos_agg
