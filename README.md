@@ -6,56 +6,27 @@ and visualisations in Looker Studio and Streamlit. Orchestration with Prefect. D
 
 ## Overview
 
-Add platform architecture.
+[Data Flow Miro board](https://miro.com/app/board/uXjVMNceW10=/?share_link_id=441240647617)
+![img.png](img.png)
+
 
 ## Components
 
 ### Scrapy crawler
 
-- [x] Create crawler container with Docker -> commits on old branch `revamp-crawler`
-- [x] Add analytics engineer research term to wttj spider
-
 ### Octoparse
-
-- [x] Linkedin eu remote
-- [ ] Linkedin fr hybrid
-- [ ] Glassdoor companies
 
 ### Postgres
 
-- [x] Add table companies
-
-### Fivetran
-
-- [ ] Set up Postgres connector with reverse SSH on ec2 instance
-- [ ] Add other connectors
- 
 ### Snowflake
-
-- [x] [Migrate Postgres to Snowflake](https://github.com/FelitaD/Learning-in-Public/blob/main/Databases/Data%20Lakes%20%26%20Data%20Warehouses/Snowflake/Migrate%20Postgres%20to%20Snowflake.md)
-- [ ] Add created_at in stage
 
 ### dbt
 
-- [x] Process technos
-- [ ] Create table for streamlit: techno stack, rename columns
-- [ ] Process location
-- [ ] Add production deployment
-
 ### Looker Studio
-
-- [x] Looker report
-- [ ] Streamlit app
 
 ### Streamlit
 
-- [ ] Search for keywords flat hierarchy, flexible hours
-
 ### Prefect
 
-- [ ] Orchestrate project
-
-### Data Vault 2.0
-
-- [ ] Create data model
+### Data Modeling
 
