@@ -1,17 +1,17 @@
 from prefect import flow, task
 
-from ingestion.octoparse.octoparse_etl import OctoparseETL
+from ingestion.octoparse.linkedin_etl import LinkedinETL
 
 
 @flow
-def octoparse_flow():
+def linkedin_flow():
     linkedin_etl(spider='linkedin_eu_remote')
     linkedin_etl(spider='linkedin_fr_all')
 
 
 @task(log_prints=True)
 def linkedin_etl(spider):
-    etl = OctoparseETL(spider=spider)
+    etl = LinkedinETL(spider=spider)
 
     file, raw = etl.extract_latest_crawl()
 
@@ -22,4 +22,4 @@ def linkedin_etl(spider):
 
 
 if __name__ == '__main__':
-    octoparse_flow()
+    linkedin_flow()

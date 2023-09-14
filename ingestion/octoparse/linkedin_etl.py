@@ -3,12 +3,11 @@ import pandas as pd
 import os
 import glob
 import snowflake.connector
-from snowflake.connector.pandas_tools import write_pandas
 
 from config.definitions import PROJECT_PATH, SNOWFLAKE_ACCOUNT, SNOWFLAKE_ROLE, SNOWFLAKE_USER, SNOWSQL_PWD, WAREHOUSE
 
 
-class OctoparseETL:
+class LinkedinETL:
     """
     Extract newly scraped jobs from octoparse, transform and insert into Snowflake.
     """
@@ -69,7 +68,7 @@ class OctoparseETL:
             return series
 
     @staticmethod
-    def insert_data_snowflake(data):
+    def insert_snowflake(data):
         """
         Automates the workflow of uploading data to a stage and then copying into a Snowflake table.
         """
