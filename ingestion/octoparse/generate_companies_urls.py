@@ -19,13 +19,11 @@ def fetch_companies():
     try:
         # We only want companies from listings that aren't already present in the companies table
         cur.execute(
-            "SELECT DISTINCT(company) "
-            "FROM jobs_technos_agg j "
-            "JOIN companies c "
-            "ON j.company = c.name "
-            "WHERE j.company NOT IN ("
-            "   SELECT name FROM companies"
-            ");"
+            """select distinct(company) from analytics.marts.jobs_technos_agg as j
+            where not exists (
+            select * from analytics.marts.companies as c
+            where j.company = c.name
+            );"""
         )
         data = cur.fetchall()
     except snowflake.connector.errors.ProgrammingError as e:
