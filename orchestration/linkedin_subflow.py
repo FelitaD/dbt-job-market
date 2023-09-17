@@ -18,7 +18,7 @@ def linkedin_etl(spider):
     transformed_generic = etl.transform_generic(raw)
     transformed_date_posted = etl.transform_date_posted(transformed_generic)
 
-    etl.insert_data_snowflake(transformed_date_posted)
+    etl.insert_snowflake(transformed_date_posted)
 
 
 if __name__ == '__main__':
