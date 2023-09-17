@@ -1,2 +1,4 @@
 config/.env
 reporting/secrets.toml
+ingestion/octoparse/data/*
+ingestion/scrapy/data/*

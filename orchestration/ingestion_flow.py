@@ -13,5 +13,3 @@ def ingestion_flow(name='Ingestion Flow'):
 if __name__ == "__main__":
     # creates a deployment and stays running to monitor for work instructions generated on the server
     ingestion_flow.serve(name="ingestion-deployment")
-
-

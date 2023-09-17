@@ -17,11 +17,11 @@ cur = conn.cursor()
 
 def fetch_companies():
     try:
-        # We want to scrape companies from new listings that aren't present in the companies table
+        # We only want companies from listings that aren't already present in the companies table
         cur.execute(
             "SELECT DISTINCT(company) "
-            "FROM jobs_technos_agg j"
-            "JOIN companies c"
+            "FROM jobs_technos_agg j "
+            "JOIN companies c "
             "ON j.company = c.name "
             "WHERE j.company NOT IN ("
             "   SELECT name FROM companies"
