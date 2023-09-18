@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 with job_postings_technos as (
-    select * from {{ ref('int_job_postings_technos') }}
+    select * from {{ ref('stg_job_postings_technos') }}
 ),
 
 jobs_technos_agg as (

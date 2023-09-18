@@ -9,7 +9,7 @@
 {%- set query_results = dbt_utils.get_query_results_as_dict(sql_statement) -%}
 
 with jobs as (
-  select * from {{ ref("int_job_postings") }}
+  select * from {{ ref("stg_job_postings") }}
 ),
 
 mentions as (

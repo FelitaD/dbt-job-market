@@ -5,7 +5,7 @@ with unpivoted_numbered as (
 ),
 
 job_postings as (
-    select id, url, title, company, location, contract, industry, remote, created_at from {{ ref('int_job_postings') }}
+    select id, url, title, company, location, contract, industry, remote, created_at from {{ ref('stg_job_postings') }}
 ),
 
 base_keywords as (

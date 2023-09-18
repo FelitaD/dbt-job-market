@@ -2,6 +2,48 @@ version: 2
 
 models:
 
+  - name: stg_job_postings
+    description: |
+      The `int_job_postings` model joins transformed fields and untransformed source fields.
+    config:
+      +materialized: table
+    columns:
+      - name: id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: url
+        description: url without the part used when a website reposts the same job with a different url.
+        tests:
+          - unique
+          - not_null
+      - name: title
+        description: title without gender information.
+        tests:
+          - not_null
+      - name: company
+        tests:
+          - not_null
+      - name: location
+      - name: contract
+        description: contract types regrouped into uniform categories.
+        tests:
+          - accepted_values:
+              values: ['Full Time', 'Graduate program', 'Other', 'Freelance']
+      - name: industry
+      - name: remote
+        description: remote policies regrouped into uniform categories.
+        tests:
+          - accepted_values:
+              values: ['total', 'partial', 'ponctual']
+      - name: text
+        description: text without newlines and leading/trailing whitespaces.
+        tests:
+          - not_null
+      - name: created_at
+
+
   - name: stg_base_keywords
     description: |
       The `stg_base_keywords` model processes the seed table `base_keywords` by building a keyword_regex for each techno, 
@@ -83,3 +125,42 @@ models:
     config:
       materialized: table
       full_refresh: false
+
+  - name: stg_job_postings_technos
+    description: |
+      The `int_job_postings_technos` model joins transformed fields and untransformed source fields.
+    config:
+      materialized: table
+    columns:
+      - name: id
+        tests:
+          - not_null
+      - name: title
+        tests:
+          - not_null
+      - name: company
+        tests:
+          - not_null
+      - name: techno
+        tests:
+          - not_null
+      - name: category
+      - name: subcategory
+      - name: techno_desc
+      - name: location
+      - name: remote
+        tests:
+          - accepted_values:
+              values: ['total', 'partial', 'ponctual']
+      - name: contract
+        tests:
+          - accepted_values:
+              values: ['Full Time', 'Graduate program', 'Other', 'Freelance']
+      - name: industry
+      - name: text
+        tests:
+          - not_null
+      - name: url
+        tests:
+          - not_null
+      - name: created_at

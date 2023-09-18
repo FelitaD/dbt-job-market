@@ -33,15 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   job_radar:
-    staging:
-      job_postings:
-          +schema: staging
-      technos:
-          +schema: staging
-    intermediate:
-      +schema: intermediate
-    marts:
-      +schema: marts
+    +schema: job_market
 
 seeds:
-  +schema: seeds
+  +schema: job_market
