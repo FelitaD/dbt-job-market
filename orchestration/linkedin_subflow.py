@@ -12,14 +12,6 @@ def linkedin_flow():
 @task(log_prints=True)
 def linkedin_etl(spider):
     etl = LinkedinETL(spider=spider)
-
-    file, raw = etl.extract_latest_crawl()
-
-    transformed_generic = etl.transform_generic(raw)
-    transformed_date_posted = etl.transform_date_posted(transformed_generic)
-
-    etl.insert_snowflake(transformed_date_posted)
+    etl.process()
 
 
-if __name__ == '__main__':
-    linkedin_flow()
