@@ -8,9 +8,9 @@ job_postings as (
     select id, url, title, company, location, contract, industry, remote, created_at from {{ ref('stg_job_postings') }}
 ),
 
-base_keywords as (
-    select name as techno, keyword, keyword_category as category, keyword_subcategory as subcategory, summary as techno_desc 
-    from {{ ref('stg_base_keywords') }}
+technos as (
+    select name as techno, keyword
+    from {{ ref('technos') }}
 ),
 
 join_job_postings as (
@@ -25,10 +25,10 @@ join_job_postings as (
 job_postings_technos as (
     select *
     from join_job_postings j
-    join base_keywords b
+    join technos t
     using(keyword)
 )
 
-select id, title, company, techno, category, subcategory, techno_desc, 
+select id, title, company, techno,
         location, remote, contract, industry, text, url, created_at
 from job_postings_technos
