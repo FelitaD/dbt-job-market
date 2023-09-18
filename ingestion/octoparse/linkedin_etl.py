@@ -3,7 +3,6 @@ import pandas as pd
 import os
 import glob
 from sqlalchemy.engine import create_engine
-from sqlalchemy.schema import Table
 from sqlalchemy import text
 from google.cloud import bigquery
 
