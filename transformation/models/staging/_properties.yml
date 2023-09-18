@@ -43,31 +43,6 @@ models:
           - not_null
       - name: created_at
 
-
-  - name: stg_base_keywords
-    description: |
-      The `stg_base_keywords` model processes the seed table `base_keywords` by building a keyword_regex for each techno, 
-      excludes some categories and eliminate duplicates (when techno have multiple categories).
-    config:
-      materialized: table
-    columns:
-      - name: name
-      - name: keyword
-        tests:
-          - unique
-          - not_null
-      - name: additional_regex
-      - name: keyword_regex
-        tests:
-          - unique
-          - not_null
-      - name: keyword_category
-      - name: keyword_subcategory
-      - name: location
-      - name: founding_year
-      - name: website
-      - name: summary
-
   - name: stg_pivoted_extraction
     description: |
       The `stg_pivoted_extraction` model creates over a thousand columns, each being a techno and indicating if it's present in the job description.
