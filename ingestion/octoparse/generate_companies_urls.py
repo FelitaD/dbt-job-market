@@ -19,10 +19,10 @@ def fetch_companies():
     try:
         # We only want companies from listings that aren't already present in the companies table
         cur.execute(
-            """select distinct(company) from analytics.marts.jobs_technos_agg as j
+            """select distinct(company, company_id) from analytics.marts.jobs_technos_agg as j
             where not exists (
             select * from analytics.marts.companies as c
-            where j.company = c.name
+            where j.company_id = c.id
             );"""
         )
         data = cur.fetchall()

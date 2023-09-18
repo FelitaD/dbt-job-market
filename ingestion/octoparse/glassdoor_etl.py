@@ -56,7 +56,7 @@ class GlassdoorETL:
                 cur.execute(
                     "MERGE INTO companies AS target "
                     "USING ("
-                    "SELECT %s AS NEW_URL "
+                    "SELECT %s AS NEW_ID "
                     ") AS source "
                     "ON target.URL = source.NEW_URL "
                     "WHEN MATCHED THEN "
