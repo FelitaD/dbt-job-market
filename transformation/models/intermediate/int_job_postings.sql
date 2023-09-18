@@ -8,7 +8,7 @@ job_postings as (
         source.id as id,
         urls.cleaned_url as url,
         titles.trimmed as title,
-        source.company as company,
+        companies.company as company,
         source.location as location,
         contracts.simplified_contract as contract,
         source.industry as industry,
@@ -22,6 +22,7 @@ job_postings as (
     join {{ ref('stg_contract_types') }} as contracts on source.id = contracts.id
     join {{ ref('stg_remote_policies' )}} as remote_policies on source.id = remote_policies.id
     join {{ ref('stg_texts') }} as texts on source.id = texts.id
+    join {{ ref('stg_companies') }} as companies on source.id = companies.id
 )
 
 select * from job_postings
