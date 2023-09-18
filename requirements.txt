@@ -6,4 +6,4 @@ Twisted
 boto3
 prefect
 prefect-shell
-snowflake-connector-python[pandas]
+sqlalchemy-bigquery
