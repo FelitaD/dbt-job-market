@@ -34,3 +34,27 @@ models:
         tests:
           - not_null
       - name: created_at
+
+  - name: technos
+    description: |
+      The `technos` model processes the seed table `base_keywords` by building a keyword_regex for each techno, 
+      excludes some categories and eliminate duplicates (when techno have multiple categories).
+    config:
+      materialized: table
+    columns:
+      - name: name
+      - name: keyword
+        tests:
+          - unique
+          - not_null
+      - name: additional_regex
+      - name: keyword_regex
+        tests:
+          - unique
+          - not_null
+      - name: keyword_category
+      - name: keyword_subcategory
+      - name: location
+      - name: founding_year
+      - name: website
+      - name: summary
