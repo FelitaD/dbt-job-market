@@ -1,10 +1,8 @@
 import scrapy
-import warnings
 import re
 import datetime
 
 from scrapy.crawler import CrawlerProcess
-from scrapy.utils.log import configure_logging
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Join
 
