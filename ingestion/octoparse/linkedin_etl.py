@@ -88,7 +88,7 @@ class LinkedinETL:
 
             for i in range(len(data)):
                 stmt = text(
-                    "MERGE job_market.job_postings target "
+                    "MERGE job_market.raw_job_postings target "
                     "USING ( SELECT :url AS new_url, :created_at AS new_created_at) source "
                     "ON target.url = source.new_url "
                     "WHEN MATCHED THEN "
