@@ -73,7 +73,8 @@ class LinkedinETL:
             for n in range(1, 5):
                 if str(n) in row:
                     return today - datetime.timedelta(weeks=n)
-        return row
+        else:
+            return today
 
     @staticmethod
     def insert_bigquery(data):
@@ -108,4 +109,6 @@ class LinkedinETL:
 
 if __name__ == '__main__':
     etl = LinkedinETL(spider='linkedin_eu_remote')
+    etl.process()
+    etl = LinkedinETL(spider='linkedin_fr_all')
     etl.process()
