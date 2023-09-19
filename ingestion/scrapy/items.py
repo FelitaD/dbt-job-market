@@ -7,17 +7,12 @@ import scrapy
 
 
 class JobsCrawlerItem(scrapy.Item):
-    job_id = scrapy.Field()
     url = scrapy.Field()
     title = scrapy.Field()
     company = scrapy.Field()
     location = scrapy.Field()
-    type = scrapy.Field()
+    contract = scrapy.Field()
     industry = scrapy.Field()
     text = scrapy.Field()
     remote = scrapy.Field()
     created_at = scrapy.Field()
-
-
-# class OldJobsCrawlerItem(scrapy.Item):
-#     job_id = scrapy.Field()

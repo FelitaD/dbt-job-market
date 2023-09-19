@@ -1,19 +1,28 @@
-from datetime import datetime, timedelta
+import datetime
 import pandas as pd
 import os
 import glob
-import snowflake.connector
+from sqlalchemy.engine import create_engine
+from sqlalchemy import text
+from google.cloud import bigquery
 
-from config.definitions import PROJECT_PATH, SNOWFLAKE_ACCOUNT, SNOWFLAKE_ROLE, SNOWFLAKE_USER, SNOWSQL_PWD, WAREHOUSE
+
+from config.definitions import PROJECT_PATH
 
 
 class LinkedinETL:
     """
-    Extract newly scraped jobs from octoparse, transform and insert into Snowflake.
+    Extract newly scraped jobs from octoparse, transform and insert into Snowflake / Bigquery (after migration).
     """
 
     def __init__(self, spider: str):
         self.spider = spider
+
+    def process(self):
+        file, raw = self.extract_latest_crawl()
+        transformed_generic = self.transform_generic(raw)
+        transformed_date_posted = self.transform_date_posted(transformed_generic)
+        self.insert_bigquery(transformed_date_posted)
 
     def extract_latest_crawl(self):
         list_of_files = glob.glob(
@@ -49,60 +58,57 @@ class LinkedinETL:
         return data[['url', 'title', 'company', 'location', 'text', 'created_at']]
 
     @staticmethod
-    def parse_created_at(series):
+    def parse_created_at(row):
         """
         Modifies information such as '1 week ago' to an actual date.
         """
-        now = datetime.now()
-        if 'hour' in series or 'heure' in series or 'minute' in series or 'second' in series:
-            return now.strftime('%Y-%m-%d')
-        if 'day' in series or 'jour' in series:
+        today = datetime.date.today()
+        if 'hour' in row or 'heure' in row or 'minute' in row or 'second' in row:
+            return today
+        if 'day' in row or 'jour' in row:
             for n in range(1, 8):
-                if str(n) in series:
-                    return (now - timedelta(days=n)).strftime('%Y-%m-%d')
-        if 'week' in series or 'semaine' in series:
+                if str(n) in row:
+                    return today - datetime.timedelta(days=n)
+        if 'week' in row or 'semaine' in row:
             for n in range(1, 5):
-                if str(n) in series:
-                    return (now - timedelta(weeks=n)).strftime('%Y-%m-%d')
+                if str(n) in row:
+                    return today - datetime.timedelta(weeks=n)
         else:
-            return series
+            return today
 
     @staticmethod
-    def insert_snowflake(data):
-        """
-        Automates the workflow of uploading data to a stage and then copying into a Snowflake table.
-        """
-        data = data.rename(str.upper, axis='columns')
+    def insert_bigquery(data):
 
-        conn = snowflake.connector.connect(
-            account=SNOWFLAKE_ACCOUNT,
-            user=SNOWFLAKE_USER,
-            password=SNOWSQL_PWD,
-            database='RAW',
-            schema='PUBLIC',
-            role=SNOWFLAKE_ROLE,
-            warehouse=WAREHOUSE
+        custom_bq_client = bigquery.Client()
+
+        engine = create_engine(
+            'bigquery://complete-flag-399316/job-market?user_supplied_client=True',
+            connect_args={'client': custom_bq_client},
         )
-        cur = conn.cursor()
-        
-        for i in range(len(data)):
-            try:
-                cur.execute(
-                    "MERGE INTO job_postings AS target "
-                    "USING ("
-                    "SELECT %s AS NEW_URL, %s AS NEW_CREATED_AT"
-                    ") AS source "
-                    "ON target.URL = source.NEW_URL "
+        with engine.connect() as connection:
+
+            for i in range(len(data)):
+                stmt = text(
+                    "MERGE job_market.raw_job_postings target "
+                    "USING ( SELECT :url AS new_url, :created_at AS new_created_at) source "
+                    "ON target.url = source.new_url "
                     "WHEN MATCHED THEN "
-                    "UPDATE SET target.CREATED_AT = source.NEW_CREATED_AT "
+                    "UPDATE SET target.created_at = source.new_created_at "
                     "WHEN NOT MATCHED THEN "
-                    "INSERT (URL, TITLE, COMPANY, LOCATION, TEXT, CREATED_AT) "
-                    "VALUES (%s,%s,%s,%s,%s,%s);",
-                    (data['URL'][i], data['CREATED_AT'][i],
-                     data['URL'][i], data['TITLE'][i], data['COMPANY'][i], data['LOCATION'][i], data['TEXT'][i], data['CREATED_AT'][i]))
-            except snowflake.connector.errors.ProgrammingError as e:
-                # default error message
-                print(e)
-                # customer error message
-                print('Error {0} ({1}): {2} ({3})'.format(e.errno, e.sqlstate, e.msg, e.sfqid))
-        cur.close()
+                    "INSERT (url, title, company, location, text, created_at) "
+                    "VALUES (:url, :title, :company, :location, :text, :created_at);")
+                connection.execute(stmt,
+                                   url=data['url'][i],
+                                   created_at=data['created_at'][i],
+                                   title=data['title'][i],
+                                   company=data['company'][i],
+                                   location=data['location'][i],
+                                   text=data['text'][i],
+                                   )
+
+
+if __name__ == '__main__':
+    etl = LinkedinETL(spider='linkedin_eu_remote')
+    etl.process()
+    etl = LinkedinETL(spider='linkedin_fr_all')
+    etl.process()

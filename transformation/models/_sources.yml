@@ -1,19 +1,19 @@
 version: 2
 
 sources:
-  - name: raw_jobs
+
+  - name: raw_job_postings
     description: a clone of the Postgres table raw_jobs
-    database: raw
-    schema: public
+    database: complete-flag-399316
+    schema: job_market
     tables:
-      - name: job_postings
-        description: the copy of original raw_jobs table without created_at, education, size, experience columns
+      - name: raw_job_postings
+        description: the table where raw scraped data is merged into
         columns:
           - name: id
             description: primary key of job_postings
             tests:
               - unique
-              - not_null
           - name: url
             description: url of the job posting
             tests:
@@ -41,3 +41,9 @@ sources:
               - not_null
           - name: created_at
   
+  - name: base_keywords
+    description: the imported csv
+    database: complete-flag-399316
+    schema: job_market
+    tables:
+      - name: base_keywords

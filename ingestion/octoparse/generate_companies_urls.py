@@ -1,39 +1,32 @@
-import snowflake.connector
 from datetime import datetime
 
-from config.definitions import PROJECT_PATH, SNOWFLAKE_ACCOUNT, SNOWFLAKE_ROLE, SNOWFLAKE_USER, SNOWSQL_PWD, WAREHOUSE
+import pandas as pd
+from sqlalchemy.engine import create_engine
+from sqlalchemy import text
+from google.cloud import bigquery
 
-conn = snowflake.connector.connect(
-    account=SNOWFLAKE_ACCOUNT,
-    user=SNOWFLAKE_USER,
-    password=SNOWSQL_PWD,
-    database='ANALYTICS',
-    schema='MARTS',
-    role=SNOWFLAKE_ROLE,
-    warehouse=WAREHOUSE
-)
-cur = conn.cursor()
+from config.definitions import PROJECT_PATH
 
 
 def fetch_companies():
-    try:
+    custom_bq_client = bigquery.Client()
+
+    engine = create_engine(
+        'bigquery://complete-flag-399316/job-market?user_supplied_client=True',
+        connect_args={'client': custom_bq_client},
+    )
+    with engine.connect() as connection:
         # We only want companies from listings that aren't already present in the companies table
-        cur.execute(
-            """select distinct(company) from analytics.marts.jobs_technos_agg as j
+        stmt = text(
+            """select distinct(company) from job_market.jobs as j
             where not exists (
-            select * from analytics.marts.companies as c
-            where j.company = c.name
+            select * from job_market.companies as c
+            where j.company = c.company_name
             );"""
         )
-        data = cur.fetchall()
-    except snowflake.connector.errors.ProgrammingError as e:
-        # default error message
-        print(e)
-        # customer error message
-        print('Error {0} ({1}): {2} ({3})'.format(e.errno, e.sqlstate, e.msg, e.sfqid))
-    finally:
-        cur.close()
-        return [t[0] for t in data]
+        data = connection.execute(stmt).fetchall()
+
+    return [t[0] for t in data]
 
 
 def generate_urls(companies):
@@ -43,15 +36,23 @@ def generate_urls(companies):
     return [base_url.format(company) for company in formatted_companies]
 
 
-def save_to_file(urls):
+def save_glassdoor_urls(urls):
     now = datetime.now().strftime('%Y-%m-%d')
-    path = PROJECT_PATH / 'ingestion' / 'octoparse' / 'data' / 'glassdoor' / f'companies_{now}.txt'
+    path = PROJECT_PATH / 'ingestion' / 'octoparse' / 'data' / 'glassdoor' / f'glassdoor_urls_{now}.txt'
     file = open(path, 'w+')
     for url in urls:
         file.write(url + "\n")
 
 
+def save_company_names(companies):
+    now = datetime.now().strftime('%Y-%m-%d')
+    path = PROJECT_PATH / 'ingestion' / 'octoparse' / 'data' / 'glassdoor' / f'company_names_{now}.csv'
+    companies_df = pd.DataFrame({'companies': companies})
+    companies_df.to_csv(path, index=False)
+
+
 if __name__ == '__main__':
     companies = fetch_companies()
     urls = generate_urls(companies)
-    save_to_file(urls)
+    save_glassdoor_urls(urls)
+    save_company_names(companies)

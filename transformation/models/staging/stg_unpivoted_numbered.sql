@@ -5,8 +5,8 @@ with unpivoted_matching as (
 numbered_job_id_keyword as (
 
     select *,
-           row_number() over(partition by job_id, keyword order by keyword_text_id) as rn
+           row_number() over(partition by id, key order by job_keyword_id) as rn
     FROM unpivoted_matching
 )
 
-select * from numbered_job_id_keyword where rn = 1 order by job_id
+select * from numbered_job_id_keyword where rn = 1 order by id

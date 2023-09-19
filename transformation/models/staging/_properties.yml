@@ -2,7 +2,7 @@ version: 2
 
 models:
 
-  - name: int_job_postings
+  - name: stg_job_postings
     description: |
       The `int_job_postings` model joins transformed fields and untransformed source fields.
     config:
@@ -14,10 +14,12 @@ models:
           - unique
           - not_null
       - name: url
+        description: url without the part used when a website reposts the same job with a different url.
         tests:
           - unique
           - not_null
       - name: title
+        description: title without gender information.
         tests:
           - not_null
       - name: company
@@ -25,20 +27,53 @@ models:
           - not_null
       - name: location
       - name: contract
+        description: contract types regrouped into uniform categories.
         tests:
           - accepted_values:
               values: ['Full Time', 'Graduate program', 'Other', 'Freelance']
       - name: industry
       - name: remote
+        description: remote policies regrouped into uniform categories.
         tests:
           - accepted_values:
               values: ['total', 'partial', 'ponctual']
       - name: text
+        description: text without newlines and leading/trailing whitespaces.
         tests:
           - not_null
       - name: created_at
-    
-  - name: int_job_postings_technos
+
+  - name: stg_pivoted_extraction
+    description: |
+      The `stg_pivoted_extraction` model creates over a thousand columns, each being a techno and indicating if it's present in the job description.
+    config:
+      materialized: table
+      full_refresh: false
+    columns:
+      - name: job_id
+      - name: text
+          
+  - name: stg_unpivoted_extraction
+    description: |
+      The `stg_unpivoted_extraction` model unpivots techno columns into one column and another column describing if they are present.
+
+
+  - name: stg_unpivoted_matching
+    description: |
+      The `stg_unpivoted_matching` model keeps rows where techno are present (keyword = 'true').
+    config:
+      materialized: table
+      full_refresh: false
+
+      
+  - name: stg_unpivoted_numbered
+    description: |
+      The `` model .
+    config:
+      materialized: table
+      full_refresh: false
+
+  - name: stg_job_postings_technos
     description: |
       The `int_job_postings_technos` model joins transformed fields and untransformed source fields.
     config:
@@ -56,9 +91,6 @@ models:
       - name: techno
         tests:
           - not_null
-      - name: category
-      - name: subcategory
-      - name: techno_desc
       - name: location
       - name: remote
         tests:
