@@ -1,7 +1,7 @@
 import scrapy
 import warnings
 import re
-from datetime import datetime
+import datetime
 
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.log import configure_logging
@@ -53,7 +53,7 @@ class WttjSpider(scrapy.Spider):
             ).get(),
         )
         l.add_value(
-            "type",
+            "contract",
             response.xpath(
                 '//i[@name="contract"]/following-sibling::span/text()'
             ).get(),
@@ -76,7 +76,7 @@ class WttjSpider(scrapy.Spider):
                 '//i[@name="remote"]/following-sibling::span/text()'
             ).get(),
         )
-        l.add_value("created_at", datetime.now())
+        l.add_value("created_at", datetime.date.today())
 
         yield l.load_item()
 
