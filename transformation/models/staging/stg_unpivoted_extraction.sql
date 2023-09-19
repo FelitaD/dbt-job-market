@@ -1,15 +1,14 @@
-with unpivoted as ( {{ 
-    dbt_utils.unpivot(
-      ref('stg_pivoted_extraction'),
-      cast_to='boolean',
-      field_name='keyword',
-      value_name='is_present',
-      exclude=[
-        'job_id',
-        'text'
-      ],
-      remove = []
-    ) 
-  }} )
+{{ config(
+  pre_hook = "{{ create_f_fhoffa_x_unpivot() }}"
+) }}
+
+with pivoted as ((
+    select * from {{ ref('stg_pivoted_extraction') }}
+))
   
-select * from unpivoted
+select 
+    id, 
+    unpivoted.key, 
+    unpivoted.value 
+from pivoted p, unnest(job_market.fhoffa_x_unpivot(p, 'k_')) unpivoted
+
