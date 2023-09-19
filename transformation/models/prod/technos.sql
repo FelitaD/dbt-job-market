@@ -1,5 +1,6 @@
 with base_keywords as (
     select * from {{ source('base_keywords', 'base_keywords') }}
+    where category not like 'Applications%'
 ),
 
 renamed as (
