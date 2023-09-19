@@ -2,84 +2,117 @@ import os
 import re
 import glob
 import pandas as pd
-import snowflake.connector
+import numpy as np
+from sqlalchemy.engine import create_engine
+from sqlalchemy import text
+from google.cloud import bigquery
 
-from config.definitions import PROJECT_PATH, SNOWFLAKE_ACCOUNT, SNOWFLAKE_ROLE, SNOWFLAKE_USER, SNOWSQL_PWD, WAREHOUSE
+from config.definitions import PROJECT_PATH
+
+pd.set_option('display.width', 300)
 
 
 class GlassdoorETL:
     def __init__(self):
+        self.companies_data = None
+        self.company_names = None
         self.data = None
 
     def process(self):
         self.extract_latest_crawl()
+        self.extract_company_names()
+        self.concat_original_company_names()
+
+        ## Verify companies match in concatenated dataframe
+        # print(self.data.iloc[113]['URL'])
+        # print(self.data.iloc[113])
+        # print('\n')
+        # print(self.data.iloc[4]['URL'])
+        # print(self.data.iloc[4])
+        # print('\n')
+        # print(self.data.iloc[3]['URL'])
+        # print(self.data.iloc[3])
+
         self.transform()
-        self.insert_snowflake()
+        self.insert_bigquery()
 
     def extract_latest_crawl(self):
         list_of_files = glob.glob(
-            f'{PROJECT_PATH}/ingestion/octoparse/data/glassdoor/*.csv')
+            f'{PROJECT_PATH}/ingestion/octoparse/data/glassdoor/companies_*.csv')
         latest_file = max(list_of_files, key=os.path.getctime)
-        self.data = pd.read_csv(latest_file)
+        self.companies_data = pd.read_csv(latest_file)
+
+    def extract_company_names(self):
+        list_of_files = glob.glob(
+            f'{PROJECT_PATH}/ingestion/octoparse/data/glassdoor/company_names_*.csv')
+        latest_file = max(list_of_files, key=os.path.getctime)
+        self.company_names = pd.read_csv(latest_file)
+
+    def concat_original_company_names(self):
+        self.data = pd.concat([self.company_names, self.companies_data], axis=1)
 
     def transform(self):
-        self.data = self.data.rename(columns={'URL': 'url',
-                                              'Field1': 'rating',
-                                              'Field2': 'name',
-                                              'Field4': 'details',
-                                              'Field5': 'headquarters',
-                                              'Field6': 'stats',
-                                              })
+        self.data = self.data.rename(columns={
+            'companies': 'company_name',
+            'URL': 'url',
+            'Field1': 'rating',
+            'Field2': 'name',
+            'Field4': 'details',
+            'Field5': 'headquarters',
+            'Field6': 'stats',
+        })
         self.data['rating'] = self.data['rating'].apply(lambda x: self.clean_rating(x))
         self.data[['industry', 'size']] = self.data['details'].apply(lambda x: self.split_details(x)).apply(pd.Series)
         self.data['headquarters'] = self.data['headquarters'].apply(lambda x: self.simplify_headquarters(x))
         self.data['stats_thousands'] = self.data['stats'].apply(lambda x: self.replace_thousands(x))
-        self.data[['reviews', 'salaries', 'jobs']] = self.data['stats_thousands'].apply(lambda x: self.split_stats(x)).apply(pd.Series)
-        self.data = self.data[['name', 'rating', 'industry', 'size', 'headquarters', 'reviews', 'salaries', 'jobs', 'url']]
-        self.data = self.data.rename(str.upper, axis='columns')
+        self.data[['reviews', 'salaries', 'jobs']] = self.data['stats_thousands'].apply(
+            lambda x: self.split_stats(x)).apply(pd.Series)
 
-    def insert_snowflake(self):
+        self.data[['company_name', 'name', 'industry', 'size', 'headquarters', 'url']] = self.data[['company_name', 'name', 'industry', 'size', 'headquarters', 'url']].fillna('None')
+        self.data[['rating', 'reviews', 'salaries', 'jobs']] = self.data[['rating', 'reviews', 'salaries', 'jobs']].fillna(0)
 
-        conn = snowflake.connector.connect(
-            account=SNOWFLAKE_ACCOUNT,
-            user=SNOWFLAKE_USER,
-            password=SNOWSQL_PWD,
-            database='ANALYTICS',
-            schema='MARTS',
-            role=SNOWFLAKE_ROLE,
-            warehouse=WAREHOUSE
+        self.data = self.data[['company_name', 'name', 'rating', 'industry', 'size', 'headquarters', 'reviews',
+                               'salaries', 'jobs', 'url']]
+
+    def insert_bigquery(self):
+        custom_bq_client = bigquery.Client()
+
+        engine = create_engine(
+            'bigquery://complete-flag-399316/job-market?user_supplied_client=True',
+            connect_args={'client': custom_bq_client},
         )
-        cur = conn.cursor()
-
-        for i in range(len(self.data)):
-            try:
-                cur.execute(
-                    "MERGE INTO companies AS target "
+        with engine.connect() as connection:
+            for i in range(len(self.data)):
+                stmt = text(
+                    "MERGE job_market.companies AS target "
                     "USING ("
-                    "SELECT %s AS NEW_ID "
+                    "SELECT :company_name AS new_company_name "
                     ") AS source "
-                    "ON target.URL = source.NEW_URL "
+                    "ON target.company_name = source.new_company_name "
                     "WHEN MATCHED THEN "
-                    "UPDATE SET target.URL = source.NEW_URL "  # DO NOTHING not supported by Snowflake
+                    "UPDATE SET target.company_name = source.new_company_name "  # DO NOTHING not supported by Bigquery
                     "WHEN NOT MATCHED THEN "
-                    "INSERT (NAME, RATING, INDUSTRY, SIZE, HEADQUARTERS, REVIEWS, SALARIES, JOBS, URL) "
-                    "VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);",
-                    (self.data['URL'][i],
-                     self.data['NAME'][i], self.data['RATING'][i], self.data['INDUSTRY'][i], self.data['SIZE'][i],
-                     self.data['HEADQUARTERS'][i], self.data['REVIEWS'][i], self.data['SALARIES'][i],
-                     self.data['JOBS'][i], self.data['URL'][i]))
-            except snowflake.connector.errors.ProgrammingError as e:
-                # default error message
-                print(e)
-                # customer error message
-                print('Error {0} ({1}): {2} ({3})'.format(e.errno, e.sqlstate, e.msg, e.sfqid))
-        cur.close()
+                    "INSERT (company_name, name, rating, industry, size, headquarters, reviews, salaries, jobs, url) "
+                    "VALUES (:company_name, :name, :rating, :industry, :size, :headquarters, :reviews, :salaries, "
+                    ":jobs, :url);")
+                connection.execute(stmt,
+                                   company_name=self.data['company_name'][i],
+                                   name=self.data['name'][i],
+                                   rating=self.data['rating'][i],
+                                   industry=self.data['industry'][i],
+                                   size=self.data['size'][i],
+                                   headquarters=self.data['headquarters'][i],
+                                   reviews=self.data['reviews'][i],
+                                   salaries=self.data['salaries'][i],
+                                   jobs=self.data['jobs'][i],
+                                   url=self.data['url'][i]
+                                   )
 
     @staticmethod
     def clean_rating(x):
         if pd.isna(x):
             return None
-        return x.replace('★', '').strip()
+        return float(x.replace('★', '').strip())
 
     @staticmethod
     def split_details(x):
@@ -107,10 +140,8 @@ class GlassdoorETL:
             pattern = r"(\d+)\sReviews(\d+)\sSalaries(\d+)\sJobs"
             match = re.search(pattern, x)
             if match:
-                return [match.group(1), match.group(2), match.group(3)]
-
+                return [int(match.group(1)), int(match.group(2)), int(match.group(3))]
 
 if __name__ == '__main__':
     etl = GlassdoorETL()
     etl.process()
-    print(etl.data)
