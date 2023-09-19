@@ -14,12 +14,11 @@ with jobs as (
 
 mentions as (
     select
-        id as job_id,
-        text,
+        id,
         {%- for k in query_results['keyword'] | list %}
         {%- set regex = query_results['keyword_regex'][loop.index-1] %}
         regexp_contains(text, r'(?i).*[\s,.\n]({{ regex }})[\s,.\n].*')
-            as `{{ k | replace(" ","_") | replace("|","_") | lower }}` {{ "," if not loop.last}}
+            as `{{ 'k_' + k | replace(" ","_") | replace("|","_") | lower }}` {{ "," if not loop.last}}
        {%- endfor %}
 
     from jobs
