@@ -7,18 +7,18 @@ with job_postings_technos as (
 jobs as (
     select 
         id,
-        title, 
         company,
-        listagg(techno, ', ') as stack,
+        contract, 
+        created_at,
+        industry, 
         location,
         remote, 
-        industry, 
-        contract, 
-        url, 
+        array_agg(techno order by techno) as stack,
         text, 
-        created_at
+        title, 
+        url, 
     from job_postings_technos
-    group by id, title, company, location, remote, industry, contract, url, text, created_at
+    group by id, company, contract, created_at, industry, location, remote, text, title, url
 )
 
-select * from jobs
+select * from jobs order by created_at desc, id
