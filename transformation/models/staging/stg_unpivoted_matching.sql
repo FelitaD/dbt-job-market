@@ -1,19 +1,16 @@
-{{ config(materialized='table') }}
-
 with unpivoted as (
     select * from {{ ref('stg_unpivoted_extraction') }}
 ),
 
 extracted_keywords as (
     select 
-        {{ dbt_utils.generate_surrogate_key(['job_id', 'text', 'keyword']) }}
-            as keyword_text_id,
-        job_id,
-        keyword,
-        text,
-        is_present
+        {{ dbt_utils.generate_surrogate_key(['id', 'key']) }}
+            as job_keyword_id,
+        id,
+        key,
+        value
     from unpivoted
-    where is_present like 'true'
+    where value like 'true'
 )
 
-select * from extracted_keywords
+select * from extracted_keywords order by id
