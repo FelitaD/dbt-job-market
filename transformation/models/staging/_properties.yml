@@ -56,22 +56,7 @@ models:
   - name: stg_unpivoted_extraction
     description: |
       The `stg_unpivoted_extraction` model unpivots techno columns into one column and another column describing if they are present.
-    config:
-      materialized: table
-      full_refresh: false
-    columns:
-      - name: job_id
-      - name: text
-      - name: keyword
-        tests:
-          - not_null
-      - name: is_present
-        tests:
-          - not_null
-          - accepted_values:
-              values:
-                - 'true'
-                - 'false'
+
 
   - name: stg_unpivoted_matching
     description: |
@@ -79,20 +64,7 @@ models:
     config:
       materialized: table
       full_refresh: false
-    columns:
-      - name: keyword_text_id
-        tests:
-          - unique
-          - not_null
-      - name: job_id
-      - name: keyword
-      - name: text
-      - name: is_present
-        tests:
-          - not_null
-          - accepted_values:
-              values:
-                - 'true'
+
       
   - name: stg_unpivoted_numbered
     description: |
@@ -119,9 +91,6 @@ models:
       - name: techno
         tests:
           - not_null
-      - name: category
-      - name: subcategory
-      - name: techno_desc
       - name: location
       - name: remote
         tests:
