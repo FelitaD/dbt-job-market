@@ -1,26 +1,39 @@
 import streamlit as st
+from google.oauth2 import service_account
+from google.cloud import bigquery
 
 from helpers.filter_dataframe import filter_dataframe
-
+from reporting.queries.queries import relevant_jobs_stmt, all_jobs_companies_stmt
 
 st.set_page_config(page_title="Data engineering job radar", page_icon="⛅︎", layout="wide")
 
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"]
+)
+client = bigquery.Client(credentials=credentials)
 
-conn = st.experimental_connection('snowflake', type='sql')
 
-stmt = """
-select title, company, stack, rating, reviews, size, location, c.industry, c.url as glassdoor_url, j.url as job_url, text, created_at
-from analytics.marts.jobs_technos_agg j
-join analytics.marts.companies c
-on j.company = c.name
-and regexp_like(title, '.*(data|analytics).*(engineer|ingénieur).*|.*(engineer|ingénieur).*(data|données|big data|bigdata)', 'i')
-order by rating desc;
-"""
-jobs = conn.query(stmt)
-jobs_copy = jobs
+@st.cache_data(ttl=600)
+def run_query(query):
+    query_job = client.query(query)
+    rows_raw = query_job.result()
+    # Convert to list of dicts. Required for st.cache_data to hash the return value.
+    rows = [dict(row) for row in rows_raw]
+    return rows
 
-st.dataframe(filter_dataframe(jobs))
-jobs = conn.query('select * from int_job_postings_technos;')
-jobs_copy = jobs
 
-st.dataframe(filter_dataframe(jobs))
+all_jobs_companies = run_query(all_jobs_companies_stmt)
+st.dataframe(all_jobs_companies)
+
+relevant_jobs = run_query(relevant_jobs_stmt)
+st.data_editor(
+    relevant_jobs,
+    column_config={
+        "apply": st.column_config.CheckboxColumn(),
+        "stack": st.column_config.ListColumn(width='medium'),
+        "text": st.column_config.TextColumn(width='medium'),
+        "size": st.column_config.TextColumn(width='small'),
+        "job_url": st.column_config.LinkColumn(width='small'),
+        "company_url": st.column_config.LinkColumn(width='small')
+    }
+)
