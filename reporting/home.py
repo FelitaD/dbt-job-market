@@ -1,9 +1,12 @@
 import streamlit as st
+import altair as alt
+import pandas as pd
+
 from google.oauth2 import service_account
 from google.cloud import bigquery
 
-from helpers.filter_dataframe import filter_dataframe
 from helpers.queries import relevant_jobs_stmt, all_jobs_companies_stmt, techno_occurences_stmt
+
 
 st.set_page_config(page_title="Data engineering job radar", page_icon="⛅︎", layout="wide")
 
@@ -12,7 +15,7 @@ credentials = service_account.Credentials.from_service_account_info(
 )
 client = bigquery.Client(credentials=credentials)
 
-tab1, tab2, tab3 = st.tabs(["Relevant jobs", "All jobs", "Technologies"])
+tab1, tab2, tab3, tab4 = st.tabs(["Relevant jobs", "All jobs", "Technologies", "Companies"])
 
 
 @st.cache_data(ttl=600)
@@ -29,7 +32,6 @@ with tab1:
     st.data_editor(
         relevant_jobs,
         column_config={
-            "apply": st.column_config.CheckboxColumn(),
             "stack": st.column_config.ListColumn(width='medium'),
             "text": st.column_config.TextColumn(width='medium'),
             "size": st.column_config.TextColumn(width='small'),
@@ -45,7 +47,26 @@ with tab2:
 
 
 with tab3:
+    # -------- DataFrame --------
     techno_occurences = run_query(techno_occurences_stmt)
     chart_data = st.data_editor(techno_occurences)
 
-    st.bar_chart(chart_data, x='techno', y='total')
+    # -------- Bar Chart --------
+
+    df = pd.DataFrame({
+        'Technos': [row['techno'] for row in techno_occurences],
+        'Counts': [row['total'] for row in techno_occurences]
+    })
+    source = df[df['Counts'] > 5]
+    print(source)
+
+    c = alt.Chart(source).transform_joinaggregate(
+        TotalCounts='sum(Counts)',
+    ).transform_calculate(
+        PercentOfTotal="datum.Counts / datum.TotalCounts"
+    ).mark_bar().encode(
+        alt.X('PercentOfTotal:Q').axis(format='.0%'),
+        y='Technos:N'
+    )
+
+    st.altair_chart(c, use_container_width=True)
