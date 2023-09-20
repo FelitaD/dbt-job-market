@@ -7,3 +7,4 @@ boto3
 prefect
 prefect-shell
 sqlalchemy-bigquery
+google-cloud-bigquery
