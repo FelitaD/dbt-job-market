@@ -12,7 +12,6 @@ all_jobs_companies_stmt = """
 
 relevant_jobs_stmt = """
     select 
-        apply,
         title,
         company,
         stack,
