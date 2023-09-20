@@ -35,11 +35,11 @@ relevant_jobs_stmt = """
 """
 
 techno_occurences_stmt = """
-select distinct name, total, category, subcategory, description
-    from (
-        select count(*) as total, name from job_market.technos group by name
-        ) as techno_count t
-    join job_market.stg_job_postings_technos j
-    on t.keyword = j.techno
-    order by total desc
+select distinct techno, total, category, subcategory, description
+from (
+    select count(*) as total, techno from job_market.stg_job_postings_technos group by techno
+    ) as j
+join job_market.technos t
+on t.name = j.techno
+order by total desc;
 """
