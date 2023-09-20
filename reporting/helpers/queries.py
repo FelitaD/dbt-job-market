@@ -10,6 +10,11 @@ all_jobs_companies_stmt = """
     order by rating desc, reviews desc, created_at desc;
 """
 
+all_companies_stmt = """
+    select *
+    from `job_market.companies`; 
+"""
+
 relevant_jobs_stmt = """
     select 
         title,
