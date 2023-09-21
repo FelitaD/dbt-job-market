@@ -4,17 +4,17 @@ with jobs as (
 
 scores as (
     select
-        *, 
+        jobs.id as id, 
 
         is_relevant_score,
         -- data/anlaytics engineer : 1
         -- non data engineer : 0
 
         seniority_score,
-        -- junior : 1
-        -- data engineer : 0
-        -- intern data engineer : -1
-        -- senior : -2
+        -- junior : 3
+        -- data engineer : 1
+        -- intern data engineer : 0
+        -- senior : -1
 
         is_same_glassdoor_score,
         -- name exactly the same: 1
