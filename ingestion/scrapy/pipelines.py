@@ -36,7 +36,7 @@ class JobsCrawlerPipeline:
                 "USING ( SELECT :url AS new_url, :created_at AS new_created_at) source "
                 "ON target.url = source.new_url "
                 "WHEN MATCHED THEN "
-                "UPDATE SET target.created_at = source.new_created_at "
+                "UPDATE SET target.url = source.new_url "
                 "WHEN NOT MATCHED THEN "
                 "INSERT (url, title, company, location, contract, industry, text, remote, created_at) "
                 "VALUES (:url, :title, :company, :location, :contract, :industry, :text, :remote, :created_at);")
