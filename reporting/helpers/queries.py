@@ -3,29 +3,42 @@ all_companies_stmt = """
     from `job_market.companies`; 
 """
 
+all_data_stmt = """
+    select * 
+    from `job_market.companies` c
+    join `job_market.jobs` j 
+    on c.company_name = j.company
+    join `job_market.scores` s
+    on j.id = s.id; 
+"""
+
 relevant_jobs_stmt = """
     select 
+        total_score,
+        is_relevant_score,
+        seniority_score,
+        rating_score,
+        is_same_glassdoor_score,
         title,
         company,
-        rating, 
-        reviews,
-        size,
-        remote,
-        location,
-        stack,
-        text,
         j.url as job_url,
         c.url as company_url,
-        contract,
+        rating, 
+        reviews,
+        stack,
+        remote,
+        location,
         created_at,
-        id,
+        text,
         apply,
-        applied
+        applied,
+        id,
     from `job_market.jobs` j
     left join `job_market.companies` c
-    on lower(j.company) = lower(c.company_name)
-    where regexp_contains(title, r'(?i).*(data|analytics).*(engineer|ingénieur).*|.*(engineer|ingénieur).*(data|données|big data|bigdata)')
-    order by rating desc, reviews desc, created_at desc;
+    on j.company = c.company_name
+    join `job_market.scores` s
+    using(id)
+    order by total_score desc;
 """
 
 techno_occurences_stmt = """
