@@ -9,3 +9,4 @@ prefect-shell
 sqlalchemy-bigquery
 google-cloud-bigquery
 altair
+plotly
