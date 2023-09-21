@@ -35,17 +35,17 @@ with tab_doc:
     
         """
     )
-    st.components.v1.html(
-        """
-        <iframe width="968" height="632" src="https://miro.com/app/live-embed/uXjVMNceW10=/?moveToViewport=-492,5651,4500,1505&embedId=45852963792" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
-        """,
-        width=1000,
-        height=600
-    )
-    st.components.v1.html(
-        """
-        <iframe width="560" height="315" src='https://dbdiagram.io/embed/65083b9d02bd1c4a5ec730d7'> </iframe>
-        """,
-        width=1000,
-        height=600
-    )
+    # st.components.v1.html(
+    #     """
+    #     <iframe width="968" height="632" src="https://miro.com/app/live-embed/uXjVMNceW10=/?moveToViewport=-492,5651,4500,1505&embedId=45852963792" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+    #     """,
+    #     width=1000,
+    #     height=600
+    # )
+    # st.components.v1.html(
+    #     """
+    #     <iframe width="560" height="315" src='https://dbdiagram.io/embed/65083b9d02bd1c4a5ec730d7'> </iframe>
+    #     """,
+    #     width=1000,
+    #     height=600
+    # )
