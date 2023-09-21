@@ -1,15 +1,3 @@
-all_jobs_companies_stmt = """
-    select 
-        title,
-        company,
-        stack,
-        *
-    from `job_market.jobs` j
-    join `job_market.companies` c
-    on j.company = c.company_name
-    order by rating desc, reviews desc, created_at desc;
-"""
-
 all_companies_stmt = """
     select *
     from `job_market.companies`; 
@@ -19,22 +7,24 @@ relevant_jobs_stmt = """
     select 
         title,
         company,
-        stack,
         rating, 
         reviews,
         size,
         remote,
+        location,
+        stack,
         text,
         j.url as job_url,
         c.url as company_url,
+        contract,
         created_at,
+        id,
+        apply,
+        applied
     from `job_market.jobs` j
-    join `job_market.companies` c
-    on j.company = c.company_name
+    left join `job_market.companies` c
+    on lower(j.company) = lower(c.company_name)
     where regexp_contains(title, r'(?i).*(data|analytics).*(engineer|ingénieur).*|.*(engineer|ingénieur).*(data|données|big data|bigdata)')
-    and title not like 'Senior%'
-    and contract not like 'Graduate program'
-    and remote not like 'ponctual'
     order by rating desc, reviews desc, created_at desc;
 """
 

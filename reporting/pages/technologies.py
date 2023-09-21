@@ -5,7 +5,7 @@ import pandas as pd
 from reporting.home import client, run_query
 from reporting.helpers.queries import techno_occurences_stmt
 
-tab_data, tab_charts = st.tabs(['Data', 'Charts'])
+tab_charts, tab_data = st.tabs(['Charts', 'Data'])
 
 
 with tab_data:

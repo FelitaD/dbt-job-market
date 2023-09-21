@@ -3,4 +3,4 @@ reporting/secrets.toml
 ingestion/octoparse/data/*
 ingestion/scrapy/data/*
 config/complete-flag-399316-90b413223151.json
-reporting/.streamlit/*
+.streamlit/*
