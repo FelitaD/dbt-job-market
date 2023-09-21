@@ -47,3 +47,9 @@ sources:
     schema: job_market
     tables:
       - name: base_keywords
+
+  - name: companies
+    database: complete-flag-399316
+    schema: job_market
+    tables:
+      - name: companies
