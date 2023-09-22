@@ -20,7 +20,7 @@ def fetch_companies():
         stmt = text(
             """select distinct(company) from job_market.jobs as j
             where not exists (
-            select * from job_market.companies as c
+            select * from job_market.stg_companies as c
             where j.company = c.company_name
             );"""
         )
