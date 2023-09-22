@@ -7,31 +7,35 @@ st.set_page_config(page_title="Jobs", layout="wide")
 from reporting.home import run_query
 from reporting.helpers.queries import relevant_jobs_stmt, all_data_stmt
 from reporting.helpers.filter_dataframe import filter_dataframe
+from reporting.helpers.style_dataframe import highlight_row
 
 all_data_df = pd.DataFrame(run_query(all_data_stmt))
-ordered_df = all_data_df[all_data_df['is_relevant_score'] == 1].sort_values(by=['total_score'], ascending=False)
+ordered_df = all_data_df[all_data_df['is_relevant'] == 1].sort_values(by=['total_score'], ascending=False)
 
 st.dataframe(
-    filter_dataframe(ordered_df),
+    filter_dataframe(ordered_df).style
+    .apply(highlight_row, axis=1)
+    .format('{:.0f}', subset=['total_score', 'company_size', 'reviews_count', 'jobs_count', 'salaries_count']),
     use_container_width=True,
     column_order=(
+        # 'rating_score',
+        # 'seniority_score',
+        'total_score',
+        'created_at',
+        'url_1',
         'title',
         'company',
-        'stack',
-        'text',
-        'url_1',
-        'seniority_score',
-        'contract',
-        'created_at',
         'industry',
+        'stack',
         'remote',
         'location',
         'headquarters',
-        'is_same_glassdoor_score',
         'url',
-        'rating_score',
-        'rating',
+        'is_same_glassdoor',
+        # 'text',
+        # 'contract',
         'company_size',
+        'rating',
         'reviews_count',
         'jobs_count',
         'salaries_count',
@@ -44,12 +48,14 @@ st.dataframe(
         # 'is_relevant_score',
     ),
     column_config={
+        'total_score': st.column_config.Column(width='small', label='🏆score'),
+        # 'seniority_score': st.column_config.Column(width='small'),
+        # 'rating_score': st.column_config.Column(width='small', label='📊rating score'),
         'title': st.column_config.Column(width='medium', label='👩‍💻title'),
         'company': st.column_config.Column(width='medium', label='💼company'),
-        'stack': st.column_config.ListColumn(width='medium', label='🛠️stack'),
+        'stack': st.column_config.ListColumn(width='large', label='🛠️stack'),
         'text': st.column_config.Column(width='medium', label='📝job description'),
-        'url_1': st.column_config.LinkColumn(width='small', label='🔗url (listing)'),
-        'seniority_score': st.column_config.Column(width='small'),
+        'url_1': st.column_config.LinkColumn(width='small', label='🔗url'),
         'contract': st.column_config.Column(width='small', label='📜contract'),
         'created_at': st.column_config.DateColumn(width='small', label='📅created at'),
         'industry': st.column_config.Column(width='medium', label='🏭industry'),
@@ -57,9 +63,8 @@ st.dataframe(
         'location': st.column_config.Column(width='medium', label='🌍location'),
         'headquarters': st.column_config.Column(width='medium', label='🌍headquarters'),
         'url': st.column_config.LinkColumn(width='small', label='🔗url (glassdoor)'),
-        'is_same_glassdoor_score': st.column_config.Column(width='small', label='⚠️is same glassdoor'),
+        'is_same_glassdoor': st.column_config.Column(width='small', label='⚠️is same glassdoor'),
         'rating': st.column_config.Column(width='small', label='⭐️rating'),
-        'rating_score': st.column_config.Column(width='small', label='📊rating score'),
         'company_size': st.column_config.Column(width='small', label='👥size'),
         'reviews_count': st.column_config.Column(width='small', label='📊reviews count'),
         'jobs_count': st.column_config.Column(width='small', label='📊jobs count'),
@@ -70,7 +75,9 @@ st.dataframe(
         # 'name': st.column_config.Column(width='medium'),
         # 'id_1': st.column_config.Column(width='small'),
         # 'total_score': st.column_config.Column(width='small'),
-        # 'is_relevant_score': st.column_config.Column(width='small'),
+        # 'is_relevant': st.column_config.Column(width='small'),
     },
     height=800
 )
+
+# chart time series of scores
