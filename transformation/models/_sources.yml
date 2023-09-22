@@ -52,4 +52,4 @@ sources:
     database: complete-flag-399316
     schema: job_market
     tables:
-      - name: companies
+      - name: stg_companies
