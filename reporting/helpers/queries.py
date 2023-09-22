@@ -1,4 +1,4 @@
-all_companies_stmt = """
+companies_stmt = """
     select *
     from `job_market.companies`; 
 """
@@ -38,7 +38,7 @@ relevant_jobs_stmt = """
     on j.company = c.company_name
     join `job_market.scores` s
     using(id)
-    order by total_score desc;
+    order by total_score desc, created_at desc;
 """
 
 techno_occurences_stmt = """
