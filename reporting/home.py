@@ -1,3 +1,4 @@
+import pandas as pd
 import streamlit as st
 from google.oauth2 import service_account
 from google.cloud import bigquery
@@ -8,7 +9,7 @@ credentials = service_account.Credentials.from_service_account_info(
 )
 client = bigquery.Client(credentials=credentials)
 
-tab_welcome, tab_doc = st.tabs(['Welcome', 'Project Documentation'])
+tab_welcome, tab_doc, tab_about_me = st.tabs(['Welcome', 'Documentation', 'About me'])
 
 
 @st.cache_data(ttl=30)
@@ -19,6 +20,7 @@ def run_query(query):
     rows = [dict(row) for row in rows_raw]
     return rows
 
+## Sankey diagram
 
 with tab_welcome:
     st.write('Welcome :rocket:')
@@ -49,3 +51,8 @@ with tab_doc:
     #     width=1000,
     #     height=600
     # )
+
+# from reporting.helpers.queries import all_data_stmt
+#
+# all_data = pd.DataFrame(run_query(all_data_stmt))
+# all_data.to_csv('transformation/analyses/all_data.csv')
