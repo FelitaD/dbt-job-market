@@ -61,8 +61,11 @@ companies as (
         company_name,
         name,
         url, 
-        industry,
         rating,
+        
+        case 
+            when industry is not null then regexp_replace(industry, r'\\n', '')
+        end as industry,
 
         case
             when headquarters is not null then regexp_replace(headquarters, r'(Headquarters.near.)', '')
