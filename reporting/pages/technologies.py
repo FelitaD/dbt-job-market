@@ -1,33 +1,31 @@
 import streamlit as st
-import altair as alt
+import plotly.express as px
 import pandas as pd
 
+st.set_page_config(page_title="Technologies", layout="wide")
+
 from reporting.home import client, run_query
-from reporting.helpers.queries import techno_occurences_stmt
-
-tab_charts, tab_data = st.tabs(['Charts', 'Data'])
+from reporting.helpers.queries import technos_stmt
 
 
-with tab_data:
+technos_df = pd.DataFrame(run_query(technos_stmt))
 
-    techno_occurences = run_query(techno_occurences_stmt)
-    chart_data = st.data_editor(techno_occurences)
+# Chart
+st.subheader('Technologies occurrences in job descriptions')
+fig = px.treemap(technos_df, path=['category', 'subcategory', 'techno'], values='total',
+                 hover_data={'category': False, 'subcategory': False, 'techno': False, 'description': False},
+                 height=800, color='category', color_discrete_sequence=px.colors.qualitative.Pastel)
+st.plotly_chart(fig, use_container_width=True)
 
-with tab_charts:
-    df = pd.DataFrame({
-        'Technos': [row['techno'] for row in techno_occurences],
-        'Counts': [row['total'] for row in techno_occurences]
-    })
-    source = df[df['Counts'] > 5].sort_values(by='Counts')
-    print(source)
-
-    c = alt.Chart(source).transform_joinaggregate(
-        TotalCounts='sum(Counts)',
-    ).transform_calculate(
-        PercentOfTotal="datum.Counts / datum.TotalCounts"
-    ).mark_bar().encode(
-        alt.X('PercentOfTotal:Q').axis(format='.0%'),
-        y='Technos:N'
-    )
-
-    st.altair_chart(c, use_container_width=True)
+# Data
+st.subheader('Data')
+st.data_editor(technos_df,
+               use_container_width=True,
+               column_order=('total', 'techno', 'category', 'subcategory', 'description'),
+               column_config={
+                   'total': st.column_config.Column(width='small', label='total'),
+                   'techno': st.column_config.Column(label='techno name'),
+                   'category': st.column_config.Column(),
+                   'subcategory': st.column_config.Column(),
+                   'description': st.column_config.Column(),
+               })
