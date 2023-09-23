@@ -5,7 +5,7 @@
 -- Not found: -1
 
 with companies as (
-    select * from {{ source('companies', 'companies') }}
+    select * from {{ source('companies', 'stg_companies') }}
 ),
 
 jobs as (
@@ -18,11 +18,11 @@ score as (
         case 
             when lower(name) not like lower(company) then 0
             when lower(name) like lower(company) then 1
-            when name like 'None' then -1
-        end as is_same_glassdoor_score
+            when name is null then -1
+        end as is_same_glassdoor
     from companies c
     join jobs j
     on c.company_name = j.company
 )
 
-select id, is_same_glassdoor_score from score
+select id, is_same_glassdoor from score

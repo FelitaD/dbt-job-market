@@ -18,11 +18,14 @@ def fetch_companies():
     with engine.connect() as connection:
         # We only want companies from listings that aren't already present in the companies table
         stmt = text(
-            """select distinct(company) from job_market.jobs as j
+            """
+            select distinct(company) 
+            from job_market.jobs as j
             where not exists (
-            select * from job_market.companies as c
-            where j.company = c.company_name
-            );"""
+                select * from job_market.companies as c
+                where j.company = c.company_name
+            );
+            """
         )
         data = connection.execute(stmt).fetchall()
 

@@ -1,3 +1,5 @@
+-- Check if scores are behaving in expected way
+
 with jobs as (
     select * from {{ ref('jobs') }}
 ),
@@ -7,7 +9,7 @@ scores as (
 ),
 
 companies as (
-    select * from {{ source('companies', 'companies') }}
+    select * from {{ ref('companies') }}
 )
 
 select 

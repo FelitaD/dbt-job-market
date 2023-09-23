@@ -7,7 +7,7 @@
 -- above 80% : 3
 
 with companies as (
-    select * from {{ source('companies', 'companies') }}
+    select * from {{ ref('companies') }}
 ),
 
 jobs as (
@@ -23,7 +23,7 @@ percentiles as (
         percentile_cont(rating, 0.6) over() as percentile60,
         percentile_cont(rating, 0.8) over() as percentile80,
         percentile_cont(rating, 1) over() as max
-    from companies where rating > 0 limit 1
+    from companies limit 1
 ),
 
 score as (
