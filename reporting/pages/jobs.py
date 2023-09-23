@@ -5,15 +5,14 @@ import plotly.express as px
 st.set_page_config(page_title="Jobs", layout="wide")
 
 from reporting.home import run_query
-from reporting.helpers.queries import relevant_jobs_stmt, all_data_stmt
+from reporting.helpers.queries import all_data_stmt
 from reporting.helpers.filter_dataframe import filter_dataframe
 from reporting.helpers.style_dataframe import highlight_row
 
 all_data_df = pd.DataFrame(run_query(all_data_stmt))
-ordered_df = all_data_df[all_data_df['is_relevant'] == 1].sort_values(by=['total_score'], ascending=False)
 
 st.dataframe(
-    filter_dataframe(ordered_df).style
+    filter_dataframe(all_data_df).style
     .apply(highlight_row, axis=1)
     .format('{:.0f}', subset=['total_score', 'company_size', 'reviews_count', 'jobs_count', 'salaries_count']),
     use_container_width=True,
