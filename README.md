@@ -26,7 +26,7 @@ Schemas of the project: [Data Flow Miro board](https://miro.com/app/board/uXjVMN
 
 ### dbt
 
-![img.png](docs/data_lineage.png)
+![img.png](docs/lineage_graph.png)
 ### Looker Studio
 
 ### Streamlit
