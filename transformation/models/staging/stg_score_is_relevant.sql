@@ -15,8 +15,8 @@ relevance as (
         case 
             when regexp_contains(title, r'(?i).*(data|analytics).*(engineer|ingénieur).*|.*(engineer|ingénieur).*(data|données|big data|bigdata)') then 1
             else 0
-        end as is_relevant_score
+        end as is_relevant
     from jobs
 )
 
-select id, is_relevant_score from relevance
+select id, is_relevant from relevance

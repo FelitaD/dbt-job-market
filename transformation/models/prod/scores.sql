@@ -6,21 +6,21 @@ scores as (
     select
         jobs.id as id, 
 
-        is_relevant_score,
+        is_relevant,
         -- data/anlaytics engineer : 1
         -- non data engineer : 0
+
+        is_same_glassdoor,
+        -- name exactly the same: 1
+        -- name different: 0
+        -- not found: -1
 
         seniority_score,
         -- junior : 3
         -- data engineer : 1
         -- intern data engineer : 0
         -- senior : -1
-
-        is_same_glassdoor_score,
-        -- name exactly the same: 1
-        -- name different: 0
-        -- not found: -1
-
+        
         rating_score, 
         -- below 20% : -3
         -- between 20% and 40% : -2
@@ -30,7 +30,7 @@ scores as (
         -- between 60% and 80% : 2
         -- above 80% : 3
 
-        is_relevant_score + seniority_score + is_same_glassdoor_score + rating_score as total_score
+        seniority_score + rating_score as total_score
 
     from jobs
     join {{ref('stg_score_is_relevant')}} a on a.id = jobs.id
