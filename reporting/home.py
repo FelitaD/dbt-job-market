@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 st.set_page_config(layout='wide')
 
@@ -10,6 +11,21 @@ from reporting.dataframes.companies_df import create_companies_st_df
 from reporting.charts.scatter_companies import scatter_companies
 
 tab_board, tab_charts, tab_data = st.tabs(['Job Board', 'Charts', 'Data'])
+
+
+with st.sidebar:
+    # Logo
+    """
+    ![logo](docs/radar.svg)
+    """
+
+    # Badges
+    """
+    [![Code](https://img.shields.io/badge/Code-000000?logo=github)](https://github.com/FelitaD/job-radar-2.0)
+    """
+
+    # Job board filters
+
 
 with tab_board:
     create_job_board()
