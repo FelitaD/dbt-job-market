@@ -13,3 +13,9 @@ SNOWFLAKE_ROLE = os.getenv('SNOWFLAKE_ROLE')
 SNOWFLAKE_USER = os.getenv('SNOWFLAKE_USER')
 OCTOPARSE_USER = os.getenv('OCTOPARSE_USER')
 OCTOPARSE_PWD = os.getenv('OCTOPARSE_PWD')
+
+all_data_columns = ['company_name', 'name', 'url', 'industry', 'headquarters', 'rating',
+                    'company_size', 'reviews_count', 'jobs_count', 'salaries_count', 'id',
+                    'company', 'contract', 'created_at', 'industry_1', 'location', 'remote',
+                    'stack', 'text', 'title', 'url_1', 'id_1', 'is_relevant',
+                    'is_same_glassdoor', 'seniority_score', 'rating_score', 'total_score']
