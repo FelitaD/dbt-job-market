@@ -46,6 +46,8 @@ def create_multiselect(field):
 
 
 def filter_dataframe(fields, **kwargs):
+    df = create_unfiltered_df()
+
     bool_expr = []
     created_at_filter = kwargs.get('created_at_filter')
     industry_filter = kwargs.get('industry_filter')
@@ -55,29 +57,25 @@ def filter_dataframe(fields, **kwargs):
         start = kwargs.get(f'start_{field}')
         end = kwargs.get(f'end_{field}')
         if field in ['rating', 'reviews_count', 'company_size', 'total_score']:
-            bool_expr += [f'{field} >= {start} & {field} <= {end}']
+            bool_expr += [f'{field} >= {start} & {field} <= {end} | {field}.isnull()']
         elif field == 'created_at' and created_at_filter:
-            bool_expr += [f"{field} == {created_at_filter}"]
+            bool_expr += [f"{field} == {created_at_filter} | {field}.isnull()"]
         elif field == 'industry' and industry_filter:
-            bool_expr += [f"{field} == {industry_filter}"]
+            bool_expr += [f"{field} == {industry_filter} | {field}.isnull()"]
         elif field == 'stack' and stack_filter:
             stack_filtered_df = df[df['stack'].apply(lambda x: all(keyword in x for keyword in stack_filter))]
 
     bool_expr_concat = ' & '.join(bool_expr)
     filtered_df = df.query(bool_expr_concat)
 
-    if stack_filter:
-        print('STACK')
+    if stack_filter::qq
         stack_filtered_df_x = stack_filtered_df.explode('stack')
         filtered_df_x = filtered_df.explode('stack')
         merged_df_x = stack_filtered_df_x.merge(filtered_df_x)
 
         keys = [column for column in all_data_columns if column != 'stack']
         merged_df = merged_df_x.groupby(by=keys, dropna=False).agg(list).reset_index()
-        print('merged_df:', merged_df)
-
-        print('merged_df:', merged_df[['id', 'stack']])
         return merged_df
+
     else:
-        print('NOT STACK')
         return filtered_df
