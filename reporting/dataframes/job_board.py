@@ -1,19 +1,13 @@
 import streamlit as st
-import pandas as pd
-
-from reporting.helpers.run_query import run_query
-from reporting.helpers.queries import all_data_stmt
-from reporting.helpers.filter_dataframe import filter_dataframe
-from reporting.helpers.style_dataframe import highlight_row
 
 
-def create_job_board():
-    all_data_df = pd.DataFrame(run_query(all_data_stmt))
+def create_job_board(filtered_df):
 
     job_board = st.dataframe(
-        filter_dataframe(all_data_df).style
-        .apply(highlight_row, axis=1)
-        .format('{:.0f}', subset=['total_score', 'company_size', 'reviews_count', 'jobs_count', 'salaries_count']),
+        filtered_df.style
+        # .apply(highlight_row, axis=1)
+        .format('{:.0f}', subset=['total_score', 'company_size', 'reviews_count', 'jobs_count', 'salaries_count'])
+        .format('{:.1f}', subset=['rating']),
         use_container_width=True,
         column_order=(
             # 'rating_score',
@@ -42,7 +36,6 @@ def create_job_board():
             # 'company_name',
             # 'name',
             # 'id_1',
-            # 'total_score',
             # 'is_relevant_score',
         ),
         column_config={
@@ -61,7 +54,7 @@ def create_job_board():
             'location': st.column_config.Column(width='medium', label='🌍location'),
             'headquarters': st.column_config.Column(width='medium', label='🌍headquarters'),
             'url': st.column_config.LinkColumn(width='small', label='🔗url (glassdoor)'),
-            'is_same_glassdoor': st.column_config.Column(width='small', label='⚠️is same glassdoor'),
+            'is_same_glassdoor': st.column_config.Column(width='small', label='is same glassdoor'),
             'rating': st.column_config.Column(width='small', label='⭐️rating'),
             'company_size': st.column_config.Column(width='small', label='👥size'),
             'reviews_count': st.column_config.Column(width='small', label='📊reviews count'),
@@ -72,9 +65,8 @@ def create_job_board():
             # 'company_name': st.column_config.Column(width='medium'),
             # 'name': st.column_config.Column(width='medium'),
             # 'id_1': st.column_config.Column(width='small'),
-            # 'total_score': st.column_config.Column(width='small'),
             # 'is_relevant': st.column_config.Column(width='small'),
         },
-        height=800
+        height=600
     )
     return job_board
