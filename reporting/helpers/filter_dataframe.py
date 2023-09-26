@@ -119,35 +119,44 @@ class DataframeFilter:
             # Add boolean expression for each numeric and categorical fields
             if field in ['rating', 'reviews_count', 'company_size', 'total_score']:
                 bool_expr += [f'( ({field} >= {start} & {field} <= {end}) | {field}.isnull() )']
-                print(bool_expr)
             elif created_at_filter and field == 'created_at':
                 bool_expr += [f"( {field} == {created_at_filter} | {field}.isnull() )"]
             elif industry_filter and field == 'industry':
                 bool_expr += [f"( {field} == {industry_filter} | {field}.isnull() )"]
 
-            # Create a new dataframe since stack (array values) can't be filtered with a boolean expression
-            elif stack_filter and field == 'stack':
-                print('stack_filter', stack_filter)
-                stack_filtered_df = self.df[self.df['stack'].apply(
-                    lambda x: all(keyword in x for keyword in stack_filter)
-                )]
-
         # Create a string containing all boolean expressions
         bool_expr_concat = ' & '.join(bool_expr)
-        print(bool_expr_concat)
 
         # Create a filtered dataframe
         filtered_df = self.df.query(bool_expr_concat)
-        print(filtered_df[['rating', 'reviews_count', 'company_size', 'total_score']])
 
-        if not stack_filter:
-            return filtered_df
+        if stack_filter:
+            # Create a new dataframe since stack (array values) can't be filtered with a boolean expression
+            stack_filtered_df = self.df[self.df['stack'].apply(
+                lambda x: all(keyword in x for keyword in stack_filter)
+            )]
+            return self.merge_stack_df(filtered_df, stack_filtered_df)
         else:
-            stack_filtered_df_x = stack_filtered_df.explode('stack')
-            filtered_df_x = filtered_df.explode('stack')
+            return filtered_df
 
-            merged_df_x = stack_filtered_df_x.merge(filtered_df_x)
+    @staticmethod
+    def merge_stack_df(filtered_df: DataFrame, stack_filtered_df: DataFrame) -> DataFrame:
+        """Merges two dataframes where one column contains type list.
 
-            keys = [column for column in all_data_columns if column != 'stack']
-            merged_df = merged_df_x.groupby(by=keys, dropna=False).agg(list).reset_index()
-            return merged_df
+        Args:
+            filtered_df: A filtered dataframe.
+            stack_filtered_df: Another filtered dataframe.
+
+        Returns:
+            A dataframe.
+        """
+        # Explode the list column with one value per row
+        stack_filtered_df_x = stack_filtered_df.explode('stack')
+        filtered_df_x = filtered_df.explode('stack')
+        # Merge the 2 dataframes
+        merged_df_x = stack_filtered_df_x.merge(filtered_df_x)
+        # Perform an aggregation that take the stack column back into a list
+        keys = [column for column in all_data_columns if column != 'stack']
+        merged_df = merged_df_x.groupby(by=keys, dropna=False).agg(list).reset_index()
+
+        return merged_df
