@@ -1,4 +1,10 @@
-import pandas as pd
+"""Produces a treemap of technologies using plotly.
+
+Represents technologies frequency where each technology
+can appear once at most in each job posting.
+The categories and subcategories are extracted from
+the MAD 2023.
+"""
 import plotly.express as px
 
 from reporting.dataframes.technos_df import technos_df

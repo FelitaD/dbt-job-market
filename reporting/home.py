@@ -1,3 +1,9 @@
+"""This module is the main Streamlit script.
+
+Typical usage:
+    ``streamlit run reporting/home.py``
+"""
+
 import streamlit as st
 import numpy as np
 
@@ -26,7 +32,6 @@ with st.sidebar:
         # Slider widgets
         start_rating, end_rating = df_filter.create_slider('rating')
         start_reviews_count, end_reviews_count = df_filter.create_slider('reviews_count')
-        print(start_reviews_count, end_reviews_count)
         start_company_size, end_company_size = df_filter.create_slider('company_size')
         start_total_score, end_total_score = df_filter.create_slider('total_score')
         # Multiselect widgets

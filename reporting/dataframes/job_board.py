@@ -1,11 +1,25 @@
+"""Produces the job board dataframe in Streamlit.
+
+Not all columns are shown in the UI.
+They can be shown if uncommented, as well as an
+optional row highlighting.
+"""
 import streamlit as st
+from pandas import DataFrame
 
 
-def create_job_board(filtered_df):
+def create_job_board(df: DataFrame) -> st.dataframe:
+    """Creates the job board dataframe in the UI.
 
-    job_board = st.dataframe(
-        filtered_df.style
-        # .apply(highlight_row, axis=1)
+    Args:
+        df: A filtered or unfiltered dataframe.
+
+    Returns:
+        An instance of st.data_editor.
+    """
+    return st.dataframe(
+        df.style
+        # .apply(highlight_total_score, axis=1)
         .format('{:.0f}', subset=['total_score', 'company_size', 'reviews_count', 'jobs_count', 'salaries_count'])
         .format('{:.1f}', subset=['rating']),
         use_container_width=True,
@@ -69,4 +83,4 @@ def create_job_board(filtered_df):
         },
         height=600
     )
-    return job_board
+

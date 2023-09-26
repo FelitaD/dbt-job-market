@@ -1,3 +1,10 @@
+"""Produces a sankey diagram using Plotly and Pandas.
+
+The purpose is to give a visual representation of how
+many rows (i.e. job postings) remain at each stages
+of the transformation in BigQuery.
+"""
+
 import pandas as pd
 import plotly.graph_objects as go
 
@@ -5,8 +12,10 @@ from reporting.helpers.run_query import run_query
 from reporting.helpers.queries import sankey_stmt
 
 
+# Create a copy of a Bigquery table as a Dataframe
 sankey_df = pd.DataFrame(run_query(sankey_stmt))
 
+# Create a dictionary that help identifying nodes
 data = {
     'raw': {
         'pos': sankey_df.jobs,
@@ -24,6 +33,7 @@ data = {
     }
 }
 
+# Create the figure with plotly Sankey package
 sankey_fig = go.Figure(data=[go.Sankey(
     arrangement='snap',
     node=dict(

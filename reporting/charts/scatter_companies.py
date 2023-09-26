@@ -1,3 +1,11 @@
+"""Produces a scatter plot using Plotly.
+
+Represent the distribution of companies' ratings on Glassdoor
+compared to the number of reviews.
+The graph also adds the percentiles as box plots on the margins.
+The size of a company is represented by the size of the marker.
+"""
+
 import plotly.express as px
 
 from reporting.dataframes.companies_df import companies_df

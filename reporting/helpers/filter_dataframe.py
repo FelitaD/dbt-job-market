@@ -1,3 +1,7 @@
+"""This module contains the DataframeFilter class definition.
+
+Main usages are in the `home.py` module.
+"""
 import pandas as pd
 import streamlit as st
 import ast
@@ -7,9 +11,8 @@ from typing import List
 from pandas import DataFrame
 from pandas.api.types import is_list_like
 
-from config.definitions import all_data_columns
+from config.definitions import all_data_columns, all_data_stmt
 from reporting.helpers.run_query import run_query
-from reporting.helpers.queries import all_data_stmt
 
 
 class DataframeFilter:
@@ -22,6 +25,10 @@ class DataframeFilter:
         df: The unfiltered dataframe used as base.
     """
     def __init__(self):
+        """Initialises the instance.
+
+        Creates an unfiltered dataframe on initialisation.
+        """
         self.df = self.create_unfiltered_df()
 
     @staticmethod
@@ -123,6 +130,8 @@ class DataframeFilter:
                 bool_expr += [f"( {field} == {created_at_filter} | {field}.isnull() )"]
             elif industry_filter and field == 'industry':
                 bool_expr += [f"( {field} == {industry_filter} | {field}.isnull() )"]
+            elif remote_filter and field == 'remote':
+                bool_expr += [f"( {field} == {remote_filter} | {field}.isnull() )"]
 
         # Create a string containing all boolean expressions
         bool_expr_concat = ' & '.join(bool_expr)
