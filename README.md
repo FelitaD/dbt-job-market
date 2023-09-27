@@ -26,8 +26,28 @@ Refactored version of [Job Radar 1.0](https://github.com/FelitaD/job-radar-1.0) 
 
 ![pipeline](docs/job-radar-2.svg)
 
+## Running locally
 
+```bash
+streamlit run reporting/home.py
+```
 
+## Testing
+
+First, install pytest and required plugins via:
+
+```bash
+pip install pytest
+pip install -r requirements.txt
+```
+
+To run all tests: 
+
+```bash
+pytest ./tests
+```
+
+_Note: Only streamlit app is tested at the moment, the rest is work in progress._ 
 
 
 
