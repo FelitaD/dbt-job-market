@@ -10,3 +10,4 @@ sqlalchemy-bigquery
 google-cloud-bigquery
 plotly
 docstr-coverage
+pytest
