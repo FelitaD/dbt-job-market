@@ -9,7 +9,7 @@ import pandas as pd
 import plotly.graph_objects as go
 
 from reporting.helpers.run_query import run_query
-from reporting.helpers.queries import sankey_stmt
+from config.definitions import sankey_stmt
 
 
 # Create a copy of a Bigquery table as a Dataframe
