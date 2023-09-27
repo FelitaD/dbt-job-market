@@ -20,12 +20,7 @@ all_data_columns = ['company_name', 'name', 'url', 'industry', 'headquarters', '
                     'stack', 'text', 'title', 'url_1', 'id_1', 'is_relevant',
                     'is_same_glassdoor', 'seniority_score', 'rating_score', 'total_score']
 
-# Google SQL queries
-
-companies_stmt = """
-    select *
-    from `job_market.companies`; 
-"""
+# GoogleSQL queries
 
 all_data_stmt = """
     select * 
@@ -48,6 +43,21 @@ on t.name = j.techno
 order by total desc;
 """
 
+companies_stmt = """
+    select *
+    from `job_market.companies`; 
+"""
+
 sankey_stmt = """
 select * from `job_market.sankey_data`;
+"""
+
+all_jobs_stmt = """
+    select * 
+    from `job_market.companies` c
+    join `job_market.jobs` j 
+    on c.company_name = j.company
+    join `job_market.scores` s
+    on j.id = s.id
+    order by total_score desc, created_at desc;
 """
