@@ -1,37 +1,35 @@
-# Job Radar 2.0
+<h1 align="center">
+    Job Radar 2.0
+</h1>
 
-The objective of the project is the same as in [version 1](https://github.com/FelitaD/job-radar-1.0): 
-analyse the data engineering job market to orient my job search.
+<p align="center">
+    <strong>🎯&nbsp; A web app to search and compare data engineer jobs 👷‍♀️</strong>
+</p>
 
-The main difference is in technologies used.
+<p align="center">
+    <a href="https://job-radar.streamlit.app/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg"></a>
+</p>
 
-# Overview
-Schemas of the project: [Data Flow Miro board](https://miro.com/app/board/uXjVMNceW10=/?share_link_id=441240647617)
 
-## Data lifecycle
-![img.png](docs/data_lifecycle.png)
+Ingest, process and visualize job listings from 2 websites ([Welcome To The Jungle](https://www.welcometothejungle.com/) 
+and [Linkedin](https://www.linkedin.com/jobs/)). Job Radar 2.0 offers more possibilities than these websites to filter jobs: 
+technologies asked for the role, company statistics from Glassdoor and comparison to other jobs.  
+Refactored version of [Job Radar 1.0](https://github.com/FelitaD/job-radar-1.0) with desire to try new technologies:
+- _Orchestration_: Airflow &rarr; Prefect
+- _Storage_: PostgreSQL &rarr; Snowflake / BigQuery
+- _Processing_: Python &rarr; dbt
+- _Visualization_: REST API &rarr; Looker Studio / Streamlit
 
-## Workflow
-![img_1.png](docs/worfklow.png)
+****
 
-## Components
+## Pipeline overview
 
-### Scrapy crawler
+![pipeline](docs/job-radar-2.svg)
 
-### Octoparse
 
-### Postgres
 
-### Snowflake
 
-### dbt
 
-![img.png](docs/lineage_graph.png)
-### Looker Studio
 
-### Streamlit
 
-### Prefect
-
-### Data Modeling
 
