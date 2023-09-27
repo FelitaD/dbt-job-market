@@ -1,114 +1,91 @@
-import pandas as pd
+"""This module is the main Streamlit script.
+
+Typical usage:
+    ``streamlit run reporting/home.py``
+"""
+
 import streamlit as st
-import plotly.graph_objects as go
-from google.oauth2 import service_account
-from google.cloud import bigquery
+import numpy as np
 
-from helpers.queries import sankey_stmt
+st.set_page_config(layout='wide')
 
-credentials = service_account.Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"]
-)
-client = bigquery.Client(credentials=credentials)
+from reporting.charts.sankey import sankey_fig
+from reporting.charts.treemap_technos import treemap_technos
+from reporting.dataframes.technos_df import create_technos_st_df
+from reporting.helpers.filter_dataframe import DataframeFilter
+from reporting.dataframes.job_board import create_job_board
+from reporting.dataframes.all_jobs_df import all_jobs_df
+from reporting.dataframes.companies_df import create_companies_st_df
+from reporting.charts.scatter_companies import scatter_companies
 
-tab_welcome, tab_doc, tab_about_me = st.tabs(['Welcome', 'Documentation', 'About me'])
+tab_job_market, tab_charts, tab_data = st.tabs(['Data Engineering Job Board', 'Charts', 'Data'])
 
+# Initialize dataframe filterer
+df_filter = DataframeFilter()
 
-@st.cache_data(ttl=600)
-def run_query(query):
-    query_job = client.query(query)
-    rows_raw = query_job.result()
-    # Convert to list of dicts. Required for st.cache_data to hash the return value.
-    rows = [dict(row) for row in rows_raw]
-    return rows
+with st.sidebar:
+    st.markdown("<h1 style='text-align: center'>Job Radar</h1>", unsafe_allow_html=True)
+    st.markdown("[![Code](https://img.shields.io/badge/Code-000000?logo=github)]"
+                "(https://github.com/FelitaD/job-radar-2.0)")
+    add_filters = st.checkbox('Add filters')
 
+    if add_filters:
+        # Slider widgets
+        start_rating, end_rating = df_filter.create_slider('rating')
+        start_reviews_count, end_reviews_count = df_filter.create_slider('reviews_count')
+        start_company_size, end_company_size = df_filter.create_slider('company_size')
+        start_total_score, end_total_score = df_filter.create_slider('total_score')
+        # Multiselect widgets
+        created_at_filter = df_filter.create_multiselect('created_at')
+        industry_filter = df_filter.create_multiselect('industry')
+        stack_filter = df_filter.create_multiselect('stack')
+        remote_filter = df_filter.create_multiselect('remote')
 
-## Sankey diagram
+        # Create a filtered dataframe using widget default / user inputs
+        filtered_df = df_filter.filter_dataframe(
+            fields=['rating', 'reviews_count', 'company_size', 'total_score',
+                    'created_at', 'industry', 'stack', 'remote'],
+            start_rating=start_rating,
+            end_rating=end_rating,
+            start_reviews_count=start_reviews_count,
+            end_reviews_count=end_reviews_count,
+            start_company_size=start_company_size,
+            end_company_size=end_company_size,
+            start_total_score=start_total_score,
+            end_total_score=end_total_score,
+            created_at_filter=created_at_filter,
+            industry_filter=industry_filter,
+            stack_filter=stack_filter,
+            remote_filter=remote_filter)
 
-with tab_welcome:
-    sankey_df = pd.DataFrame(run_query(sankey_stmt))
-    data = {
-        'raw': {
-            'pos': sankey_df.jobs,
-            'neg': sankey_df.raw - sankey_df.jobs
-        },
-        'jobs': {
-            'pos': sankey_df.relevant,
-            'neg': sankey_df.jobs - sankey_df.relevant
-        },
-        'relevant': {
-            'senior': sankey_df.senior,
-            'junior': sankey_df.junior,
-            'graduate': sankey_df.graduate,
-            'unspecified': sankey_df.unspecified
-        }
-    }
-    fig = go.Figure(data=[go.Sankey(
-        arrangement='snap',
-        node=dict(
-            label=[
-                'raw',  # 0
-                'jobs',  # 1
-                '',  # 2
-                'relevant',  # 3
-                '',  # 4
-                'senior',  # 5
-                'junior',  # 6
-                'graduate',  # 7
-                'unspecified',  # 8
-            ],
-            color='blue',
-            x=[0, .25, .25, .5, .5, 1, 1, 1, 1],
-            y=[.1, .1, .1, .1, .1, .4, .6, .5, .3]
+with tab_job_market:
 
-        ),
-        link=dict(
-            source=[0, 0, 1, 1, 3, 3, 3, 3],
-            target=[1, 2, 3, 4, 5, 6, 7, 8],
-            value=[
-                data['raw']['pos'][0],
-                data['raw']['neg'][0],
-                data['jobs']['pos'][0],
-                data['jobs']['neg'][0],
-                data['relevant']['senior'][0],
-                data['relevant']['junior'][0],
-                data['relevant']['graduate'][0],
-                data['relevant']['unspecified'][0],
-            ],
-            color=['red', 'gray', 'red', 'gray', 'red', 'red', 'red', 'red']
-        ),
+    if add_filters:
+        st.write(f'Results contain {len(filtered_df)} rows')
+        create_job_board(filtered_df)  # Filtered dataframe
+    else:
+        st.write(f'Results contain {len(df_filter.df)} rows')
+        create_job_board(df_filter.df)  # Unfiltered dataframe
 
-    )])
-    st.plotly_chart(fig)
+with tab_charts:
 
-with tab_doc:
-    st.markdown(
-        """
-        # Job Radar 2.0
-    
-        Version 2 of [Job Radar 1.0](https://github.com/FelitaD/job-radar-1.0) by modifying technologies used.
-        
-        Focus is emphasized on analytics engineering using [Snowflake](https://www.snowflake.com/en/) coupled with [dbt](https://www.getdbt.com/) 
-        and visualisations in Looker Studio and Streamlit. Orchestration with Prefect. Data modeling with Data Vault.
-    
-        """
-    )
-    # st.components.v1.html(
-    #     """
-    #     <iframe width="968" height="632" src="https://miro.com/app/live-embed/uXjVMNceW10=/?moveToViewport=-492,5651,4500,1505&embedId=45852963792" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
-    #     """,
-    #     width=1000,
-    #     height=600
-    # )
-    # st.components.v1.html(
-    #     """
-    #     <iframe width="560" height="315" src='https://dbdiagram.io/embed/65083b9d02bd1c4a5ec730d7'> </iframe>
-    #     """,
-    #     width=1000,
-    #     height=600
-    # )
+    st.subheader('Number of job postings during pipeline transformations')
+    st.plotly_chart(sankey_fig)
 
-# from reporting.helpers.queries import all_data_stmt
-#
-# all_data = pd.DataFrame(run_query(all_data_stmt))
-# all_data.to_csv('transformation/analyses/all_data.csv')
+    st.subheader('Occurence of technologies in job descriptions')
+    st.plotly_chart(treemap_technos)
+
+    st.subheader("Companies' Glassdoor rating, per number of reviews and company size")
+    st.plotly_chart(scatter_companies)
+
+with tab_data:
+
+    st.subheader('All jobs (not relevant included)')
+    st.dataframe(all_jobs_df)
+
+    st.subheader("Technologies")
+    create_technos_st_df()
+
+    st.subheader("Companies")
+    create_companies_st_df()
+

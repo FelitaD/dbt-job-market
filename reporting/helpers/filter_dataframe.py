@@ -1,125 +1,171 @@
-import streamlit as st
+"""This module contains the DataframeFilter class definition.
+
+Main usages are in the `home.py` module.
+"""
 import pandas as pd
-import re
+import streamlit as st
+import ast
+import datetime
 
-from pandas.api.types import (
-    is_categorical_dtype,
-    is_datetime64_any_dtype,
-    is_numeric_dtype,
-    is_object_dtype,
-)
+from typing import List
+from pandas import DataFrame
+from pandas.api.types import is_list_like
+
+from config.definitions import all_data_columns, all_data_stmt
+from reporting.helpers.run_query import run_query
 
 
-def filter_dataframe(df: pd.DataFrame, key=None) -> pd.DataFrame:
+class DataframeFilter:
+    """Creates all components needed to filter dataframe displayed in Streamlit.
+
+    Longer class information...
+    Longer class information...
+
+    Attributes:
+        df: The unfiltered dataframe used as base.
     """
-    Adds a UI on top of a dataframe to let viewers filter columns
+    def __init__(self):
+        """Initialises the instance.
 
-    Args:
-        df (pd.DataFrame): Original dataframe
-        key: the unique identifier for the checkbox
+        Creates an unfiltered dataframe on initialisation.
+        """
+        self.df = self.create_unfiltered_df()
 
-    Returns:
-        pd.DataFrame: Filtered dataframe
-    """
-    modify = st.checkbox("Add filters", key=key)
+    @staticmethod
+    def create_unfiltered_df() -> DataFrame:
+        """Creates a dataframe used by all filtering operations.
 
-    if not modify:
+        The function requests the database indirectly via another function
+        `run_query` that caches results for a given amount of time.
+        Columns are then converted to needed data types for transformation.
+
+        Returns:
+            A Pandas DataFrame containing 3 tables joined together:
+            jobs, companies and scores.
+        """
+        df = pd.DataFrame(run_query(all_data_stmt))
+        df['rating'] = df['rating'].astype(float)
+
+        if not is_list_like(df['stack']):
+            df['stack'] = df['stack'].apply(lambda x: ast.literal_eval(x))
+
         return df
 
-    modification_container = st.container()
-    with modification_container:
-        to_filter_columns = st.multiselect("Filter dataframe on", df.columns)
+    def create_slider(self, field: str) -> List:
+        """Creates a Streamlit widget `select_slider`.
 
-    for column in to_filter_columns:
-        left, right = st.columns((1, 20))
-        left.write("↳")
+        The slider has 2 selectors that can be moved in the UI to change
+        minimum and maximum value of a given field.
 
-        if is_numeric_dtype(df[column]):
-            _min = float(df[column].min())
-            _max = float(df[column].max())
-            step = 0.1
+        Args:
+            field: The name of the column.
 
-        if is_categorical_dtype(df[column]) or df[column].nunique() < 80:
-            user_cat_input = right.multiselect(
-                f"Values for {column}",
-                df[column].unique(),
-                default=list(df[column].unique()),
-            )
-            df = df[df[column].isin(user_cat_input)]
+        Returns:
+            A list of 2 numeric values. By default, the min and max value
+            of the numeric column.
+        """
+        options = self.df[self.df[field].notnull()][field].sort_values()
+        _min = options.min()
+        _max = options.max()
+        field_label = field.replace('_', ' ').capitalize()
 
-        elif is_numeric_dtype(df[column]):
-            _min = float(df[column].min())
-            _max = float(df[column].max())
-            step = (_max - _min) / 100
+        return st.select_slider(
+            label=field_label,
+            options=options,
+            value=(_min, _max),
+            key=field
+        )
 
-            user_num_input = right.slider(
-                f"Values for {column}",
-                min_value=_min,
-                max_value=_max,
-                value=(_min, _max),
-                step=step,
-            )
-            df = df[df[column].between(*user_num_input)]
+    def create_multiselect(self, field: str) -> List:
+        """Creates a Streamlit widget `multiselect`.
 
-        elif df[column].name == 'title':
-            user_text_input = right.text_input(
-                f"Substring or regex in {column}",
-            )
-            if user_text_input:
-                df = df[df[column].astype(str).str.contains(user_text_input,  regex=True, na=False)]
+        The multiselect allows to choose multiple values for a given field.
 
-        elif df[column].name == 'company':
-            user_cat_input = right.multiselect(
-                f"Values for {column}",
-                df[column].sort_values().unique(),
-            )
-            df = df[df[column].isin(user_cat_input)]
+        Args:
+            field: The name of the column.
 
-        elif df[column].name == 'stack':
-            user_cat_input = right.multiselect(
-                f"Values for {column}",
-                df[column].sort_values().unique(),
-            )
-            df = df[df[column].isin(user_cat_input)]
+        Returns:
+            A list of values of the column's data type. Empty by default.
+        """
+        if field == 'stack':  # Which value is an array
+            options = self.df['stack'].explode().sort_values().unique()
+        else:
+            options = self.df[self.df[field].notnull()][field].sort_values(ascending=False).unique()
 
-        # elif is_datetime64_any_dtype(df[column]):
-        #     user_date_input = right.date_input(
-        #         f"Values for {column}",
-        #         value=(
-        #             df[column].min(),
-        #             df[column].max(),
-        #         ),
-        #     )
-        #     if len(user_date_input) == 2:
-        #         user_date_input = tuple(map(pd.to_datetime, user_date_input))
-        #         start_date, end_date = user_date_input
-        #         df = df.loc[df[column].between(start_date, end_date)]
-        #
-        #     else:
-        #         user_text_input = right.text_input(
-        #             f"Substring or regex in {column}",
-        #         )
-        #         if user_text_input:
-        #             df = df[df[column].astype(str).str.contains(user_text_input)]
+        field_label = field.replace('_', ' ').capitalize()
 
-        elif is_datetime64_any_dtype(df[column]):
-            user_date_input = right.date_input(
-                f"Values for {column}",
-                value=(
-                    df[column].min(),
-                    df[column].max(),
-                ),
-            )
-            if len(user_date_input) == 2:
-                user_date_input = tuple(map(pd.to_datetime, user_date_input))
-                start_date, end_date = user_date_input
-                df = df.loc[df[column].between(start_date, end_date)]
+        return st.multiselect(
+            label=field_label,
+            options=options,
+        )
 
-            else:
-                user_text_input = right.text_input(
-                    f"Substring or regex in {column}",
-                )
-                if user_text_input:
-                    df = df[df[column].astype(str).str.contains(user_text_input)]
+    def filter_dataframe(self, fields, **kwargs):
+        """Filters the instance's base dataframe using widget default / user inputs.
 
-        return df
+        It creates a new filtered dataframe with boolean expressions of each field.
+        If `stack_filter` is not empty, creates another dataframe that is merged
+        to the previous one.
+
+        Returns:
+            A filtered dataframe.
+        """
+        # Initialize the boolean expression used as filter
+        bool_expr = []
+
+        # Get values of multiselect widgets (categorical fields)
+        created_at_filter = kwargs.get('created_at_filter')
+        industry_filter = kwargs.get('industry_filter')
+        stack_filter = kwargs.get('stack_filter')
+        remote_filter = kwargs.get('remote_filter')
+
+        for field in fields:
+            # Get start and end values of slider widgets (numeric fields)
+            start = kwargs.get(f'start_{field}')
+            end = kwargs.get(f'end_{field}')
+
+            # Add boolean expression for each numeric and categorical fields
+            if field in ['rating', 'reviews_count', 'company_size', 'total_score']:
+                bool_expr += [f'( ({field} >= {start} & {field} <= {end}) | {field}.isnull() )']
+            elif created_at_filter and field == 'created_at':
+                bool_expr += [f"( {field} == {created_at_filter} | {field}.isnull() )"]
+            elif industry_filter and field == 'industry':
+                bool_expr += [f"( {field} == {industry_filter} | {field}.isnull() )"]
+            elif remote_filter and field == 'remote':
+                bool_expr += [f"( {field} == {remote_filter} | {field}.isnull() )"]
+
+        # Create a string containing all boolean expressions
+        bool_expr_concat = ' & '.join(bool_expr)
+
+        # Create a filtered dataframe
+        filtered_df = self.df.query(bool_expr_concat)
+
+        if stack_filter:
+            # Create a new dataframe since stack (array values) can't be filtered with a boolean expression
+            stack_filtered_df = self.df[self.df['stack'].apply(
+                lambda x: all(keyword in x for keyword in stack_filter)
+            )]
+            return self.merge_stack_df(filtered_df, stack_filtered_df)
+        else:
+            return filtered_df
+
+    @staticmethod
+    def merge_stack_df(filtered_df: DataFrame, stack_filtered_df: DataFrame) -> DataFrame:
+        """Merges two dataframes where one column contains type list.
+
+        Args:
+            filtered_df: A filtered dataframe.
+            stack_filtered_df: Another filtered dataframe.
+
+        Returns:
+            A dataframe.
+        """
+        # Explode the list column with one value per row
+        stack_filtered_df_x = stack_filtered_df.explode('stack')
+        filtered_df_x = filtered_df.explode('stack')
+        # Merge the 2 dataframes
+        merged_df_x = stack_filtered_df_x.merge(filtered_df_x)
+        # Perform an aggregation that take the stack column back into a list
+        keys = [column for column in all_data_columns if column != 'stack']
+        merged_df = merged_df_x.groupby(by=keys, dropna=False).agg(list).reset_index()
+
+        return merged_df

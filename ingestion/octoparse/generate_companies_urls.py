@@ -9,6 +9,9 @@ from config.definitions import PROJECT_PATH
 
 
 def fetch_companies():
+    """
+
+    """
     custom_bq_client = bigquery.Client()
 
     engine = create_engine(
@@ -41,7 +44,7 @@ def generate_urls(companies):
 
 def save_glassdoor_urls(urls):
     now = datetime.now().strftime('%Y-%m-%d')
-    path = PROJECT_PATH / 'ingestion' / 'octoparse' / 'data' / 'glassdoor' / f'glassdoor_urls_{now}.txt'
+    path = PROJECT_PATH / 'ingestion' / 'octoparse' / 'data' / 'companies' / f'glassdoor_urls_{now}.txt'
     file = open(path, 'w+')
     for url in urls:
         file.write(url + "\n")
@@ -49,7 +52,7 @@ def save_glassdoor_urls(urls):
 
 def save_company_names(companies):
     now = datetime.now().strftime('%Y-%m-%d')
-    path = PROJECT_PATH / 'ingestion' / 'octoparse' / 'data' / 'glassdoor' / f'company_names_{now}.csv'
+    path = PROJECT_PATH / 'ingestion' / 'octoparse' / 'data' / 'companies' / f'company_names_{now}.csv'
     companies_df = pd.DataFrame({'companies': companies})
     companies_df.to_csv(path, index=False)
 

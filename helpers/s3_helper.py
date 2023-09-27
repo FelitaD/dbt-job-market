@@ -1,3 +1,8 @@
+"""This module contains a helper for the crawling process.
+
+
+"""
+
 import re
 import ast
 import boto3
@@ -10,15 +15,21 @@ from config.definitions import PROJECT_PATH
 
 class S3Helper:
     """
-    Uploads file to S3 containing new links after comparing with latest file.
+
     """
 
     def __init__(self):
+        """
+
+        """
         self.today = datetime.now().strftime('%d-%m-%y')
         self.today_filename = self.get_filename_today()
         self.today_filepath = self.get_today_filepath()
 
     def upload_new_links(self):
+        """
+
+        """
         # Download links from latest file on S3
         latest_links = self.extract_links_from_s3('latest')
 
@@ -40,6 +51,9 @@ class S3Helper:
 
     @staticmethod
     def extract_constant_url(urls):
+        """
+
+        """
         matches = [re.search(r'.*(?=\?q=)', url) for url in urls]
         new_urls = [match.group(0) for match in matches if match is not None]
         if len(new_urls) > 0:
@@ -47,6 +61,9 @@ class S3Helper:
         return set(urls)
 
     def extract_links_from_s3(self, date='today'):
+        """
+
+        """
         s3 = boto3.resource('s3')
         bucket_name = "crawler-job-links"
         if date == 'today':
@@ -59,6 +76,9 @@ class S3Helper:
 
     @staticmethod
     def get_latest_modified(s3, bucket_name):
+        """
+
+        """
         bucket = s3.Bucket(bucket_name)
         latest_file = None
         last_modified_date = datetime(2022, 9, 1).replace(tzinfo=None)
@@ -71,16 +91,29 @@ class S3Helper:
         return latest_file.key
 
     def extract_links_from_file(self, filepath):
+        """
+
+        """
         with open(filepath, 'r') as f:
             links = f.read()
         return ast.literal_eval(links)
 
     def upload_to_s3(self):
+        """
+
+        """
         s3 = boto3.resource('s3')
         s3.Bucket("crawler-job-links").upload_file(self.today_filepath, self.today_filename)
+
     def get_filename_today(self):
+        """
+
+        """
         return f'wttj_links_{self.today}.txt'
 
     def get_today_filepath(self):
+        """
+
+        """
         return PROJECT_PATH / 'ingestion' / 'scrapy' / 'data' / self.today_filename
 
