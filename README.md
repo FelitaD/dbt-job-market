@@ -20,22 +20,19 @@ Refactored version of [Job Radar 1.0](https://github.com/FelitaD/job-radar-1.0) 
 - _Processing_: Python &rarr; dbt
 - _Visualization_: REST API &rarr; Looker Studio / Streamlit
 
-<br>
-
----
-
-<br>
+****
 
 ## Pipeline overview
 
 <p align="center">
     <img src="docs/job-radar-2.svg" width=600>
 </p>
+  
 
 ## Running locally
 
 ```bash
-streamlit run reporting/home.py
+streamlit run home.py
 ```
 
 ## Testing
@@ -55,7 +52,19 @@ pytest ./tests
 
 _Note: Only streamlit app is tested at the moment, the rest is work in progress._ 
 
+## TODO
 
-
-
-
+- [ ] Add notes in Streamlit
+- [ ] Improve charts layout
+- [ ] Complete hire me Streamlit tab
+- [ ] Complete all tests
+- [ ] Add test coverage badge 
+- [ ] Complete all docstrings
+- [ ] Add docstring coverage badge 
+- [ ] Add missing documentation in dbt
+- [ ] Add prefect dbt orchestration
+- [ ] Add black check with 
+- [ ] Improve CI/CD
+- [ ] Improve dbt best practices
+- [ ] Improve prefect best practices
+- [ ] Add CDC
