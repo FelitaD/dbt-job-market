@@ -1,7 +1,7 @@
 """This module is the main Streamlit script.
 
 Typical usage:
-    ``streamlit run reporting/home.py``
+    `streamlit run home.py`
 """
 
 import streamlit as st
@@ -18,15 +18,18 @@ from reporting.dataframes.all_jobs_df import all_jobs_df
 from reporting.dataframes.companies_df import create_companies_st_df
 from reporting.charts.scatter_companies import scatter_companies
 
-tab_job_market, tab_charts, tab_data = st.tabs(['Data Engineering Job Board', 'Charts', 'Data'])
+tab_job_board, tab_charts, tab_data, tab_hire_me = st.tabs(['🎯 Job Board', '📊 Charts', '🧮 Data', '👩🏻‍💻 Hire Me'])
 
 # Initialize dataframe filterer
 df_filter = DataframeFilter()
 
 with st.sidebar:
     st.markdown("<h1 style='text-align: center'>Job Radar</h1>", unsafe_allow_html=True)
-    st.markdown("[![Code](https://img.shields.io/badge/Code-000000?logo=github)]"
-                "(https://github.com/FelitaD/job-radar-2.0)")
+    st.markdown("<p style='font-size:90%; text-align: center'>Search and compare data engineer positions</p>",
+                unsafe_allow_html=True)
+    st.markdown("<p align='center'><a href='https://github.com/FelitaD/job-radar-2.0'><img "
+                "src='https://img.shields.io/badge/View_on_Github-000000?logo=github'></a></p>", unsafe_allow_html=True)
+
     add_filters = st.checkbox('Add filters')
 
     if add_filters:
@@ -58,13 +61,13 @@ with st.sidebar:
             stack_filter=stack_filter,
             remote_filter=remote_filter)
 
-with tab_job_market:
+with tab_job_board:
 
     if add_filters:
-        st.write(f'Results contain {len(filtered_df)} rows')
+        st.write(f'{len(filtered_df)} jobs')
         create_job_board(filtered_df)  # Filtered dataframe
     else:
-        st.write(f'Results contain {len(df_filter.df)} rows')
+        st.write(f'{len(df_filter.df)} jobs')
         create_job_board(df_filter.df)  # Unfiltered dataframe
 
 with tab_charts:
