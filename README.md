@@ -20,11 +20,17 @@ Refactored version of [Job Radar 1.0](https://github.com/FelitaD/job-radar-1.0) 
 - _Processing_: Python &rarr; dbt
 - _Visualization_: REST API &rarr; Looker Studio / Streamlit
 
-****
+<br>
+
+---
+
+<br>
 
 ## Pipeline overview
 
-![pipeline](docs/job-radar-2.svg)
+<p align="center">
+    <img src="docs/job-radar-2.svg" width=600>
+</p>
 
 ## Running locally
 
