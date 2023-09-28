@@ -54,9 +54,9 @@ _Note: Only streamlit app is tested at the moment, the rest is work in progress.
 
 ## TODO
 
-- [ ] Add notes in Streamlit
+- [x] Add timeline
+- [x] Add notes in Streamlit
 - [ ] Improve charts layout
-- [ ] Complete hire me Streamlit tab
 - [ ] Complete all tests
 - [ ] Add test coverage badge 
 - [ ] Complete all docstrings
