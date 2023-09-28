@@ -9,7 +9,7 @@ import numpy as np
 
 from streamlit_timeline import timeline
 
-
+# Must be called first
 st.set_page_config(layout='wide')
 
 from reporting.charts.sankey import sankey_fig
@@ -21,6 +21,7 @@ from reporting.dataframes.all_jobs_df import all_jobs_df
 from reporting.dataframes.companies_df import create_companies_st_df
 from reporting.charts.scatter_companies import scatter_companies
 
+# Define layout elements
 tab_job_board, tab_charts, tab_data, tab_hire_me = st.tabs(['🎯 Job Board', '📊 Charts', '🧮 Data', '👩🏻‍💻Resume Timeline'])
 
 # Initialize dataframe filterer
@@ -65,7 +66,6 @@ with st.sidebar:
             remote_filter=remote_filter)
 
 with tab_job_board:
-
     if add_filters:
         st.write(f'{len(filtered_df)} jobs')
         create_job_board(filtered_df)  # Filtered dataframe
@@ -73,17 +73,13 @@ with tab_job_board:
         st.write(f'{len(df_filter.df)} jobs')
         create_job_board(df_filter.df)  # Unfiltered dataframe
     """
-    Notes:   
-    - _score_: the sum of 2 hidden scores: the seniority level score + the company's glassdoor rating score.
-    - _is_same_glassdoor_: indicates if the company name collected on Glassdoor is the same as in the job posting. 
+    - _score_: The sum of 2 hidden scores: the seniority level score + the company's glassdoor rating score.
+    - _is_same_glassdoor_: Indicates if the company name collected on Glassdoor is the same as in the job posting. 
     If 0, manual verification is recommended.
-    - _company_size_: the mean of the original data of the form '1 to 50 employees'.
+    - _company_size_: The mean of the original data of the form '1 to 50 employees'.
     """
 
-
-
 with tab_charts:
-
     st.subheader('Number of job postings during pipeline transformations')
     st.plotly_chart(sankey_fig)
 
@@ -94,15 +90,24 @@ with tab_charts:
     st.plotly_chart(scatter_companies)
 
 with tab_data:
-
-    st.subheader('All jobs (not relevant included)')
-    st.dataframe(all_jobs_df)
-
     st.subheader("Technologies")
     create_technos_st_df()
+    """
+    Technologies extracted from job descriptions.Frequency is maximum 1 per job.
+    Categories, subcategories and descriptions come from the [MAD 2023](https://mad.firstmark.com/), omitting the categories "Applications - *".
+    """
 
     st.subheader("Companies")
     create_companies_st_df()
+    """
+    Data scraped on Glassdoor each time a new company is added to the `jobs` table.
+    """
+
+    st.subheader('All jobs')
+    st.dataframe(all_jobs_df)
+    """
+    Data after technologies extraction and before relevancy filtering.
+    """
 
 with tab_hire_me:
     with open('docs/timeline.json', "r") as f:
