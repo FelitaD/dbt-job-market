@@ -72,7 +72,14 @@ with tab_job_board:
     else:
         st.write(f'{len(df_filter.df)} jobs')
         create_job_board(df_filter.df)  # Unfiltered dataframe
-    st.write('explanation')
+    """
+    Notes:   
+    - _score_: the sum of 2 hidden scores: the seniority level score + the company's glassdoor rating score.
+    - _is_same_glassdoor_: indicates if the company name collected on Glassdoor is the same as in the job posting. 
+    If 0, manual verification is recommended.
+    - _company_size_: the mean of the original data of the form '1 to 50 employees'.
+    """
+
 
 
 with tab_charts:
