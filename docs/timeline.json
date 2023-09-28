@@ -1,0 +1,810 @@
+{
+  "title": {
+        "text": {
+          "headline": "Resume Timeline <br/> Félita Donor"
+        },
+        "background": {
+          "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/cliff.jpeg"
+        }
+    },
+  "events": [
+    {
+      "start_date": {
+        "year": 2011,
+        "month": 6
+      },
+      "text": {
+        "headline": "Baccalauréat Scientifique",
+        "text": "Mention Très Bien - Option Physique Chimie <br> Lycée Jean Prévost - Montivilliers"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/Baccalaureat.jpeg"
+      },
+      "group": "academic"
+    },
+    {
+      "start_date": {
+        "year": 2011,
+        "month": 8
+      },
+      "end_date": {
+        "year": 2011,
+        "month": 12
+      },
+      "text": {
+        "headline": "Première Année Commune Aux Études de Santé",
+        "text": "Faculté de Médecine de Rouen<br> 1er Semestre"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/coeur.png",
+        "credit": "Morphologie externe du coeur: Olivier Trost<br/><a href='https://www.youtube.com/watch?v=rPTI-p8f8Gw&ab_channel=OlivierTROST%2FAnatomie-FreeAnatomyLessons'>Extrait de cours</a>"
+      },
+      "group": "academic"
+    },
+    {
+      "start_date": {
+        "year": 2012,
+        "month": 1
+      },
+      "end_date": {
+        "year": 2013,
+        "month": 6
+      },
+      "text": {
+        "headline": "Licence d'Histoire Géographie (1ère et 2ème année)",
+        "text": "Université du Havre"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/zola.png",
+        "credit": "Extrait notes de cours: Felita Donor<br/><a href='https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/Zola+%22J'accuse%22.pdf'>\"J'accuse\" Zola</a>"
+      },
+      "group": "academic"
+    },
+    {
+      "start_date": {
+        "year": 2013,
+        "month": 9
+      },
+      "end_date": {
+        "year": 2014,
+        "month": 6
+      },
+      "text": {
+        "headline": "Licence d'Histoire Géographie (3ème année)",
+        "text": "Université Paris IV Sorbonne"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/pollution.png",
+        "credit": "Extrait de cours: Pr. F. Bertrand<br/><a href='https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/L5GERNSO_2012-2013-TD_7_Pollution_marine.pdf'>Risques Naturels et Sociétés - Pollution Marine - TD7</a>"
+      },
+      "group": "academic"
+    },
+    {
+      "start_date": {
+        "year": 2014,
+        "month": 9
+      },
+      "end_date": {
+        "year": 2015,
+        "month": 5
+      },
+      "text": {
+        "headline": "Master 1 Sociologie & Anthropologie",
+        "text": "Genre et Changement Social et Politique : Perspectives Transnationales <br> Paris VII Diderot"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/pres_memoire.png",
+        "credit": "Extrait: Félita Donor<br/><a href='https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/pres_memoire_diderot.pdf'>Présentation Projet de Mémoire de Recherche</a>"
+      },
+      "group": "academic"
+    },
+    {
+      "start_date": {
+        "year": 2015,
+        "month": 9
+      },
+      "end_date": {
+        "year": 2017,
+        "month": 6
+      },
+      "text": {
+        "headline": "Licence d'Architecture (1ère et 2ème année)",
+        "text": "ENSA Marne-la-Vallée"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/ensa.png",
+        "credit": "Projet de 1ère année: Félita Donor<br/><a href='https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/F_DONOR_CV%2BPortfolio.pdf'>Portfolio 1ère et 2ème année</a>"
+      },
+      "group": "academic"
+    },
+    {
+      "start_date": {
+        "year": 2016,
+        "month": 8
+      },
+      "end_date": {
+        "year": 2016,
+        "month": 8
+      },
+      "text": {
+        "headline": "Stage Chantier",
+        "text": "Trady <br> Montreuil"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/chantier.png",
+        "credit": "Chantier d'immeuble à Montreuil: Inconnu<br/><a href='https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/Donor_rapport+de+stage.pdf'>Rapport de Stage, Félita Donor</a>"
+      },
+      "group": "academic"
+    },
+    {
+      "start_date": {
+        "year": 2017,
+        "month": 6
+      },
+      "end_date": {
+        "year": 2017,
+        "month": 8
+      },
+      "text": {
+        "headline": "Stage d'Urbanisme",
+        "text": "AURH - Agence d'Urbanisme de la Région du Havre et de l'Estuaire de la Seine"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/aurh.png",
+        "credit": "Illustration du Plan Local d'Urbanisme: Félita Donor<br/><a href='https://www.aurh.fr/'>AURH website</a>"
+      },
+      "group": "academic"
+    },
+    {
+      "start_date": {
+        "year": 2017,
+        "month": 9
+      },
+      "end_date": {
+        "year": 2018,
+        "month": 6
+      },
+      "text": {
+        "headline": "Licence d'Architecture (3ème année)",
+        "text": "Waterford Institute of Technology<br> Ireland (Erasmus)<br>"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/wit.png",
+        "credit": "Rehabilitation of Templemore's Townhall: Félita Donor</br><a href='https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/wit.png'>Conservation Project</a>"
+      },
+      "group": "academic"
+    },
+    {
+      "start_date": {
+        "year": 2018,
+        "month": 6
+      },
+      "end_date": {
+        "year": 2018,
+        "month": 11
+      },
+      "text": {
+        "headline": "Multilingual Customer Specialist",
+        "text": "Voxpro outsourced to Airbnb<br> Cork, Ireland"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/voxpro.jpg",
+        "credit": "Voxpro offices in Cork: Unknown</br><a href='https://www.glassdoor.fr/photos/-Photos-des-bureaux-IMG1041084.htm'>Voxpro, Glassdoor</a>"
+      },
+      "group": "work"
+    },
+    {
+      "start_date": {
+        "year": 2018,
+        "month": 11
+      },
+      "end_date": {
+        "year": 2019,
+        "month": 1
+      },
+      "text": {
+        "headline": "Rider",
+        "text": "Deliveroo<br> Cork, Ireland"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/deliveroo.jpg",
+        "credit": "Deliveroo Rider: Denis Minihane</br><a href='https://www.irishexaminer.com/business/companies/arid-41201902.html'>Irish Examiner</a>"
+      },
+      "group": "work"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 1
+      },
+      "end_date": {
+        "year": 2019,
+        "month": 6
+      },
+      "text": {
+        "headline": "Language Data Analyst",
+        "text": "Lionbridge outsourced to Apple<br> Cork, Ireland"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/apple.jpg",
+        "credit": "Apple Campus Cork: William Gallagher</br><a href='https://appleinsider.com/articles/20/03/13/two-more-apple-staff-contract-coronavirus-at-irish-headquarters'>Apple Insider</a>"
+      },
+      "group": "work"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 5
+      },
+      "text": {
+        "headline": "The Data Scientist's Toolbox",
+        "text": "Johns Hopkins University <br> Coursera <br> <br> Data Science - Github - R Programming- R Studio"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/Coursera+RZRQJB9DDW7Y.png",
+        "credit": "<a href='https://coursera.org/share/776d421c6c66c3c478d15f736cb32d4f'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 6
+      },
+      "text": {
+        "headline": "Introduction to R",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/introduction_to_r.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/432f34e4ff8b47192f5f726b9aa188460ceef886'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 6
+      },
+      "text": {
+        "headline": "Writing Functions in R",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/writing_functions_r.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/80a6398162e0691f52ee99a647122990f070f886?share=true'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 6
+      },
+      "text": {
+        "headline": "Python Data Science Toolbox (part 1)",
+        "text": "Datacamp <br> "
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/python_ds_toolbox.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/93fc10ec96c1f739ad575dfab149eece17cc30f5?share=true'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 6
+      },
+      "text": {
+        "headline": "Introduction to Python",
+        "text": "Datacamp <br> "
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/intro_python.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/602dbc504a6b71b3bc11f64b64f167757b34721b?share=true'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 6
+      },
+      "text": {
+        "headline": "Intermediate SQL Queries",
+        "text": "Datacamp <br> "
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/intermediate_sql_queries.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/7963fc032ea7be8402733f835abd861134406ec6?share=true'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 6
+      },
+      "text": {
+        "headline": "Intermediate Python for Data Science",
+        "text": "Datacamp <br> "
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/intermediate_python.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/a97eb8158cb1940e542359d87d4a2e66e9235cf2?share=true'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 7
+      },
+      "text": {
+        "headline": "Introduction to Importing Data in Python",
+        "text": "Datacamp <br> "
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/intro_importing_python.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/fa9b68b349e741e1507b4b60e57280c8dd69b22a?share=true'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 7
+      },
+      "text": {
+        "headline": "Cleaning Data in Python",
+        "text": "Datacamp <br> "
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/cleaning_data_python.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/097b10883d83e11c4c5987433762e7466e28324f'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 11
+      },
+      "text": {
+        "headline": "Pandas Foundations",
+        "text": "Datacamp <br> "
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/pandas_foundations.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/048b5b4343ee82db7e2d966814b83c557ce99a8f'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 12
+      },
+      "text": {
+        "headline": "Automate the Boring Stuff with Python",
+        "text": "Al Sweigart <br> Udemy"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/automate_boring_stuff_python.jpg",
+        "credit": "<a href='https://www.udemy.com/certificate/UC-NZMPCYYQ/'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2020,
+        "month": 8
+      },
+      "text": {
+        "headline": "Web Scraping in Python",
+        "text": "Datacamp <br> "
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/web_scraping_python.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/a66850463d6ade7475c27f6b389f7c674cf6563a?share=true'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2020,
+        "month": 8
+      },
+      "text": {
+        "headline": "Joining Data in SQL",
+        "text": "Datacamp <br> "
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/joining_sql.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/db16503f1f452e35be6f0b93bd8ffef21dd4d4ad'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2020,
+        "month": 9
+      },
+      "text": {
+        "headline": "Introduction to Version Control with Git",
+        "text": "Datacamp <br> "
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/intro_git.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/6cf02423b1c0354498449565194b6132b74a452c?share=true'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 9
+      },
+      "end_date": {
+        "year": 2019,
+        "month": 10
+      },
+      "text": {
+        "headline": "Assistante Logistique",
+        "text": "Atelier BRAAM <br> Paris"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/braam.png",
+        "credit": "Screenshot <br/><a href='https://atelierbraam.com/'>BRAAM website</a>"
+      },
+      "group": "work"
+    },
+    {
+      "start_date": {
+        "year": 2020,
+        "month": 9
+      },
+      "end_date": {
+        "year": 2021,
+        "month": 6
+      },
+      "text": {
+        "headline": "Master 1 Méga Données et Analyse Sociale",
+        "text": "Conservatoire National des Arts et Métiers <br> <br> Humanités numériques\n- Algorithmique du traitement des données\n- Statistiques 1\n- Programmation et données structurées\n- Droit des TIC, protection des données\n- Approches spatiales et temporelles des données\n- Organisation et systèmes d'information\n- Outils de données (Excel, SAS)\n- Fouilles de données 1\n- Data visualisation\n- Bases de données et systèmes d'information"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/cnam.jpg",
+        "credit": "CNAM Paris: Villain Sandrine <br/><a href='https://www.cnam-paris.fr/construire-mon-parcours/decouvrez-le-centre-cnam-paris-1267892.kjsp'>CNAM-Paris</a>"
+      },
+      "group": "academic"
+    },
+    {
+      "start_date": {
+        "year": 2020,
+        "month": 9
+      },
+      "end_date": {
+        "year": 2021,
+        "month": 9
+      },
+      "text": {
+        "headline": "Junior Data Manager",
+        "text": "eXplain <br> Alternance <br> Paris <br> <br> Python - Shell Scripting - PostgreSQL - Web Crawling - Git - Unit Testing - Agile"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/explain.png",
+        "credit": "Screenshot <br/><a href='https://explain.fr/'>eXplain website</a>"
+      },
+      "group": "work"
+    },
+    {
+      "start_date": {
+        "year": 2021,
+        "month": 9
+      },
+      "end_date": {
+        "year": 2021,
+        "month": 11
+      },
+      "text": {
+        "headline": "Web Crawler",
+        "text": "Freelance"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/scrapy.png",
+        "credit": "Scrapy Architecture<br/><a href='https://docs.scrapy.org/en/latest/topics/architecture.html'>Scrapy 2.11.0 Documentation</a>"
+      },
+      "group": "work"
+    },
+    {
+      "start_date": {
+        "year": 2022,
+        "month": 2
+      },
+      "end_date": {
+        "year": 2022,
+        "month": 5
+      },
+      "text": {
+        "headline": "Data Engineer Bootcamp",
+        "text": "DataScientest <br> <br> Programming : Python, OOP, Bash, Linux\n- Databases : SQL, MongoDB, Elasticsearch, Neo4j\n- Data science : Statistics, Machine Learning, Matplotlib\n- Big Data Volume : Hadoop, Hive, HBase, Spark\n- CI / CD : Git, GitHub\n- Big Data Speed : Streaming architecture, Kafka, Spark\n- Automation and Deployment : APIs, Docker, Kubernetes, Airflow"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/datascientest.png",
+        "credit": "<a href='https://datascientest-documents.s3.eu-west-1.amazonaws.com/4d7696e4-b8ee-4f3f-a0cb-783c68a1cb0b.pdf'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2023,
+        "month": 2
+      },
+      "text": {
+        "headline": "Databases: OLAP and Recursion",
+        "text": "Jennifer Widom <br> Stanford Online <br> edX  <br> <br> OLTP vs OLAP - OLAP - Recursion"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/olap.png",
+        "credit": "<a href='https://courses.edx.org/certificates/6c14d37b31184133972f5d198c97dd77'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2023,
+        "month": 2
+      },
+      "text": {
+        "headline": "Databases: Modeling and Theory",
+        "text": "Jennifer Widom <br> Stanford Online <br> edX  <br> <br> Relational Algebra - Relational Design Theory - UML - Normal Forms"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/modeling.png",
+        "credit": "<a href='https://courses.edx.org/certificates/755a3c85c3a140169889b3983430fea6'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2023,
+        "month": 2
+      },
+      "text": {
+        "headline": "Databases: Advanced Topics in SQL",
+        "text": "Jennifer Widom <br> Stanford Online <br> edX <br> <br> Indexes - Transactions - Constraints and Triggers - Views - Authorizations"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/advanced_sql.png",
+        "credit": "<a href='https://courses.edx.org/certificates/3a74fe6e64bc4f599dd0c5b47192ec26'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2023,
+        "month": 3
+      },
+      "text": {
+        "headline": "Associate Data Engineer",
+        "text": "Andreas Kretz <br> Learn Data Engineering <br> <br> Data Platform & Pipeline Design - Security Fundamentals - Choosing Data Stores - Schema Design Data Stores - Docker - Kafka - Spark - Modern Data Warehouses & Data Lakes - Data Engineering on AWS - Document Streaming with Spark, Kafka and MongoDB"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/associate_de.png",
+        "credit": "<a href='https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/certificate-of-completion-for-data-engineering-certification.pdf'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2023,
+        "month": 8
+      },
+      "text": {
+        "headline": "dbt Fundamentals",
+        "text": "dbt Labs"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/dbt_fundamentals.png",
+        "credit": "<a href='https://www.credential.net/7f7fdc77-1dee-4fcc-a67e-61af3ad79014#gs.5pxg8e'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2023,
+        "month": 9
+      },
+      "text": {
+        "headline": "Secure Shell Essentials: hands-on guide",
+        "text": "Ahmed Elfakharany <br> Udemy"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/ssh.jpg",
+        "credit": "<a href='https://www.udemy.com/certificate/UC-cd86f10c-3848-406b-ae9d-46e375e6e7c2/'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2023,
+        "month": 6
+      },
+      "text": {
+        "headline": "Data Structures and Algorithms in Python",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/data_structures_algo_python.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/f395013a940f318a3cd44abf67885e9dc49fdd38?raw=1'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2021,
+        "month":12
+      },
+      "text": {
+        "headline": "Joining Data With pandas",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/joining_pandas.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/00d1a62ef61ae983ee6f682542f948b8668717ff?raw=1'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 7
+      },
+      "text": {
+        "headline": "Intermediate Importing Data in Python",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/intermediate_importing_python.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/82effec9b54fcc53fe7a1d7abcce64a3b4744946?raw=1'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2021,
+        "month": 12
+      },
+      "text": {
+        "headline": "Introduction to Relational Databases in SQL",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/intro_sql.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/3b5e3800900ba526a3bb280c1b2947c014d1a511?raw=1'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2021,
+        "month": 12
+      },
+      "text": {
+        "headline": "Introduction to Bash Scripting",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/intro_bash.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/cf023c3c1cd5df5c36bcb4b232047a2a0ee8f772?raw=1'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2021,
+        "month": 12
+      },
+      "text": {
+        "headline": "Introduction to Shell",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/intro_shell.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/33d4a415434afbd4169fd5a15447cfa841deb12b?raw=1'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2021,
+        "month": 12
+      },
+      "text": {
+        "headline": "Data Manipulation with pandas",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/manipulation_pandas.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/ae9238ff9ac60115195bd3b7ac306c2642540657?raw=1'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2021,
+        "month": 12
+      },
+      "text": {
+        "headline": "Introduction to Data Science in Python",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/intro_ds_python.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/29b1308046563493efdc4a62b7f6023eba54e8f0?raw=1'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2021,
+        "month": 12
+      },
+      "text": {
+        "headline": "Manipulating Time Series Data in Python",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/time_series_python.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/d2a3351b3bcc88f8db65e46a70d70d34ec1d3182?raw=1'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2019,
+        "month": 7
+      },
+      "text": {
+        "headline": "Python Data Science Toolbox (part 2)",
+        "text": "Datacamp"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/python_ds_toolbox_2.png",
+        "credit": "<a href='https://www.datacamp.com/statement-of-accomplishment/course/f8c5127a4db34466e77b6fb9a1d5d43a1bb6eb66?raw=1'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2020,
+        "month": 4
+      },
+      "text": {
+        "headline": "The Complete Javascript Course 2020",
+        "text": "Jonas Schmedtmann <br> Udemy"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/javascript.jpg",
+        "credit": "<a href='https://www.udemy.com/certificate/UC-fba6913a-78a3-46f7-99ed-3e93445872a1/'>Certificate</a>"
+      },
+      "group": "certificates"
+    },
+    {
+      "start_date": {
+        "year": 2022,
+        "month": 5
+      },
+      "text": {
+        "headline": "Tableau 2020 A-Z: Hands-On Training for Data Science",
+        "text": "Kirill Eremenko <br> Udemy"
+      },
+      "media": {
+        "url": "https://certifications-data-engineering.s3.eu-west-3.amazonaws.com/tableau.jpg",
+        "credit": "<a href='https://www.udemy.com/certificate/UC-9e01a371-8f3b-4b30-ad9e-2ffdacbe6ac1/'>Certificate</a>"
+      },
+      "group": "certificates"
+    }
+  ]
+}
