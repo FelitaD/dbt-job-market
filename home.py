@@ -82,6 +82,7 @@ with tab_job_board:
 
 with tab_charts:
     # TODO: modify charts to be used in Streamlit Elements
+    st.markdown('_New layout with streamlit-elements in progress._')
     st.subheader('Number of job postings during pipeline transformations')
     st.plotly_chart(sankey_fig)
 
