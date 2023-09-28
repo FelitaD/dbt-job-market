@@ -12,3 +12,4 @@ plotly
 docstr-coverage
 pytest
 streamlit-timeline
+streamlit-elements==0.1.*
