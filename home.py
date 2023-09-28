@@ -4,14 +4,18 @@ Typical usage:
     `streamlit run home.py`
 """
 
-import streamlit as st
 import numpy as np
+import streamlit as st
+import streamlit_analytics
 
 from streamlit_timeline import timeline
 from streamlit_elements import elements, mui, html, dashboard
 
 # Must be called first
 st.set_page_config(layout='wide')
+streamlit_analytics.start_tracking()
+streamlit_analytics.stop_tracking()
+
 
 from reporting.charts.sankey import sankey_fig
 from reporting.charts.treemap_technos import treemap_technos
