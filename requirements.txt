@@ -11,3 +11,4 @@ google-cloud-bigquery
 plotly
 docstr-coverage
 pytest
+streamlit-timeline
