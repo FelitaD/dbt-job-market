@@ -7,6 +7,9 @@ Typical usage:
 import streamlit as st
 import numpy as np
 
+from streamlit_timeline import timeline
+
+
 st.set_page_config(layout='wide')
 
 from reporting.charts.sankey import sankey_fig
@@ -18,7 +21,7 @@ from reporting.dataframes.all_jobs_df import all_jobs_df
 from reporting.dataframes.companies_df import create_companies_st_df
 from reporting.charts.scatter_companies import scatter_companies
 
-tab_job_board, tab_charts, tab_data, tab_hire_me = st.tabs(['🎯 Job Board', '📊 Charts', '🧮 Data', '👩🏻‍💻 Hire Me'])
+tab_job_board, tab_charts, tab_data, tab_hire_me = st.tabs(['🎯 Job Board', '📊 Charts', '🧮 Data', '👩🏻‍💻Resume Timeline'])
 
 # Initialize dataframe filterer
 df_filter = DataframeFilter()
@@ -30,7 +33,7 @@ with st.sidebar:
     st.markdown("<p align='center'><a href='https://github.com/FelitaD/job-radar-2.0'><img "
                 "src='https://img.shields.io/badge/View_on_Github-000000?logo=github'></a></p>", unsafe_allow_html=True)
 
-    add_filters = st.checkbox('Add filters')
+    add_filters = st.checkbox('Add Job Board filters')
 
     if add_filters:
         # Slider widgets
@@ -69,6 +72,8 @@ with tab_job_board:
     else:
         st.write(f'{len(df_filter.df)} jobs')
         create_job_board(df_filter.df)  # Unfiltered dataframe
+    st.write('explanation')
+
 
 with tab_charts:
 
@@ -91,4 +96,15 @@ with tab_data:
 
     st.subheader("Companies")
     create_companies_st_df()
+
+with tab_hire_me:
+    with open('docs/timeline.json', "r") as f:
+        data = f.read()
+
+    # TODO: make the years appear completely at the bottom
+    timeline(data, height=800)
+    """
+    Events are categorized as _academic_, _work_ and _certificates_ for easier navigation.
+    My [Github Portfolio](https://github.com/FelitaD/Portfolio) contains projects and other online courses.
+    """
 
