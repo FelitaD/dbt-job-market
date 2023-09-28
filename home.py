@@ -8,6 +8,7 @@ import streamlit as st
 import numpy as np
 
 from streamlit_timeline import timeline
+from streamlit_elements import elements, mui, html, dashboard
 
 # Must be called first
 st.set_page_config(layout='wide')
@@ -80,6 +81,7 @@ with tab_job_board:
     """
 
 with tab_charts:
+    # TODO: modify charts to be used in Streamlit Elements
     st.subheader('Number of job postings during pipeline transformations')
     st.plotly_chart(sankey_fig)
 
@@ -93,7 +95,7 @@ with tab_data:
     st.subheader("Technologies")
     create_technos_st_df()
     """
-    Technologies extracted from job descriptions.Frequency is maximum 1 per job.
+    Technologies extracted from job descriptions. Their frequency is maximum 1 per job.  
     Categories, subcategories and descriptions come from the [MAD 2023](https://mad.firstmark.com/), omitting the categories "Applications - *".
     """
 
