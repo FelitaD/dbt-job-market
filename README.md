@@ -68,3 +68,4 @@ _Note: Only streamlit app is tested at the moment, the rest is work in progress.
 - [ ] Improve dbt best practices
 - [ ] Improve prefect best practices
 - [ ] Add CDC
+- [ ] Process location
