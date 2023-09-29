@@ -5,3 +5,4 @@ ingestion/scrapy/data/*
 config/complete-flag-399316-90b413223151.json
 .streamlit/*
 transformation/analyses/*csv
+*.log
