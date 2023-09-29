@@ -1,12 +1,17 @@
 """This module contains a helper for the crawling process.
 
-
+Compare a local file with the latest S3 resource, and
+upload the difference to S3.
+These links are jobs pages that will be scraped by the
+module `wttj.py` and inserted in the database.
 """
 
 import re
 import ast
+from typing import Set
+
 import boto3
-from datetime import datetime
+import datetime
 from pathlib import Path
 import logging
 
@@ -14,106 +19,136 @@ from config.definitions import PROJECT_PATH
 
 
 class S3Helper:
-    """
+    """This class helps to upload new links only.
 
+    Because the crawler gets all links from WTTJ website,
+    and that some jobs are reposted with a different url,
+    we want to avoid jobs to be scraped again.
     """
 
     def __init__(self):
+        """Initializes the instance with S3 and today's information."""
+        self.today = datetime.date.today()
+        self.today_filename = f'wttj_links_{self.today}.txt'
+        self.today_filepath = PROJECT_PATH / 'ingestion' / 'scrapy' / 'data' / self.today_filename
+        self.today_filepath_new = PROJECT_PATH / 'ingestion' / 'scrapy' / 'data' / f'new_{self.today_filename}'
+        self.s3 = boto3.resource('s3')
+        self.bucket_name = 'crawler-job-links'
+
+    def upload_new_links(self) -> Set:
+        """Factory function to upload new links only.
+
+        Returns:
+            A set of uploaded links.
         """
+        # Download the 2 files we wish to compare
+        s3_links = self.extract_s3_links()
+        local_links = self.extract_local_links(self.today_filepath)
 
+        # Extract the constant part of the urls
+        local_links_constant = self.extract_constant_url(local_links)
+        s3_links_constant = self.extract_constant_url(s3_links)
+
+        # Subtract links from S3 to links freshly scraped
+        new_links = self.subtract_old_links(s3_links_constant, local_links_constant)
+
+        # Write new links to a file and upload to S3
+        self.write_new_links_to_file(new_links)
+        
+        # Upload to S3 without the 'new_' prefix
+        self.s3.Bucket(self.bucket_name).upload_file(self.today_filepath_new, self.today_filename)
+
+        return new_links
+
+    def extract_s3_links(self) -> Set:
+        """Extracts the latest S3 file's content.
+
+        Returns:
+            A set of urls.
         """
-        self.today = datetime.now().strftime('%d-%m-%y')
-        self.today_filename = self.get_filename_today()
-        self.today_filepath = self.get_today_filepath()
-
-    def upload_new_links(self):
-        """
-
-        """
-        # Download links from latest file on S3
-        latest_links = self.extract_links_from_s3('latest')
-
-        # Get local file that we wish to add to S3
-        today_links = self.extract_links_from_file(self.today_filepath)
-
-        # Prepare urls for comparison
-        today_links_constant = self.extract_constant_url(today_links)
-        latest_links_constant = self.extract_constant_url(latest_links)
-
-        # Compare
-        new_links = today_links_constant - latest_links_constant
-
-        # Overwrite today's file with only new links
-        with open(self.today_filepath, 'w') as f:
-            f.write(str(new_links))
-
-        self.upload_to_s3()
-
-    @staticmethod
-    def extract_constant_url(urls):
-        """
-
-        """
-        matches = [re.search(r'.*(?=\?q=)', url) for url in urls]
-        new_urls = [match.group(0) for match in matches if match is not None]
-        if len(new_urls) > 0:
-            return set(new_urls)
-        return set(urls)
-
-    def extract_links_from_s3(self, date='today'):
-        """
-
-        """
-        s3 = boto3.resource('s3')
-        bucket_name = "crawler-job-links"
-        if date == 'today':
-            filename = self.today_filename
-        elif date == 'latest':
-            filename = self.get_latest_modified(s3, bucket_name)
-        obj = s3.Object(bucket_name, key=filename)
+        filename = self.get_latest_s3_file()
+        obj = self.s3.Object(self.bucket_name, key=filename)
         links = obj.get()['Body'].read().decode('utf-8')
+        
         return ast.literal_eval(links)
+    
+    def get_latest_s3_file(self) -> str:
+        """Get a bucket's latest modified file's name.
+
+        Returns:
+            A string of the file name.
+        """
+        bucket = self.s3.Bucket(self.bucket_name)
+        last_modified_date = datetime.date(2022, 9, 1)  # A random old date
+        latest_s3_file = None
+
+        for s3_file in bucket.objects.all():
+            s3_file_date = s3_file.last_modified.date()
+            if last_modified_date < s3_file_date <= self.today:
+                last_modified_date = s3_file_date
+                latest_s3_file = s3_file
+
+        return latest_s3_file.key
 
     @staticmethod
-    def get_latest_modified(s3, bucket_name):
-        """
+    def extract_local_links(filepath: str) -> Set:
+        """Extracts today's local links.
 
-        """
-        bucket = s3.Bucket(bucket_name)
-        latest_file = None
-        last_modified_date = datetime(2022, 9, 1).replace(tzinfo=None)
-        todays_date = datetime.now().replace(hour=0, minute=0, second=0)
-        for file in bucket.objects.all():
-            file_date = file.last_modified.replace(tzinfo=None)
-            if last_modified_date < file_date < todays_date:
-                last_modified_date = file_date
-                latest_file = file
-        return latest_file.key
+        Will throw an error if the spider hasn't run today.
 
-    def extract_links_from_file(self, filepath):
-        """
-
+        Returns:
+            A set of local links
         """
         with open(filepath, 'r') as f:
             links = f.read()
         return ast.literal_eval(links)
 
-    def upload_to_s3(self):
-        """
+    @staticmethod
+    def extract_constant_url(urls: set) -> Set:
+        """Truncates the query part of the url.
 
-        """
-        s3 = boto3.resource('s3')
-        s3.Bucket("crawler-job-links").upload_file(self.today_filepath, self.today_filename)
+        On welcometothejungle website, jobs get reposted
+        with a different url, which makes them being scraped
+        more than once.
 
-    def get_filename_today(self):
+        Returns:
+            A set of truncated urls.
         """
+        # Remove the query part that doesn't identify uniquely a job
+        matches = [re.search(r'.*(?=\?q=)', url) for url in urls]
+        constant_urls = [match.group(0) for match in matches if match is not None]
 
-        """
-        return f'wttj_links_{self.today}.txt'
+        # Duplicates are removed
+        return set(constant_urls)
 
-    def get_today_filepath(self):
-        """
+    @staticmethod
+    def subtract_old_links(s3_links: set, local_links: set) -> Set:
+        """Subtracts from local (new) links, those that are already
+        in S3 (old).
 
+        Returns:
+            A set of new links.
         """
-        return PROJECT_PATH / 'ingestion' / 'scrapy' / 'data' / self.today_filename
+        return local_links - s3_links
+
+    def write_new_links_to_file(self, new_links: set) -> str:
+        """Writes new links to local file.
+
+        Overwrites it if it already exists.
+
+        Returns:
+            The written string.
+        """
+        new_links_str = str(new_links)
+
+        with open(self.today_filepath_new, 'w+') as f:
+            f.write(str(new_links))
+
+        return new_links_str
+
+
+if __name__ == '__main__':
+    s3_helper = S3Helper()
+    new_links = s3_helper.upload_new_links()
+    print(f'There is {len(new_links)} new links')
 
