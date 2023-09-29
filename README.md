@@ -10,6 +10,8 @@
     <a href="https://job-radar.streamlit.app/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg"></a>
 </p>
 
+<script src="https://gist.github.com/FelitaD/479f2f9f67493c1ab075b977abf066af.js"></script>
+
 
 Ingest, process and visualize job listings from 2 websites ([Welcome To The Jungle](https://www.welcometothejungle.com/) 
 and [Linkedin](https://www.linkedin.com/jobs/)). Job Radar 2.0 offers more possibilities than these websites to filter jobs: 
@@ -37,21 +39,23 @@ streamlit run home.py
 
 ## Testing
 
-First, install pytest and required plugins via:
-
-```bash
-pip install pytest
-pip install -r requirements.txt
-```
-
 To run all tests: 
 
 ```bash
 pytest ./tests
 ```
 
-_Note: Only streamlit app is tested at the moment, the rest is work in progress._ 
+To create coverage report:
 
+```bash
+coverage run --source=. --omit='tests/*','__init__.py' -m pytest
+coverage report
+```
+Generate a badge:
+
+```bash
+coverage-badge -o coverage.svg
+```
 ## TODO
 
 - [x] Add timeline
