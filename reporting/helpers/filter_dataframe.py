@@ -99,7 +99,7 @@ class DataframeFilter:
             options=options,
         )
 
-    def filter_dataframe(self, fields, **kwargs):
+    def filter_dataframe(self, fields: List, **kwargs) -> DataFrame:
         """Filters the instance's base dataframe using widget default / user inputs.
 
         It creates a new filtered dataframe with boolean expressions of each field.
