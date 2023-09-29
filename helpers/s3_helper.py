@@ -116,11 +116,16 @@ class S3Helper:
             A set of truncated urls.
         """
         # Remove the query part that doesn't identify uniquely a job
-        matches = [re.search(r'.*(?=\?q=)', url) for url in urls]
-        constant_urls = [match.group(0) for match in matches if match is not None]
+        constant_urls = set()
 
-        # Duplicates are removed
-        return set(constant_urls)
+        for url in urls:
+            match = re.search(r'.*(?=\?q=)', url)
+            if match:
+                constant_urls.add(match.group(0))
+            else:
+                constant_urls.add(url)
+
+        return constant_urls
 
     @staticmethod
     def subtract_old_links(s3_links: set, local_links: set) -> Set:
