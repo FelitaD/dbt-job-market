@@ -14,8 +14,8 @@ def wttj_flow(name='Wttj Flow'):
     """
     # Scrape dynamic pages for job postings' links
     scrape_wttj_links()
-    # Stores links to S3
-    upload_links_to_s3()
+    # Stores new links to S3
+    upload_new_links_to_s3()
     # Scrape static pages
     scrape_wttj_job_details()
 
@@ -30,8 +30,8 @@ def scrape_wttj_links():
     ).run()
 
 @task
-def upload_links_to_s3():
-    S3Helper().upload_to_s3()
+def upload_new_links_to_s3():
+    S3Helper().upload_new_links()
 
 
 @task
