@@ -12,6 +12,6 @@ plotly
 docstr-coverage
 pytest
 coverage
-pytest-cov
+coverage-badge
 streamlit-timeline
 streamlit-elements==0.1.*
