@@ -19,7 +19,7 @@ class WttjSpider(scrapy.Spider):
     name = "wttj"
 
     def start_requests(self):
-        links = S3Helper().extract_links_from_s3()
+        links = S3Helper().extract_s3_links()
         for link in links:
             yield scrapy.Request(link, self.yield_job_item)
 
