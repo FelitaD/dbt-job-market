@@ -31,8 +31,8 @@ class S3Helper:
         self.today = datetime.date.today()
         self.today_filename = f'wttj_links_{self.today}.txt'
         self.data_path = PROJECT_PATH / 'ingestion' / 'scrapy' / 'data'
-        self.today_filepath = self.data_path + self.today_filename
-        self.today_filepath_new = self.data_path + f'new_{self.today_filename}'
+        self.today_filepath = self.data_path / self.today_filename
+        self.today_filepath_new = self.data_path / f'new_{self.today_filename}'
         self.s3 = boto3.resource('s3')
         self.bucket_name = 'crawler-job-links'
 
