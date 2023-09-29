@@ -11,5 +11,7 @@ google-cloud-bigquery
 plotly
 docstr-coverage
 pytest
+coverage
+pytest-cov
 streamlit-timeline
 streamlit-elements==0.1.*
