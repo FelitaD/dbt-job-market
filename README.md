@@ -63,7 +63,7 @@ _Note: Only streamlit app is tested at the moment, the rest is work in progress.
 - [ ] Add docstring coverage badge 
 - [ ] Add missing documentation in dbt
 - [ ] Add prefect dbt orchestration
-- [ ] Add black check with 
+- [ ] Add code style black
 - [ ] Improve CI/CD
 - [ ] Improve dbt best practices
 - [ ] Improve prefect best practices
