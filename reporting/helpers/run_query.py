@@ -3,8 +3,9 @@
 It is handled by the bigquery Client module,
 and Streamlit decorator `st.cache_data`.
 """
-
 import streamlit as st
+
+from typing import List
 from google.oauth2 import service_account
 from google.cloud import bigquery
 
@@ -15,7 +16,7 @@ client = bigquery.Client(credentials=credentials)
 
 
 @st.cache_data(ttl=600)
-def run_query(query):
+def run_query(query: str) -> List:
     """Extracts data from BigQuery.
 
     Args:
