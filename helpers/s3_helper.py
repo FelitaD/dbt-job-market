@@ -115,15 +115,8 @@ class S3Helper:
         Returns:
             A set of truncated urls.
         """
-        # Remove the query part that doesn't identify uniquely a job
-        constant_urls = set()
-
-        for url in urls:
-            match = re.search(r'.*(?=\?q=)', url)
-            if match:
-                constant_urls.add(match.group(0))
-            else:
-                constant_urls.add(url)
+        constant_urls = set([re.search(r'.*(?=\?q=)', url).group(0) if re.search(r'.*(?=\?q=)', url) is not None
+                             else url for url in urls])
 
         return constant_urls
 
