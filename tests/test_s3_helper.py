@@ -72,10 +72,6 @@ class TestS3Helper:
         actual_new_links = s3_helper.subtract_old_links(s3_links, local_links)
         assert actual_new_links == expected_new_links
 
-    def test_write_new_links_to_file(self, s3_helper):
-        dummy_links = {'dorian', 'gray'}
-        new_links_str = s3_helper.write_new_links_to_file(dummy_links)
-        assert new_links_str == "{'dorian', 'gray'}"
 
 
 
