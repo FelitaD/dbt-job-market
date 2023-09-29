@@ -1,7 +1,7 @@
 import warnings
 import scrapy
 
-from datetime import datetime
+import datetime
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.log import configure_logging
 
@@ -64,7 +64,7 @@ class WttjLinksSpider(scrapy.Spider):
                 break
 
             finally:
-                now = datetime.now().strftime('%d-%m-%y')
+                now = datetime.date.today()
                 with open(f'{PROJECT_PATH}/ingestion/scrapy/data/wttj_links_{now}.txt', "w+") as f:
                     f.write(str(self.links))
 
