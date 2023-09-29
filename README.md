@@ -10,9 +10,6 @@
     <a href="https://job-radar.streamlit.app/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg"></a>
 </p>
 
-![img](https://gist.githubusercontent.com/FelitaD/b3835652aad55c485f2f7d4ab6b912ca/raw/56c9edf002fd235df66903672610df060d14c77c/coverage.svg)
-
-
 Ingest, process and visualize job listings from 2 websites ([Welcome To The Jungle](https://www.welcometothejungle.com/) 
 and [Linkedin](https://www.linkedin.com/jobs/)). Job Radar 2.0 offers more possibilities than these websites to filter jobs: 
 technologies asked for the role, company statistics from Glassdoor and comparison to other jobs.  
@@ -37,7 +34,7 @@ Refactored version of [Job Radar 1.0](https://github.com/FelitaD/job-radar-1.0) 
 streamlit run home.py
 ```
 
-## Testing
+## Testing & Documentation
 
 To run all tests: 
 
@@ -56,15 +53,22 @@ Generate a badge:
 ```bash
 coverage-badge -o coverage.svg
 ```
+
+To create docstring coverage report:
+```bash
+
+```
+The options will skip init files, include present docstrings, exclude pattern and create a badge.
+
 ## TODO
 
 - [x] Add timeline
 - [x] Add notes in Streamlit
 - [ ] Improve charts layout
 - [ ] Complete all tests
-- [ ] Add test coverage badge 
+- [x] Create test coverage badge 
 - [ ] Complete all docstrings
-- [ ] Add docstring coverage badge 
+- [x] Create docstring coverage badge 
 - [ ] Add missing documentation in dbt
 - [ ] Add prefect dbt orchestration
 - [ ] Add code style black
