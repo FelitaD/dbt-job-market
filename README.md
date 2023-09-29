@@ -10,7 +10,7 @@
     <a href="https://job-radar.streamlit.app/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg"></a>
 </p>
 
-<script src="https://gist.github.com/FelitaD/479f2f9f67493c1ab075b977abf066af.js"></script>
+![img](https://gist.githubusercontent.com/FelitaD/b3835652aad55c485f2f7d4ab6b912ca/raw/56c9edf002fd235df66903672610df060d14c77c/coverage.svg)
 
 
 Ingest, process and visualize job listings from 2 websites ([Welcome To The Jungle](https://www.welcometothejungle.com/) 
