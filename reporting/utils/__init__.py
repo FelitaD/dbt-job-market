@@ -1,3 +1,2 @@
-from reporting.helpers.filter_dataframe import DataframeFilter
-from reporting.helpers.run_query import run_query
-from reporting.helpers.style_dataframe import create_color, highlight_total_score, highlight_quant_column
+from reporting.utils.run_query import run_query
+from reporting.utils.sql_statements import technos_stmt, companies_stmt, sankey_stmt, all_jobs_stmt, relevant_jobs_stmt, all_data_columns
