@@ -1,0 +1,52 @@
+{
+    "name": "technos",
+    "t": "hsl(103, 70%, 50%)",
+    "children": [
+        {
+            "name": "cat_1",
+            "children": [
+                {
+                    "name": "subcat_1",
+                    "children": [
+                        {
+                            "name": "techno_1",
+                            "loc": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "subcat_2",
+                    "children": [
+                        {
+                            "name": "techno_2",
+                            "loc": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "subcat_2",
+                    "children": [
+                        {
+                            "name": "techno_3",
+                            "loc": 3
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "cat_2",
+            "children": [
+                {
+                    "name": "subcat_1",
+                    "children": [
+                        {
+                            "name": "techno_4",
+                            "loc": 4
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
