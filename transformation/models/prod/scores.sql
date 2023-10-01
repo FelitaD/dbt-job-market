@@ -7,7 +7,7 @@ scores as (
         jobs.id as id, 
 
         is_relevant,
-        -- data/anlaytics engineer : 1
+        -- data/analytics engineer : 1
         -- non data engineer : 0
 
         is_same_glassdoor,
