@@ -64,7 +64,7 @@ The options will skip init files, include present docstrings, exclude pattern an
 
 - [x] Add timeline
 - [x] Add notes in Streamlit
-- [ ] Improve charts layout
+- [x] Improve charts layout
 - [ ] Complete all tests
 - [x] Create test coverage badge 
 - [ ] Complete all docstrings
