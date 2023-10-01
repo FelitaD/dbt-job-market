@@ -2,7 +2,7 @@ import json
 import pandas as pd
 
 from streamlit_elements import nivo, mui
-from .dashboard import Dashboard
+from .board import Dashboard
 
 from ..transformers import sankey_df
 
