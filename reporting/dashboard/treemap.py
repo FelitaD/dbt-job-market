@@ -1,7 +1,7 @@
 import json
 
 from streamlit_elements import nivo, mui
-from .dashboard import Dashboard
+from dashboard import Dashboard
 
 
 class Treemap(Dashboard.Item):
