@@ -13,5 +13,7 @@ docstr-coverage
 pytest
 coverage
 coverage-badge
+streamlit
 streamlit-timeline
 streamlit-elements==0.1.*
+watchdog

@@ -1,0 +1,501 @@
+{
+  "name": "technos",
+  "t": "hsl(103, 70%, 50%)",
+  "children": [
+    {
+      "name": "Data Sources & APIs",
+      "color": "hsl(103, 70%, 50%)",
+      "children": [
+        {
+          "name": "Data Marketplaces & Discovery",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Marketplaces & Discovery",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "People/Entities",
+          "color": "",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Machine Learning & Artificial Intelligence",
+      "color": "hsl(103, 70%, 50%)",
+      "children": [
+        {
+          "name": "Data Science Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Enterprise ML Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "GPU Cloud",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Enterprise ML Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Enterprise ML Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "AI Hardware",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Science Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Horizontal AI/AGI",
+          "color": "",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "color": "hsl(103, 70%, 50%)",
+      "children": [
+        {
+          "name": "Compute",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Streaming/In-Memory",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Warehouses",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "ETL/ELT/Data Transformation",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "NoSQL Databases",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Storage",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Warehouses",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Infrastructure - Orchestration",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "RDBMs",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Real Time Databases",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "RDBMs",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "RDBMs",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Integration",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Warehouses",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "ETL/ELT/Data Transformation",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Lakes/Lakehouses",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "NoSQL Databases",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Governance & Catalog",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "RDBMs",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "ETL/ELT/Data Transformation",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Lakes/Lakehouses",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Graph DBs",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Streaming/In-Memory",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Compute",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "ETL/ELT/Data Transformation",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "MPP DBs",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "MGMT/Monitoring",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "ETL/ELT/Data Transformation",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Warehouses",
+          "color": "",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "color": "hsl(103, 70%, 50%)",
+      "children": [
+        {
+          "name": "Analytics - Visualization",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Analyst Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Analytics - Visualization",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Enterprise Search",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Log Analytics",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "BI Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "BI Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Customer Data Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Log Analytics",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Log Analytics",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Query Engine",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "BI Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "BI Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Product Analytics",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Analyst Platforms",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Analytics - Visualization",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Analyst Platforms",
+          "color": "",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Data & AI Consulting",
+      "color": "hsl(103, 70%, 50%)",
+      "children": []
+    },
+    {
+      "name": "Open Source Infrastructure",
+      "color": "hsl(103, 70%, 50%)",
+      "children": [
+        {
+          "name": "Stat Tools & Languages",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Frameworks",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Frameworks",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Query/Dataflow",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Frameworks",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Streaming & Messaging",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Stat Tools & Languages",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Databases",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Open Source - Orchestration",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Stat Tools & Languages",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Query/Dataflow",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Stat Tools & Languages",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Databases",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Databases",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "AI Frameworks & Libraries",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Collaboration",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Databases",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Frameworks",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "AI Frameworks & Libraries",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Stat Tools & Languages",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Query/Dataflow",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Logging & Monitoring",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Streaming & Messaging",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Frameworks",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Streaming & Messaging",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "AI Frameworks & Libraries",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Query/Dataflow",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Format",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "MLOps & AI Infra",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Logging & Monitoring",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Query/Dataflow",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Data Access",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "MLOps & AI Infra",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Databases",
+          "color": "",
+          "children": []
+        },
+        {
+          "name": "Databases",
+          "color": "",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
