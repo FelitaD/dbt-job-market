@@ -3,7 +3,7 @@ import json
 from streamlit_elements import nivo, mui
 from .dashboard import Dashboard
 
-from reporting.transformers import scatter_data
+from .transformers import scatter_data
 
 
 class Scatter(Dashboard.Item):

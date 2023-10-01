@@ -3,7 +3,7 @@ import json
 from streamlit_elements import nivo, mui
 from .dashboard import Dashboard
 
-from reporting.transformers import radial_data
+from .transformers import radial_data
 
 
 class RadialBar(Dashboard.Item):

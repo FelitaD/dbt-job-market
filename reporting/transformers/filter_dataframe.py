@@ -11,7 +11,7 @@ from typing import List
 from pandas import DataFrame
 from pandas.api.types import is_list_like
 
-from reporting.utils import run_query, all_data_columns, relevant_jobs_stmt
+from .utils import run_query, all_data_columns, relevant_jobs_stmt
 
 
 class DataframeFilter:

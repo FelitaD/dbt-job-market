@@ -11,8 +11,8 @@ from streamlit_timeline import timeline
 from streamlit_elements import elements, sync, event
 from types import SimpleNamespace
 
-from reporting.dashboard import Dashboard, Treemap, Sankey, Scatter, RadialBar
-from reporting.transformers import create_relevant_jobs_st_df, DataframeFilter
+from .dashboard import Dashboard, Treemap, Sankey, Scatter, RadialBar
+from .transformers import create_relevant_jobs_st_df, DataframeFilter
 
 
 def main():

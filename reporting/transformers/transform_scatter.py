@@ -6,7 +6,7 @@ The graph also adds the percentiles as box plots on the margins.
 The size of a company is represented by the size of the marker.
 """
 
-from reporting.transformers import companies_df
+from .transformers import companies_df
 
 
 def transform_row(row):

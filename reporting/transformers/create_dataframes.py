@@ -1,8 +1,8 @@
 import pandas as pd
 import streamlit as st
 
-from reporting.utils.run_query import run_query
-from reporting.utils import companies_stmt, technos_stmt, all_jobs_stmt, relevant_jobs_stmt, sankey_stmt
+from .utils.run_query import run_query
+from .utils import companies_stmt, technos_stmt, all_jobs_stmt, relevant_jobs_stmt, sankey_stmt
 
 companies_df = pd.DataFrame(run_query(companies_stmt))
 technos_df = pd.DataFrame(run_query(technos_stmt))
