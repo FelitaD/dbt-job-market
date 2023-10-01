@@ -1,7 +1,7 @@
 import json
 
 from streamlit_elements import nivo, mui
-from board import Dashboard
+from reporting.dashboard.board import Dashboard
 
 from ..transformers import scatter_data
 

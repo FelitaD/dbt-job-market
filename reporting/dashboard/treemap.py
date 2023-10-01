@@ -1,7 +1,7 @@
 import json
 
 from streamlit_elements import nivo, mui
-from board import Dashboard
+from reporting.dashboard.board import Dashboard
 
 
 class Treemap(Dashboard.Item):
@@ -43,7 +43,7 @@ class Treemap(Dashboard.Item):
     def __call__(self):
         try:
             # TODO: Add transform_treemap module
-            with open('/data/test_data.json', 'r') as f:
+            with open('reporting/data/test_data.json', 'r') as f:
                 data = json.load(f)
         except json.JSONDecodeError:
             data = self.DEFAULT_DATA
