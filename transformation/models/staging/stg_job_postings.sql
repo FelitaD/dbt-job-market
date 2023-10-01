@@ -41,6 +41,7 @@ stg_job_postings as (
             when remote like '%total%' then 'total'
             when remote like '%partiel%' or remote like '%régulier%' then 'partial'
             when remote like '%occasionnel%' or remote like '%ponctuel%' then 'ponctual'
+            when (remote like 'N' or remote IS NULL) and url like '%linkedin%' then 'total'
             when remote like 'N' then NULL
             else remote
         end as clean_remote,
