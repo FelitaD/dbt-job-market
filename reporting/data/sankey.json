@@ -1,0 +1,24 @@
+{
+        "nodes": [
+            {"id": "raw", "nodeColor": "hsl(116, 70%, 50%)"},
+            {"id": "jobs", "nodeColor": "hsl(116, 70%, 50%)"},
+            {"id": "raw_neg", "nodeColor": "hsl(267, 70%, 50%)"},
+            {"id": "relevant", "nodeColor": "hsl(277, 70%, 50%)"},
+            {"id": "jobs_neg", "nodeColor": "hsl(20, 70%, 50%)"},
+            {"id": "relevant", "nodeColor": "hsl(138, 70%, 50%)"},
+            {"id": "unspecified", "nodeColor": "hsl(342, 70%, 50%)"},
+            {"id": "senior", "nodeColor": "hsl(342, 70%, 50%)"},
+            {"id": "graduate", "nodeColor": "hsl(342, 70%, 50%)"},
+            {"id": "junior", "nodeColor": "hsl(342, 70%, 50%)"}
+        ],
+        "links": [
+            {"source": "raw", "target": "jobs", "value": 2618},
+            {"source": "raw", "target": "raw_neg", "value": 810},
+            {"source": "jobs", "relevant": "Marcel", "value": 658},
+            {"source": "jobs", "jobs_neg": "Junko", "value": 1960},
+            {"source": "relevant", "unspecified": "Raoul", "value": 494},
+            {"source": "relevant", "senior": "John", "value": 119},
+            {"source": "relevant", "junior": "Ibrahim", "value": 6},
+            {"source": "relevant", "graduate": "Ibrahim", "value": 39}
+        ]
+    }

@@ -1,0 +1,609 @@
+{
+    "name": "technos",
+    "t": "hsl(103, 70%, 50%)",
+    "children": [
+        {
+            "name": "Analytics",
+            "children": [
+                {
+                    "name": "Analytics - Visualization",
+                    "children": [
+                        {
+                            "name": "Grid",
+                            "loc": "14"
+                        },
+                        {
+                            "name": "Power BI",
+                            "loc": "254"
+                        },
+                        {
+                            "name": "Tableau",
+                            "loc": "189"
+                        }
+                    ]
+                },
+                {
+                    "name": "BI Platforms",
+                    "children": [
+                        {
+                            "name": "Looker",
+                            "loc": "48"
+                        },
+                        {
+                            "name": "Metabase",
+                            "loc": "20"
+                        },
+                        {
+                            "name": "Microstrategy",
+                            "loc": "17"
+                        },
+                        {
+                            "name": "Qlik",
+                            "loc": "81"
+                        }
+                    ]
+                },
+                {
+                    "name": "Customer Data Platforms",
+                    "children": [
+                        {
+                            "name": "Salesforce CDP",
+                            "loc": "45"
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Analyst Platforms",
+                    "children": [
+                        {
+                            "name": "Alteryx",
+                            "loc": "12"
+                        },
+                        {
+                            "name": "Canvas",
+                            "loc": "15"
+                        },
+                        {
+                            "name": "Microsoft",
+                            "loc": "252"
+                        }
+                    ]
+                },
+                {
+                    "name": "Enterprise Search",
+                    "children": [
+                        {
+                            "name": "Elastic",
+                            "loc": "159"
+                        }
+                    ]
+                },
+                {
+                    "name": "Log Analytics",
+                    "children": [
+                        {
+                            "name": "Datadog",
+                            "loc": "85"
+                        },
+                        {
+                            "name": "Kibana",
+                            "loc": "29"
+                        },
+                        {
+                            "name": "Splunk",
+                            "loc": "28"
+                        }
+                    ]
+                },
+                {
+                    "name": "Product Analytics",
+                    "children": [
+                        {
+                            "name": "Google Analytics",
+                            "loc": "15"
+                        }
+                    ]
+                },
+                {
+                    "name": "Query Engine",
+                    "children": [
+                        {
+                            "name": "Athena",
+                            "loc": "24"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Data Sources & APIs",
+            "children": [
+                {
+                    "name": "Data Marketplaces & Discovery",
+                    "children": [
+                        {
+                            "name": "Narrative",
+                            "loc": "53"
+                        },
+                        {
+                            "name": "Snowflake Data Exchange",
+                            "loc": "159"
+                        }
+                    ]
+                },
+                {
+                    "name": "People/Entities",
+                    "children": [
+                        {
+                            "name": "Epsilon",
+                            "loc": "20"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Infrastructure",
+            "children": [
+                {
+                    "name": "Compute",
+                    "children": [
+                        {
+                            "name": "Amazon ECS",
+                            "loc": "13"
+                        },
+                        {
+                            "name": "Azure",
+                            "loc": "510"
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Governance & Catalog",
+                    "children": [
+                        {
+                            "name": "IBM",
+                            "loc": "34"
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Integration",
+                    "children": [
+                        {
+                            "name": "Informatica",
+                            "loc": "71"
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Lakes/Lakehouses",
+                    "children": [
+                        {
+                            "name": "Amazon EMR",
+                            "loc": "28"
+                        },
+                        {
+                            "name": "Cloudera",
+                            "loc": "42"
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Warehouses",
+                    "children": [
+                        {
+                            "name": "Azure Synapse Analytics",
+                            "loc": "11"
+                        },
+                        {
+                            "name": "Google BigQuery",
+                            "loc": "100"
+                        },
+                        {
+                            "name": "RedShift",
+                            "loc": "66"
+                        },
+                        {
+                            "name": "Snowflake",
+                            "loc": "159"
+                        }
+                    ]
+                },
+                {
+                    "name": "ETL/ELT/Data Transformation",
+                    "children": [
+                        {
+                            "name": "AWS Glue",
+                            "loc": "31"
+                        },
+                        {
+                            "name": "Airbyte",
+                            "loc": "13"
+                        },
+                        {
+                            "name": "Azure Data Factory",
+                            "loc": "57"
+                        },
+                        {
+                            "name": "Fivetran",
+                            "loc": "12"
+                        },
+                        {
+                            "name": "Talend",
+                            "loc": "138"
+                        }
+                    ]
+                },
+                {
+                    "name": "Graph DBs",
+                    "children": [
+                        {
+                            "name": "neo4j",
+                            "loc": "27"
+                        }
+                    ]
+                },
+                {
+                    "name": "Infrastructure - Orchestration",
+                    "children": [
+                        {
+                            "name": "Microsoft Azure Data Factory",
+                            "loc": "97"
+                        }
+                    ]
+                },
+                {
+                    "name": "MGMT/Monitoring",
+                    "children": [
+                        {
+                            "name": "VMWare Aria",
+                            "loc": "13"
+                        }
+                    ]
+                },
+                {
+                    "name": "MPP DBs",
+                    "children": [
+                        {
+                            "name": "Teradata",
+                            "loc": "13"
+                        }
+                    ]
+                },
+                {
+                    "name": "NoSQL Databases",
+                    "children": [
+                        {
+                            "name": "DynamoDB",
+                            "loc": "35"
+                        },
+                        {
+                            "name": "MongoDB",
+                            "loc": "131"
+                        }
+                    ]
+                },
+                {
+                    "name": "RDBMs",
+                    "children": [
+                        {
+                            "name": "Amazon RDS",
+                            "loc": "32"
+                        },
+                        {
+                            "name": "Microsoft SQL Server",
+                            "loc": "89"
+                        },
+                        {
+                            "name": "Oracle",
+                            "loc": "78"
+                        },
+                        {
+                            "name": "SAP ASE",
+                            "loc": "97"
+                        }
+                    ]
+                },
+                {
+                    "name": "Real Time Databases",
+                    "children": [
+                        {
+                            "name": "Redis",
+                            "loc": "95"
+                        }
+                    ]
+                },
+                {
+                    "name": "Storage",
+                    "children": [
+                        {
+                            "name": "S3",
+                            "loc": "101"
+                        }
+                    ]
+                },
+                {
+                    "name": "Streaming/In-Memory",
+                    "children": [
+                        {
+                            "name": "Amazon Kinesis",
+                            "loc": "26"
+                        },
+                        {
+                            "name": "Databricks",
+                            "loc": "165"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Machine Learning & Artificial Intelligence",
+            "children": [
+                {
+                    "name": "AI Hardware",
+                    "children": [
+                        {
+                            "name": "Arm",
+                            "loc": "19"
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Science Platforms",
+                    "children": [
+                        {
+                            "name": "Sas",
+                            "loc": "83"
+                        },
+                        {
+                            "name": "Tibco",
+                            "loc": "11"
+                        }
+                    ]
+                },
+                {
+                    "name": "Enterprise ML Platforms",
+                    "children": [
+                        {
+                            "name": "Continual",
+                            "loc": "80"
+                        },
+                        {
+                            "name": "Dataiku",
+                            "loc": "44"
+                        },
+                        {
+                            "name": "Modular",
+                            "loc": "30"
+                        }
+                    ]
+                },
+                {
+                    "name": "GPU Cloud",
+                    "children": [
+                        {
+                            "name": "Lambda",
+                            "loc": "47"
+                        }
+                    ]
+                },
+                {
+                    "name": "Horizontal AI/AGI",
+                    "children": [
+                        {
+                            "name": "CSM",
+                            "loc": "11"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Open Source Infrastructure",
+            "children": [
+                {
+                    "name": "AI Frameworks & Libraries",
+                    "children": [
+                        {
+                            "name": "Keras",
+                            "loc": "19"
+                        },
+                        {
+                            "name": "PyTorch",
+                            "loc": "36"
+                        },
+                        {
+                            "name": "TensorFlow",
+                            "loc": "58"
+                        }
+                    ]
+                },
+                {
+                    "name": "Collaboration",
+                    "children": [
+                        {
+                            "name": "Jupyter",
+                            "loc": "40"
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Access",
+                    "children": [
+                        {
+                            "name": "DataHub",
+                            "loc": "14"
+                        }
+                    ]
+                },
+                {
+                    "name": "Databases",
+                    "children": [
+                        {
+                            "name": "Cassandra",
+                            "loc": "58"
+                        },
+                        {
+                            "name": "Flume",
+                            "loc": "12"
+                        },
+                        {
+                            "name": "HBase",
+                            "loc": "37"
+                        },
+                        {
+                            "name": "InfluxDB",
+                            "loc": "12"
+                        },
+                        {
+                            "name": "MySQL",
+                            "loc": "60"
+                        },
+                        {
+                            "name": "PostgreSQL",
+                            "loc": "199"
+                        }
+                    ]
+                },
+                {
+                    "name": "Format",
+                    "children": [
+                        {
+                            "name": "Parquet",
+                            "loc": "18"
+                        }
+                    ]
+                },
+                {
+                    "name": "Frameworks",
+                    "children": [
+                        {
+                            "name": "Docker",
+                            "loc": "438"
+                        },
+                        {
+                            "name": "Flink",
+                            "loc": "27"
+                        },
+                        {
+                            "name": "Kubernetes",
+                            "loc": "529"
+                        },
+                        {
+                            "name": "Spark",
+                            "loc": "527"
+                        },
+                        {
+                            "name": "Yarn",
+                            "loc": "37"
+                        }
+                    ]
+                },
+                {
+                    "name": "Logging & Monitoring",
+                    "children": [
+                        {
+                            "name": "Grafana",
+                            "loc": "29"
+                        },
+                        {
+                            "name": "Prometheus",
+                            "loc": "15"
+                        }
+                    ]
+                },
+                {
+                    "name": "MLOps & AI Infra",
+                    "children": [
+                        {
+                            "name": "KubeFlow",
+                            "loc": "15"
+                        },
+                        {
+                            "name": "MLFlow",
+                            "loc": "13"
+                        }
+                    ]
+                },
+                {
+                    "name": "Open Source - Orchestration",
+                    "children": [
+                        {
+                            "name": "Airflow",
+                            "loc": "193"
+                        }
+                    ]
+                },
+                {
+                    "name": "Query/Dataflow",
+                    "children": [
+                        {
+                            "name": "Apache Pig",
+                            "loc": "15"
+                        },
+                        {
+                            "name": "Beam",
+                            "loc": "18"
+                        },
+                        {
+                            "name": "GraphQL",
+                            "loc": "33"
+                        },
+                        {
+                            "name": "Hive",
+                            "loc": "99"
+                        },
+                        {
+                            "name": "Spark SQL",
+                            "loc": "527"
+                        }
+                    ]
+                },
+                {
+                    "name": "Stat Tools & Languages",
+                    "children": [
+                        {
+                            "name": "NumPy",
+                            "loc": "36"
+                        },
+                        {
+                            "name": "Pandas",
+                            "loc": "62"
+                        },
+                        {
+                            "name": "Python",
+                            "loc": "1614"
+                        },
+                        {
+                            "name": "R",
+                            "loc": "141"
+                        },
+                        {
+                            "name": "Scala",
+                            "loc": "250"
+                        }
+                    ]
+                },
+                {
+                    "name": "Streaming & Messaging",
+                    "children": [
+                        {
+                            "name": "Kafka",
+                            "loc": "277"
+                        },
+                        {
+                            "name": "Nifi",
+                            "loc": "25"
+                        },
+                        {
+                            "name": "RabbitMQ",
+                            "loc": "28"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

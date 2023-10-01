@@ -11,8 +11,7 @@ from typing import List
 from pandas import DataFrame
 from pandas.api.types import is_list_like
 
-from config.definitions import all_data_columns, all_data_stmt
-from reporting.helpers.run_query import run_query
+from reporting.utils import run_query, all_data_columns, relevant_jobs_stmt
 
 
 class DataframeFilter:
@@ -29,10 +28,10 @@ class DataframeFilter:
 
         Creates an unfiltered dataframe on initialisation.
         """
-        self.df = self.create_unfiltered_df()
+        self.df = self.create_unfiltered_relevant_df()
 
     @staticmethod
-    def create_unfiltered_df() -> DataFrame:
+    def create_unfiltered_relevant_df() -> DataFrame:
         """Creates a dataframe used by all filtering operations.
 
         The function requests the database indirectly via another function
@@ -43,7 +42,7 @@ class DataframeFilter:
             A Pandas DataFrame containing 3 tables joined together:
             jobs, companies and scores.
         """
-        df = pd.DataFrame(run_query(all_data_stmt))
+        df = pd.DataFrame(run_query(relevant_jobs_stmt))
         df['rating'] = df['rating'].astype(float)
 
         if not is_list_like(df['stack']):

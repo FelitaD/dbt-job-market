@@ -1,14 +1,58 @@
-"""Produces the job board dataframe in Streamlit.
-
-Not all columns are shown in the UI.
-They can be shown if uncommented, as well as an
-optional row highlighting.
-"""
+import pandas as pd
 import streamlit as st
-from pandas import DataFrame
+
+from reporting.utils.run_query import run_query
+from reporting.utils import companies_stmt, technos_stmt, all_jobs_stmt, relevant_jobs_stmt, sankey_stmt
+
+companies_df = pd.DataFrame(run_query(companies_stmt))
+technos_df = pd.DataFrame(run_query(technos_stmt))
+all_jobs_df = pd.DataFrame(run_query(all_jobs_stmt))
+relevant_df = pd.DataFrame(run_query(relevant_jobs_stmt))
+sankey_df = pd.DataFrame(run_query(sankey_stmt))
 
 
-def create_job_board(df: DataFrame) -> st.dataframe:
+def create_companies_st_df() -> st.data_editor:
+    """Creates the companies dataframe in the UI.
+
+    Returns:
+        An instance of st.data_editor.
+    """
+    return st.data_editor(companies_df.sort_values(by=['company_name']),
+                          use_container_width=True,
+                          column_config={
+                              "company_name": st.column_config.TextColumn('name (listing)'),
+                              "name": st.column_config.TextColumn('name (glassdoor)'),
+                              "url": st.column_config.LinkColumn('url', width='small'),
+                              "industry": st.column_config.Column(),
+                              "headquarters": st.column_config.Column(),
+                              "rating": st.column_config.Column(),
+                              "company_size": st.column_config.NumberColumn('size mean'),
+                              "reviews_count": st.column_config.NumberColumn(),
+                              "jobs_count": st.column_config.NumberColumn(),
+                              "salaries_count": st.column_config.NumberColumn(),
+                          })
+
+
+def create_technos_st_df(key) -> st.data_editor:
+    """Creates the technologies dataframe in the UI.
+
+    Returns:
+        An instance of st.data_editor.
+    """
+    return st.data_editor(technos_df,
+                          use_container_width=True,
+                          column_order=('total', 'techno', 'category', 'subcategory', 'description'),
+                          column_config={
+                              'total': st.column_config.Column(width='small', label='total'),
+                              'techno': st.column_config.Column(label='techno name'),
+                              'category': st.column_config.Column(),
+                              'subcategory': st.column_config.Column(),
+                              'description': st.column_config.Column(),
+                          },
+                          key=key)
+
+
+def create_relevant_jobs_st_df(df: pd.DataFrame) -> st.dataframe:
     """Creates the job board dataframe in the UI.
 
     Args:
@@ -83,4 +127,3 @@ def create_job_board(df: DataFrame) -> st.dataframe:
         },
         height=600
     )
-

@@ -1,0 +1,1228 @@
+{
+  "Open Source Infrastructure": {
+    "name": "Open Source Infrastructure",
+    "color": "hsl(39, 70%, 50%)",
+    "children": [
+      {
+        "Stat Tools & Languages": {
+          "name": "Stat Tools & Languages",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Python",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 1614
+            }
+          ]
+        }
+      },
+      {
+        "Frameworks": {
+          "name": "Frameworks",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Kubernetes",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 529
+            }
+          ]
+        }
+      },
+      {
+        "Frameworks": {
+          "name": "Frameworks",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Spark",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 527
+            }
+          ]
+        }
+      },
+      {
+        "Query/Dataflow": {
+          "name": "Query/Dataflow",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Spark SQL",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 527
+            }
+          ]
+        }
+      },
+      {
+        "Frameworks": {
+          "name": "Frameworks",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Docker",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 438
+            }
+          ]
+        }
+      },
+      {
+        "Streaming & Messaging": {
+          "name": "Streaming & Messaging",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Kafka",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 277
+            }
+          ]
+        }
+      },
+      {
+        "Stat Tools & Languages": {
+          "name": "Stat Tools & Languages",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Scala",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 250
+            }
+          ]
+        }
+      },
+      {
+        "Databases": {
+          "name": "Databases",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "PostgreSQL",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 199
+            }
+          ]
+        }
+      },
+      {
+        "Open Source - Orchestration": {
+          "name": "Open Source - Orchestration",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Airflow",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 193
+            }
+          ]
+        }
+      },
+      {
+        "Stat Tools & Languages": {
+          "name": "Stat Tools & Languages",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "R",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 141
+            }
+          ]
+        }
+      },
+      {
+        "Query/Dataflow": {
+          "name": "Query/Dataflow",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Hive",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 99
+            }
+          ]
+        }
+      },
+      {
+        "Stat Tools & Languages": {
+          "name": "Stat Tools & Languages",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Pandas",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 62
+            }
+          ]
+        }
+      },
+      {
+        "Databases": {
+          "name": "Databases",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "MySQL",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 60
+            }
+          ]
+        }
+      },
+      {
+        "Databases": {
+          "name": "Databases",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Cassandra",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 58
+            }
+          ]
+        }
+      },
+      {
+        "AI Frameworks & Libraries": {
+          "name": "AI Frameworks & Libraries",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "TensorFlow",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 58
+            }
+          ]
+        }
+      },
+      {
+        "Collaboration": {
+          "name": "Collaboration",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Jupyter",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 40
+            }
+          ]
+        }
+      },
+      {
+        "Databases": {
+          "name": "Databases",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "HBase",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 37
+            }
+          ]
+        }
+      },
+      {
+        "Frameworks": {
+          "name": "Frameworks",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Yarn",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 37
+            }
+          ]
+        }
+      },
+      {
+        "AI Frameworks & Libraries": {
+          "name": "AI Frameworks & Libraries",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "PyTorch",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 36
+            }
+          ]
+        }
+      },
+      {
+        "Stat Tools & Languages": {
+          "name": "Stat Tools & Languages",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "NumPy",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 36
+            }
+          ]
+        }
+      },
+      {
+        "Query/Dataflow": {
+          "name": "Query/Dataflow",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "GraphQL",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 33
+            }
+          ]
+        }
+      },
+      {
+        "Logging & Monitoring": {
+          "name": "Logging & Monitoring",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Grafana",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 29
+            }
+          ]
+        }
+      },
+      {
+        "Streaming & Messaging": {
+          "name": "Streaming & Messaging",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "RabbitMQ",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 28
+            }
+          ]
+        }
+      },
+      {
+        "Frameworks": {
+          "name": "Frameworks",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Flink",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 27
+            }
+          ]
+        }
+      },
+      {
+        "Streaming & Messaging": {
+          "name": "Streaming & Messaging",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Nifi",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 25
+            }
+          ]
+        }
+      },
+      {
+        "AI Frameworks & Libraries": {
+          "name": "AI Frameworks & Libraries",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Keras",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 19
+            }
+          ]
+        }
+      },
+      {
+        "Query/Dataflow": {
+          "name": "Query/Dataflow",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Beam",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 18
+            }
+          ]
+        }
+      },
+      {
+        "Format": {
+          "name": "Format",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Parquet",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 18
+            }
+          ]
+        }
+      },
+      {
+        "MLOps & AI Infra": {
+          "name": "MLOps & AI Infra",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "KubeFlow",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 15
+            }
+          ]
+        }
+      },
+      {
+        "Logging & Monitoring": {
+          "name": "Logging & Monitoring",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Prometheus",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 15
+            }
+          ]
+        }
+      },
+      {
+        "Query/Dataflow": {
+          "name": "Query/Dataflow",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Apache Pig",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 15
+            }
+          ]
+        }
+      },
+      {
+        "Data Access": {
+          "name": "Data Access",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "DataHub",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 14
+            }
+          ]
+        }
+      },
+      {
+        "MLOps & AI Infra": {
+          "name": "MLOps & AI Infra",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "MLFlow",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 13
+            }
+          ]
+        }
+      },
+      {
+        "Databases": {
+          "name": "Databases",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Flume",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 12
+            }
+          ]
+        }
+      },
+      {
+        "Databases": {
+          "name": "Databases",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "InfluxDB",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 12
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "Infrastructure": {
+    "name": "Infrastructure",
+    "color": "hsl(39, 70%, 50%)",
+    "children": [
+      {
+        "Compute": {
+          "name": "Compute",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Azure",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 510
+            }
+          ]
+        }
+      },
+      {
+        "Streaming/In-Memory": {
+          "name": "Streaming/In-Memory",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Databricks",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 165
+            }
+          ]
+        }
+      },
+      {
+        "Data Warehouses": {
+          "name": "Data Warehouses",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Snowflake",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 159
+            }
+          ]
+        }
+      },
+      {
+        "ETL/ELT/Data Transformation": {
+          "name": "ETL/ELT/Data Transformation",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Talend",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 138
+            }
+          ]
+        }
+      },
+      {
+        "NoSQL Databases": {
+          "name": "NoSQL Databases",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "MongoDB",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 131
+            }
+          ]
+        }
+      },
+      {
+        "Storage": {
+          "name": "Storage",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "S3",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 101
+            }
+          ]
+        }
+      },
+      {
+        "Data Warehouses": {
+          "name": "Data Warehouses",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Google BigQuery",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 100
+            }
+          ]
+        }
+      },
+      {
+        "Infrastructure - Orchestration": {
+          "name": "Infrastructure - Orchestration",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Microsoft Azure Data Factory",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 97
+            }
+          ]
+        }
+      },
+      {
+        "RDBMs": {
+          "name": "RDBMs",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "SAP ASE",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 97
+            }
+          ]
+        }
+      },
+      {
+        "Real Time Databases": {
+          "name": "Real Time Databases",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Redis",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 95
+            }
+          ]
+        }
+      },
+      {
+        "RDBMs": {
+          "name": "RDBMs",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Microsoft SQL Server",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 89
+            }
+          ]
+        }
+      },
+      {
+        "RDBMs": {
+          "name": "RDBMs",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Oracle",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 78
+            }
+          ]
+        }
+      },
+      {
+        "Data Integration": {
+          "name": "Data Integration",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Informatica",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 71
+            }
+          ]
+        }
+      },
+      {
+        "Data Warehouses": {
+          "name": "Data Warehouses",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "RedShift",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 66
+            }
+          ]
+        }
+      },
+      {
+        "ETL/ELT/Data Transformation": {
+          "name": "ETL/ELT/Data Transformation",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Azure Data Factory",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 57
+            }
+          ]
+        }
+      },
+      {
+        "Data Lakes/Lakehouses": {
+          "name": "Data Lakes/Lakehouses",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Cloudera",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 42
+            }
+          ]
+        }
+      },
+      {
+        "NoSQL Databases": {
+          "name": "NoSQL Databases",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "DynamoDB",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 35
+            }
+          ]
+        }
+      },
+      {
+        "Data Governance & Catalog": {
+          "name": "Data Governance & Catalog",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "IBM",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 34
+            }
+          ]
+        }
+      },
+      {
+        "RDBMs": {
+          "name": "RDBMs",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Amazon RDS",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 32
+            }
+          ]
+        }
+      },
+      {
+        "ETL/ELT/Data Transformation": {
+          "name": "ETL/ELT/Data Transformation",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "AWS Glue",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 31
+            }
+          ]
+        }
+      },
+      {
+        "Data Lakes/Lakehouses": {
+          "name": "Data Lakes/Lakehouses",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Amazon EMR",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 28
+            }
+          ]
+        }
+      },
+      {
+        "Graph DBs": {
+          "name": "Graph DBs",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "neo4j",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 27
+            }
+          ]
+        }
+      },
+      {
+        "Streaming/In-Memory": {
+          "name": "Streaming/In-Memory",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Amazon Kinesis",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 26
+            }
+          ]
+        }
+      },
+      {
+        "Compute": {
+          "name": "Compute",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Amazon ECS",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 13
+            }
+          ]
+        }
+      },
+      {
+        "ETL/ELT/Data Transformation": {
+          "name": "ETL/ELT/Data Transformation",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Airbyte",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 13
+            }
+          ]
+        }
+      },
+      {
+        "MPP DBs": {
+          "name": "MPP DBs",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Teradata",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 13
+            }
+          ]
+        }
+      },
+      {
+        "MGMT/Monitoring": {
+          "name": "MGMT/Monitoring",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "VMWare Aria",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 13
+            }
+          ]
+        }
+      },
+      {
+        "ETL/ELT/Data Transformation": {
+          "name": "ETL/ELT/Data Transformation",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Fivetran",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 12
+            }
+          ]
+        }
+      },
+      {
+        "Data Warehouses": {
+          "name": "Data Warehouses",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Azure Synapse Analytics",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 11
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "Analytics": {
+    "name": "Analytics",
+    "color": "hsl(39, 70%, 50%)",
+    "children": [
+      {
+        "Analytics - Visualization": {
+          "name": "Analytics - Visualization",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Power BI",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 254
+            }
+          ]
+        }
+      },
+      {
+        "Data Analyst Platforms": {
+          "name": "Data Analyst Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Microsoft",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 252
+            }
+          ]
+        }
+      },
+      {
+        "Analytics - Visualization": {
+          "name": "Analytics - Visualization",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Tableau",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 189
+            }
+          ]
+        }
+      },
+      {
+        "Enterprise Search": {
+          "name": "Enterprise Search",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Elastic",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 159
+            }
+          ]
+        }
+      },
+      {
+        "Log Analytics": {
+          "name": "Log Analytics",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Datadog",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 85
+            }
+          ]
+        }
+      },
+      {
+        "BI Platforms": {
+          "name": "BI Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Qlik",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 81
+            }
+          ]
+        }
+      },
+      {
+        "BI Platforms": {
+          "name": "BI Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Looker",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 48
+            }
+          ]
+        }
+      },
+      {
+        "Customer Data Platforms": {
+          "name": "Customer Data Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Salesforce CDP",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 45
+            }
+          ]
+        }
+      },
+      {
+        "Log Analytics": {
+          "name": "Log Analytics",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Kibana",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 29
+            }
+          ]
+        }
+      },
+      {
+        "Log Analytics": {
+          "name": "Log Analytics",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Splunk",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 28
+            }
+          ]
+        }
+      },
+      {
+        "Query Engine": {
+          "name": "Query Engine",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Athena",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 24
+            }
+          ]
+        }
+      },
+      {
+        "BI Platforms": {
+          "name": "BI Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Metabase",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 20
+            }
+          ]
+        }
+      },
+      {
+        "BI Platforms": {
+          "name": "BI Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Microstrategy",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 17
+            }
+          ]
+        }
+      },
+      {
+        "Product Analytics": {
+          "name": "Product Analytics",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Google Analytics",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 15
+            }
+          ]
+        }
+      },
+      {
+        "Data Analyst Platforms": {
+          "name": "Data Analyst Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Canvas",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 15
+            }
+          ]
+        }
+      },
+      {
+        "Analytics - Visualization": {
+          "name": "Analytics - Visualization",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Grid",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 14
+            }
+          ]
+        }
+      },
+      {
+        "Data Analyst Platforms": {
+          "name": "Data Analyst Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Alteryx",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 12
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "Data Sources & APIs": {
+    "name": "Data Sources & APIs",
+    "color": "hsl(39, 70%, 50%)",
+    "children": [
+      {
+        "Data Marketplaces & Discovery": {
+          "name": "Data Marketplaces & Discovery",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Snowflake Data Exchange",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 159
+            }
+          ]
+        }
+      },
+      {
+        "Data Marketplaces & Discovery": {
+          "name": "Data Marketplaces & Discovery",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Narrative",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 53
+            }
+          ]
+        }
+      },
+      {
+        "People/Entities": {
+          "name": "People/Entities",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Epsilon",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 20
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "Machine Learning & Artificial Intelligence": {
+    "name": "Machine Learning & Artificial Intelligence",
+    "color": "hsl(39, 70%, 50%)",
+    "children": [
+      {
+        "Data Science Platforms": {
+          "name": "Data Science Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Sas",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 83
+            }
+          ]
+        }
+      },
+      {
+        "Enterprise ML Platforms": {
+          "name": "Enterprise ML Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Continual",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 80
+            }
+          ]
+        }
+      },
+      {
+        "GPU Cloud": {
+          "name": "GPU Cloud",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Lambda",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 47
+            }
+          ]
+        }
+      },
+      {
+        "Enterprise ML Platforms": {
+          "name": "Enterprise ML Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Dataiku",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 44
+            }
+          ]
+        }
+      },
+      {
+        "Enterprise ML Platforms": {
+          "name": "Enterprise ML Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Modular",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 30
+            }
+          ]
+        }
+      },
+      {
+        "AI Hardware": {
+          "name": "AI Hardware",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Arm",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 19
+            }
+          ]
+        }
+      },
+      {
+        "Data Science Platforms": {
+          "name": "Data Science Platforms",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "Tibco",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 11
+            }
+          ]
+        }
+      },
+      {
+        "Horizontal AI/AGI": {
+          "name": "Horizontal AI/AGI",
+          "color": "hsl(39, 50%, 30%)",
+          "children": [
+            {
+              "name": "CSM",
+              "color": "hsl(39, 30%, 10%)",
+              "loc": 11
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

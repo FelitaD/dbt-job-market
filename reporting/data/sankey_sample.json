@@ -1,0 +1,66 @@
+{
+  "nodes": [
+    {
+      "id": "John",
+      "nodeColor": "hsl(116, 70%, 50%)"
+    },
+    {
+      "id": "Raoul",
+      "nodeColor": "hsl(267, 70%, 50%)"
+    },
+    {
+      "id": "Jane",
+      "nodeColor": "hsl(277, 70%, 50%)"
+    },
+    {
+      "id": "Marcel",
+      "nodeColor": "hsl(20, 70%, 50%)"
+    },
+    {
+      "id": "Ibrahim",
+      "nodeColor": "hsl(138, 70%, 50%)"
+    },
+    {
+      "id": "Junko",
+      "nodeColor": "hsl(342, 70%, 50%)"
+    }
+  ],
+  "links": [
+    {
+      "source": "Marcel",
+      "target": "John",
+      "value": 137
+    },
+    {
+      "source": "Junko",
+      "target": "John",
+      "value": 87
+    },
+    {
+      "source": "Junko",
+      "target": "Marcel",
+      "value": 55
+    },
+    {
+      "source": "Ibrahim",
+      "target": "Junko",
+      "value": 155
+    },
+    {
+      "source": "John",
+      "target": "Raoul",
+      "value": 85
+    },
+    {
+      "source": "Jane",
+      "target": "John",
+      "value": 14
+    },
+    {
+      "source": "Jane",
+      "target": "Ibrahim",
+      "value": 46
+    }
+  ]
+}
+ACTIONS LOGS

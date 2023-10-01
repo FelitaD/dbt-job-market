@@ -1,0 +1,461 @@
+[{
+  "category": "Analytics",
+  "subcategory": "Analytics - Visualization",
+  "techno": "Grid",
+  "loc": "14"
+}, {
+  "category": "Analytics",
+  "subcategory": "Analytics - Visualization",
+  "techno": "Power BI",
+  "loc": "254"
+}, {
+  "category": "Analytics",
+  "subcategory": "Analytics - Visualization",
+  "techno": "Tableau",
+  "loc": "189"
+}, {
+  "category": "Analytics",
+  "subcategory": "BI Platforms",
+  "techno": "Looker",
+  "loc": "48"
+}, {
+  "category": "Analytics",
+  "subcategory": "BI Platforms",
+  "techno": "Metabase",
+  "loc": "20"
+}, {
+  "category": "Analytics",
+  "subcategory": "BI Platforms",
+  "techno": "Microstrategy",
+  "loc": "17"
+}, {
+  "category": "Analytics",
+  "subcategory": "BI Platforms",
+  "techno": "Qlik",
+  "loc": "81"
+}, {
+  "category": "Analytics",
+  "subcategory": "Customer Data Platforms",
+  "techno": "Salesforce CDP",
+  "loc": "45"
+}, {
+  "category": "Analytics",
+  "subcategory": "Data Analyst Platforms",
+  "techno": "Alteryx",
+  "loc": "12"
+}, {
+  "category": "Analytics",
+  "subcategory": "Data Analyst Platforms",
+  "techno": "Canvas",
+  "loc": "15"
+}, {
+  "category": "Analytics",
+  "subcategory": "Data Analyst Platforms",
+  "techno": "Microsoft",
+  "loc": "252"
+}, {
+  "category": "Analytics",
+  "subcategory": "Enterprise Search",
+  "techno": "Elastic",
+  "loc": "159"
+}, {
+  "category": "Analytics",
+  "subcategory": "Log Analytics",
+  "techno": "Datadog",
+  "loc": "85"
+}, {
+  "category": "Analytics",
+  "subcategory": "Log Analytics",
+  "techno": "Kibana",
+  "loc": "29"
+}, {
+  "category": "Analytics",
+  "subcategory": "Log Analytics",
+  "techno": "Splunk",
+  "loc": "28"
+}, {
+  "category": "Analytics",
+  "subcategory": "Product Analytics",
+  "techno": "Google Analytics",
+  "loc": "15"
+}, {
+  "category": "Analytics",
+  "subcategory": "Query Engine",
+  "techno": "Athena",
+  "loc": "24"
+}, {
+  "category": "Data Sources \u0026 APIs",
+  "subcategory": "Data Marketplaces \u0026 Discovery",
+  "techno": "Narrative",
+  "loc": "53"
+}, {
+  "category": "Data Sources \u0026 APIs",
+  "subcategory": "Data Marketplaces \u0026 Discovery",
+  "techno": "Snowflake Data Exchange",
+  "loc": "159"
+}, {
+  "category": "Data Sources \u0026 APIs",
+  "subcategory": "People/Entities",
+  "techno": "Epsilon",
+  "loc": "20"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Compute",
+  "techno": "Amazon ECS",
+  "loc": "13"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Compute",
+  "techno": "Azure",
+  "loc": "510"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Data Governance \u0026 Catalog",
+  "techno": "IBM",
+  "loc": "34"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Data Integration",
+  "techno": "Informatica",
+  "loc": "71"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Data Lakes/Lakehouses",
+  "techno": "Amazon EMR",
+  "loc": "28"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Data Lakes/Lakehouses",
+  "techno": "Cloudera",
+  "loc": "42"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Data Warehouses",
+  "techno": "Azure Synapse Analytics",
+  "loc": "11"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Data Warehouses",
+  "techno": "Google BigQuery",
+  "loc": "100"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Data Warehouses",
+  "techno": "RedShift",
+  "loc": "66"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Data Warehouses",
+  "techno": "Snowflake",
+  "loc": "159"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "ETL/ELT/Data Transformation",
+  "techno": "AWS Glue",
+  "loc": "31"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "ETL/ELT/Data Transformation",
+  "techno": "Airbyte",
+  "loc": "13"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "ETL/ELT/Data Transformation",
+  "techno": "Azure Data Factory",
+  "loc": "57"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "ETL/ELT/Data Transformation",
+  "techno": "Fivetran",
+  "loc": "12"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "ETL/ELT/Data Transformation",
+  "techno": "Talend",
+  "loc": "138"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Graph DBs",
+  "techno": "neo4j",
+  "loc": "27"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Infrastructure - Orchestration",
+  "techno": "Microsoft Azure Data Factory",
+  "loc": "97"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "MGMT/Monitoring",
+  "techno": "VMWare Aria",
+  "loc": "13"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "MPP DBs",
+  "techno": "Teradata",
+  "loc": "13"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "NoSQL Databases",
+  "techno": "DynamoDB",
+  "loc": "35"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "NoSQL Databases",
+  "techno": "MongoDB",
+  "loc": "131"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "RDBMs",
+  "techno": "Amazon RDS",
+  "loc": "32"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "RDBMs",
+  "techno": "Microsoft SQL Server",
+  "loc": "89"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "RDBMs",
+  "techno": "Oracle",
+  "loc": "78"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "RDBMs",
+  "techno": "SAP ASE",
+  "loc": "97"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Real Time Databases",
+  "techno": "Redis",
+  "loc": "95"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Storage",
+  "techno": "S3",
+  "loc": "101"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Streaming/In-Memory",
+  "techno": "Amazon Kinesis",
+  "loc": "26"
+}, {
+  "category": "Infrastructure",
+  "subcategory": "Streaming/In-Memory",
+  "techno": "Databricks",
+  "loc": "165"
+}, {
+  "category": "Machine Learning \u0026 Artificial Intelligence",
+  "subcategory": "AI Hardware",
+  "techno": "Arm",
+  "loc": "19"
+}, {
+  "category": "Machine Learning \u0026 Artificial Intelligence",
+  "subcategory": "Data Science Platforms",
+  "techno": "Sas",
+  "loc": "83"
+}, {
+  "category": "Machine Learning \u0026 Artificial Intelligence",
+  "subcategory": "Data Science Platforms",
+  "techno": "Tibco",
+  "loc": "11"
+}, {
+  "category": "Machine Learning \u0026 Artificial Intelligence",
+  "subcategory": "Enterprise ML Platforms",
+  "techno": "Continual",
+  "loc": "80"
+}, {
+  "category": "Machine Learning \u0026 Artificial Intelligence",
+  "subcategory": "Enterprise ML Platforms",
+  "techno": "Dataiku",
+  "loc": "44"
+}, {
+  "category": "Machine Learning \u0026 Artificial Intelligence",
+  "subcategory": "Enterprise ML Platforms",
+  "techno": "Modular",
+  "loc": "30"
+}, {
+  "category": "Machine Learning \u0026 Artificial Intelligence",
+  "subcategory": "GPU Cloud",
+  "techno": "Lambda",
+  "loc": "47"
+}, {
+  "category": "Machine Learning \u0026 Artificial Intelligence",
+  "subcategory": "Horizontal AI/AGI",
+  "techno": "CSM",
+  "loc": "11"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "AI Frameworks \u0026 Libraries",
+  "techno": "Keras",
+  "loc": "19"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "AI Frameworks \u0026 Libraries",
+  "techno": "PyTorch",
+  "loc": "36"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "AI Frameworks \u0026 Libraries",
+  "techno": "TensorFlow",
+  "loc": "58"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Collaboration",
+  "techno": "Jupyter",
+  "loc": "40"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Data Access",
+  "techno": "DataHub",
+  "loc": "14"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Databases",
+  "techno": "Cassandra",
+  "loc": "58"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Databases",
+  "techno": "Flume",
+  "loc": "12"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Databases",
+  "techno": "HBase",
+  "loc": "37"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Databases",
+  "techno": "InfluxDB",
+  "loc": "12"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Databases",
+  "techno": "MySQL",
+  "loc": "60"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Databases",
+  "techno": "PostgreSQL",
+  "loc": "199"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Format",
+  "techno": "Parquet",
+  "loc": "18"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Frameworks",
+  "techno": "Docker",
+  "loc": "438"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Frameworks",
+  "techno": "Flink",
+  "loc": "27"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Frameworks",
+  "techno": "Kubernetes",
+  "loc": "529"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Frameworks",
+  "techno": "Spark",
+  "loc": "527"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Frameworks",
+  "techno": "Yarn",
+  "loc": "37"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Logging \u0026 Monitoring",
+  "techno": "Grafana",
+  "loc": "29"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Logging \u0026 Monitoring",
+  "techno": "Prometheus",
+  "loc": "15"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "MLOps \u0026 AI Infra",
+  "techno": "KubeFlow",
+  "loc": "15"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "MLOps \u0026 AI Infra",
+  "techno": "MLFlow",
+  "loc": "13"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Open Source - Orchestration",
+  "techno": "Airflow",
+  "loc": "193"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Query/Dataflow",
+  "techno": "Apache Pig",
+  "loc": "15"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Query/Dataflow",
+  "techno": "Beam",
+  "loc": "18"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Query/Dataflow",
+  "techno": "GraphQL",
+  "loc": "33"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Query/Dataflow",
+  "techno": "Hive",
+  "loc": "99"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Query/Dataflow",
+  "techno": "Spark SQL",
+  "loc": "527"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Stat Tools \u0026 Languages",
+  "techno": "NumPy",
+  "loc": "36"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Stat Tools \u0026 Languages",
+  "techno": "Pandas",
+  "loc": "62"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Stat Tools \u0026 Languages",
+  "techno": "Python",
+  "loc": "1614"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Stat Tools \u0026 Languages",
+  "techno": "R",
+  "loc": "141"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Stat Tools \u0026 Languages",
+  "techno": "Scala",
+  "loc": "250"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Streaming \u0026 Messaging",
+  "techno": "Kafka",
+  "loc": "277"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Streaming \u0026 Messaging",
+  "techno": "Nifi",
+  "loc": "25"
+}, {
+  "category": "Open Source Infrastructure",
+  "subcategory": "Streaming \u0026 Messaging",
+  "techno": "RabbitMQ",
+  "loc": "28"
+}]
