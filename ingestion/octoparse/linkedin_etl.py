@@ -36,9 +36,7 @@ class LinkedinETL:
         self.data_path = PROJECT_PATH / 'ingestion' / 'octoparse' / 'data' / self.spider
 
     def process(self) -> None:
-        """Factory function that performs the ETL process.
-
-        """
+        """Factory function that performs the ETL process."""
         raw = self.extract_latest_crawl()
         logger.info(f'Raw data: {len(raw)} rows')
         transformed_generic = self.transform_generic(raw)
