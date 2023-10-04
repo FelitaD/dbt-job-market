@@ -10,48 +10,54 @@ from google.cloud import bigquery
 from config.definitions import PROJECT_PATH
 
 pd.set_option('display.width', 300)
+pd.set_option('display.max_columns', 15)
 
 
 class GlassdoorETL:
+    """Performs ETL on Glassdoor companies details.
+
+    Details on companies were scraped on Glassdoor, based
+    on a list of urls. To ensure its insertion in the table
+    for the right company, we merge 2 dataframes to associate
+    the original name and the url found on Glassdoor (might be
+    different). It is transformed in order to be inserted
+    (replace missing values to avoid clash in BigQuery...).
+    """
+
+    DATA_PATH = f'{PROJECT_PATH}/ingestion/octoparse/data/companies/'
+
     def __init__(self):
+        """Contains DataFrames changing between ETL steps."""
         self.companies_data = None
         self.company_names = None
         self.data = None
 
-    def process(self):
+    def process(self) -> None:
+        """Factory function that performs the ETL process."""
         self.extract_latest_crawl()
         self.extract_company_names()
         self.concat_original_company_names()
-
-        ## Verify companies match in concatenated dataframe
-        # print(self.data.iloc[113]['URL'])
-        # print(self.data.iloc[113])
-        # print('\n')
-        # print(self.data.iloc[4]['URL'])
-        # print(self.data.iloc[4])
-        # print('\n')
-        # print(self.data.iloc[3]['URL'])
-        # print(self.data.iloc[3])
-
         self.transform()
         self.insert_bigquery()
 
-    def extract_latest_crawl(self):
-        list_of_files = glob.glob(
-            f'{PROJECT_PATH}/ingestion/octoparse/data/glassdoor/companies*.csv')
+    def extract_latest_crawl(self) -> None:
+        """Extracts Glassdoor data exported to a CSV."""
+        list_of_files = glob.glob(f'{self.DATA_PATH}/companies*.csv')
         latest_file = max(list_of_files, key=os.path.getctime)
         self.companies_data = pd.read_csv(latest_file)
 
-    def extract_company_names(self):
-        list_of_files = glob.glob(
-            f'{PROJECT_PATH}/ingestion/octoparse/data/glassdoor/company_names_*.csv')
+    def extract_company_names(self) -> None:
+        """Gets company names to scrape from a CSV."""
+        list_of_files = glob.glob(f'{self.DATA_PATH}/company_names_*.csv')
         latest_file = max(list_of_files, key=os.path.getctime)
         self.company_names = pd.read_csv(latest_file)
 
-    def concat_original_company_names(self):
+    def concat_original_company_names(self) -> None:
+        """Reassemble companies' names and Glassdoor data into a DataFrame."""
         self.data = pd.concat([self.company_names, self.companies_data], axis=1)
 
-    def transform(self):
+    def transform(self) -> None:
+        """Rename columns, replace missing values and cast to string."""
         self.data = self.data.rename(columns={
             'companies': 'company_name',
             'URL': 'url',
@@ -66,7 +72,8 @@ class GlassdoorETL:
         self.data = self.data.fillna('None')
         self.data = self.data.astype('string')
 
-    def insert_bigquery(self):
+    def insert_bigquery(self) -> None:
+        """Insert transformed data in BigQuery."""
         custom_bq_client = bigquery.Client()
 
         engine = create_engine(
@@ -102,3 +109,4 @@ class GlassdoorETL:
 if __name__ == '__main__':
     etl = GlassdoorETL()
     etl.process()
+
