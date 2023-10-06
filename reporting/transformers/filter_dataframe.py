@@ -127,13 +127,13 @@ class DataframeFilter:
             if field in ['rating', 'reviews_count', 'company_size', 'total_score']:
                 bool_expr += [f'( ({field} >= {start} & {field} <= {end}) | {field}.isnull() )']
             elif created_at_filter and field == 'created_at':
-                bool_expr += [f"( {field} == {created_at_filter} | {field}.isnull() )"]
+                bool_expr += [f"( {field} == {created_at_filter} )"]
             elif industry_filter and field == 'industry':
-                bool_expr += [f"( {field} == {industry_filter} | {field}.isnull() )"]
+                bool_expr += [f"( {field} == {industry_filter} )"]
             elif remote_filter and field == 'remote':
-                bool_expr += [f"( {field} == {remote_filter} | {field}.isnull() )"]
+                bool_expr += [f"( {field} == {remote_filter} )"]
             elif contract_filter and field == 'contract':
-                bool_expr += [f"( {field} == {contract_filter} | {field}.isnull() )"]
+                bool_expr += [f"( {field} == {contract_filter} )"]
 
         # Create a string containing all boolean expressions
         bool_expr_concat = ' & '.join(bool_expr)
