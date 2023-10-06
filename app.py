@@ -66,7 +66,6 @@ def main():
             st.write(f'{len(df_filter.df)} jobs')
             create_relevant_jobs_st_df(df_filter.df)  # Unfiltered dataframe
         """
-        - _score_: The sum of 2 hidden scores: the seniority level score + the company's glassdoor rating score.
         - _is_same_glassdoor_: Indicates if the company name collected on Glassdoor is the same as in the job posting.
         If 0, manual verification is recommended.
         - _company_size_: The mean of the original data of the form '1 to 50 employees'.

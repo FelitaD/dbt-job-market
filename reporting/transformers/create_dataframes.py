@@ -70,7 +70,7 @@ def create_relevant_jobs_st_df(df: pd.DataFrame) -> st.dataframe:
         column_order=(
             # 'rating_score',
             # 'seniority_score',
-            'total_score',
+            # 'total_score',
             'created_at',
             'url_1',
             'title',
@@ -83,7 +83,7 @@ def create_relevant_jobs_st_df(df: pd.DataFrame) -> st.dataframe:
             'url',
             'is_same_glassdoor',
             # 'text',
-            # 'contract',
+            'contract',
             'company_size',
             'rating',
             'reviews_count',
@@ -97,7 +97,7 @@ def create_relevant_jobs_st_df(df: pd.DataFrame) -> st.dataframe:
             # 'is_relevant_score',
         ),
         column_config={
-            'total_score': st.column_config.Column(width='small', label='🏆score'),
+            # 'total_score': st.column_config.Column(width='small', label='🏆score'),
             # 'seniority_score': st.column_config.Column(width='small'),
             # 'rating_score': st.column_config.Column(width='small', label='📊rating score'),
             'title': st.column_config.Column(width='medium', label='👩‍💻title'),
