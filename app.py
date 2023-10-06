@@ -36,15 +36,16 @@ def main():
             start_company_size, end_company_size = df_filter.create_slider('company_size')
             start_total_score, end_total_score = df_filter.create_slider('total_score')
             # Multiselect widgets
+            stack_filter = df_filter.create_multiselect('stack')
+            contract_filter = df_filter.create_multiselect('contract')
             created_at_filter = df_filter.create_multiselect('created_at')
             industry_filter = df_filter.create_multiselect('industry')
-            stack_filter = df_filter.create_multiselect('stack')
             remote_filter = df_filter.create_multiselect('remote')
 
             # Create a filtered dataframe using widget default / user inputs
             filtered_df = df_filter.filter_dataframe(
                 fields=['rating', 'reviews_count', 'company_size', 'total_score',
-                        'created_at', 'industry', 'stack', 'remote'],
+                        'created_at', 'industry', 'stack', 'remote', 'contract'],
                 start_rating=start_rating,
                 end_rating=end_rating,
                 start_reviews_count=start_reviews_count,
@@ -56,7 +57,8 @@ def main():
                 created_at_filter=created_at_filter,
                 industry_filter=industry_filter,
                 stack_filter=stack_filter,
-                remote_filter=remote_filter)
+                remote_filter=remote_filter,
+                contract_filter=contract_filter)
 
     with tab_job_board:
         if add_filters:

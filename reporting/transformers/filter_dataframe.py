@@ -116,6 +116,7 @@ class DataframeFilter:
         industry_filter = kwargs.get('industry_filter')
         stack_filter = kwargs.get('stack_filter')
         remote_filter = kwargs.get('remote_filter')
+        contract_filter = kwargs.get('contract_filter')
 
         for field in fields:
             # Get start and end values of slider widgets (numeric fields)
@@ -131,6 +132,8 @@ class DataframeFilter:
                 bool_expr += [f"( {field} == {industry_filter} | {field}.isnull() )"]
             elif remote_filter and field == 'remote':
                 bool_expr += [f"( {field} == {remote_filter} | {field}.isnull() )"]
+            elif contract_filter and field == 'contract':
+                bool_expr += [f"( {field} == {contract_filter} | {field}.isnull() )"]
 
         # Create a string containing all boolean expressions
         bool_expr_concat = ' & '.join(bool_expr)
