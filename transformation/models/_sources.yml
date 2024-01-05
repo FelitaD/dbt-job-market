@@ -4,7 +4,7 @@ sources:
 
   - name: raw_job_postings
     description: a clone of the Postgres table raw_jobs
-    database: complete-flag-399316
+    database: resume-404711
     schema: job_market
     tables:
       - name: raw_job_postings
@@ -43,13 +43,13 @@ sources:
   
   - name: base_keywords
     description: the imported csv
-    database: complete-flag-399316
+    database: resume-404711
     schema: job_market
     tables:
       - name: base_keywords
 
   - name: companies
-    database: complete-flag-399316
+    database: resume-404711
     schema: job_market
     tables:
       - name: stg_companies

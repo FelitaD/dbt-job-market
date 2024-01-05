@@ -77,7 +77,7 @@ class GlassdoorETL:
         custom_bq_client = bigquery.Client()
 
         engine = create_engine(
-            'bigquery://complete-flag-399316/job-market?user_supplied_client=True',
+            'bigquery://resume-404711/job-market?user_supplied_client=True',
             connect_args={'client': custom_bq_client},
         )
         with engine.connect() as connection:
