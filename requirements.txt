@@ -17,4 +17,5 @@ streamlit
 streamlit-timeline
 streamlit-elements==0.1.*
 watchdog
-prefect_dbt
+prefect
+google-cloud-bigquery-storage

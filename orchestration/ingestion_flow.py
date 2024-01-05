@@ -5,7 +5,7 @@ from linkedin_subflow import linkedin_flow
 
 
 @flow
-def ingestion_flow(name='Ingestion Flow'):
+def ingestion_flow(logs_print=True):
     wttj_flow()
     linkedin_flow()
 

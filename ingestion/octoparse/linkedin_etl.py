@@ -38,11 +38,11 @@ class LinkedinETL:
     def process(self) -> None:
         """Factory function that performs the ETL process."""
         raw = self.extract_latest_crawl()
-        logger.info(f'Raw data: {len(raw)} rows')
+        print(f'Raw data: {len(raw)} rows')
         transformed_generic = self.transform_generic(raw)
-        logger.info(f'Transformed generic data: {len(transformed_generic)} rows')
+        print(f'Transformed generic data: {len(transformed_generic)} rows')
         transformed_date_posted = self.transform_date_posted(transformed_generic)
-        logger.info(f'Transformed date data: {len(transformed_date_posted)} rows')
+        print(f'Transformed date data: {len(transformed_date_posted)} rows')
         transformed_date_posted = transformed_date_posted[['url', 'title', 'company', 'location', 'text', 'created_at']]
         self.insert_bigquery(transformed_date_posted)
 
@@ -52,6 +52,7 @@ class LinkedinETL:
         Returns:
             A dataframe with spider's scraped data.
         """
+        print(f'Extracting latest crawl for {self.spider}')
         list_of_files = glob.glob(f'{self.data_path}/*.csv')
         latest_file = max(list_of_files, key=os.path.getctime)
         return pd.read_csv(latest_file)
@@ -119,8 +120,9 @@ class LinkedinETL:
         """
         custom_bq_client = bigquery.Client()
         engine = create_engine(
-            'bigquery://complete-flag-399316/job-market?user_supplied_client=True',
+            'bigquery://resume-404711/job-market?user_supplied_client=True',
             connect_args={'client': custom_bq_client},
+            echo=True
         )
         with engine.connect() as connection:
             for i in range(len(data)):
