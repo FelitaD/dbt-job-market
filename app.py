@@ -64,7 +64,7 @@ def main():
             stack_filter=stack_filter,
             remote_filter=remote_filter,
             contract_filter=contract_filter)
-        filtered_df
+
         st.write(f'{len(filtered_df)} jobs')
         create_relevant_jobs_st_df(filtered_df)  # Filtered dataframe
         # else:
