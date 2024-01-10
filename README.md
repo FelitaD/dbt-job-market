@@ -30,7 +30,9 @@ Refactored version of [Job Radar 1.0](https://github.com/FelitaD/job-radar-1.0) 
 ## Transformation
 
 *dbt models lineage*
-![data_lineage](/Users/donor/PycharmProjects/job-radar-2.0/docs/data_lineage.png)
+<p align="center">
+    <img src="docs/data_lineage.png" width=600>
+</p>
 
 - The first and main step of data transformation is to extract technologies from jobs descriptions.
 In the table `jobs` only those that have a technology (from `base_keywords`) are present.
