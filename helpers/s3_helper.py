@@ -68,9 +68,10 @@ class S3Helper:
             A set of urls.
         """
         filename = self.get_latest_s3_file()
+        print('Latest file: ', filename, '\n')
         obj = self.s3.Object(self.bucket_name, key=filename)
         links = obj.get()['Body'].read().decode('utf-8')
-        
+        print('Latest links: ', links, '\n')
         return ast.literal_eval(links)
     
     def get_latest_s3_file(self) -> str:
@@ -85,7 +86,7 @@ class S3Helper:
 
         for s3_file in bucket.objects.all():
             s3_file_date = s3_file.last_modified.date()
-            if last_modified_date < s3_file_date <= self.today:
+            if last_modified_date < s3_file_date < self.today:
                 last_modified_date = s3_file_date
                 latest_s3_file = s3_file
 
