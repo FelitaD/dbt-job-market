@@ -36,7 +36,7 @@ Refactored version of [Job Radar 1.0](https://github.com/FelitaD/job-radar-1.0) 
 In the table `jobs` only those that have a technology (from `base_keywords`) are present.
 - From these relevant jobs, the `companies`' information is extracted from Glassdoor.
 - Multiple `scores` are calculated such as seniority, rating, relevancy.
-- The `sankey_data` is used to categorise the original data (`raw_job_postings`).
+- Finally, the `sankey_data` table categorises the original data (`raw_job_postings`).
 
 ## Running pipeline with Prefect deployment
 
