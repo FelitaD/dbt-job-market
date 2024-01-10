@@ -14,9 +14,6 @@ renamed as (
     -- description
     summary as description,
 
-    -- founding_year
-    founding_year,
-
     -- keyword
     keyword,
 
@@ -53,7 +50,6 @@ select
     additional_regex,  
     category,
     description,
-    founding_year,
     keyword,
     keyword_regex,
     location,
