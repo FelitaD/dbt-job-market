@@ -16,60 +16,63 @@ from reporting.transformers import create_relevant_jobs_st_df, DataframeFilter
 
 
 def main():
+
+    st.markdown("<h1 style='text-align: center'>Job Radar</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:90%; text-align: center'>Search and compare data engineer positions</p>",
+                unsafe_allow_html=True)
+    st.markdown("<p align='center'><a href='https://github.com/FelitaD/job-radar-2.0'><img "
+                "src='https://img.shields.io/badge/View_on_Github-000000?logo=github'></a></p>",
+                unsafe_allow_html=True)
+
+    df_filter = DataframeFilter()
+
+    with st.sidebar:
+        add_filters = st.checkbox('Add Job Board filters')
+
+        if add_filters:
+            # with col1:
+            start_rating, end_rating = df_filter.create_slider('rating')
+        # with col2:
+            start_reviews_count, end_reviews_count = df_filter.create_slider('reviews_count')
+        # with col3:
+            start_company_size, end_company_size = df_filter.create_slider('company_size')
+        # with col4:
+            stack_filter = df_filter.create_multiselect('stack')
+        # with col5:
+            contract_filter = df_filter.create_multiselect('contract')
+        # with col6:
+            created_at_filter = df_filter.create_multiselect('created_at')
+        # with col7:
+            industry_filter = df_filter.create_multiselect('industry')
+        # with col8:
+            remote_filter = df_filter.create_multiselect('remote')
+
     tab_dashboard, tab_job_board, tab_timeline = st.tabs(['Dashboard', 'Job Board', 'Resume Timeline'])
 
     with tab_job_board:
-        col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8, gap='medium')
+        # col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8, gap='medium')
+        if add_filters:
+            # Create a filtered dataframe using widget default / user inputs
+            filtered_df = df_filter.filter_dataframe(
+                fields=['rating', 'reviews_count', 'company_size',
+                        'created_at', 'industry', 'stack', 'remote', 'contract'],
+                start_rating=start_rating,
+                end_rating=end_rating,
+                start_reviews_count=start_reviews_count,
+                end_reviews_count=end_reviews_count,
+                start_company_size=start_company_size,
+                end_company_size=end_company_size,
+                created_at_filter=created_at_filter,
+                industry_filter=industry_filter,
+                stack_filter=stack_filter,
+                remote_filter=remote_filter,
+                contract_filter=contract_filter)
 
-        # st.markdown("<h1 style='text-align: center'>Job Radar</h1>", unsafe_allow_html=True)
-        # st.markdown("<p style='font-size:90%; text-align: center'>Search and compare data engineer positions</p>",
-        #             unsafe_allow_html=True)
-        # st.markdown("<p align='center'><a href='https://github.com/FelitaD/job-radar-2.0'><img "
-        #             "src='https://img.shields.io/badge/View_on_Github-000000?logo=github'></a></p>",
-        #             unsafe_allow_html=True)
-
-        # add_filters = st.checkbox('Add Job Board filters')
-        df_filter = DataframeFilter()
-
-        # if add_filters:
-        with col1:
-            start_rating, end_rating = df_filter.create_slider('rating')
-        with col2:
-            start_reviews_count, end_reviews_count = df_filter.create_slider('reviews_count')
-        with col3:
-            start_company_size, end_company_size = df_filter.create_slider('company_size')
-        with col4:
-            stack_filter = df_filter.create_multiselect('stack')
-        with col5:
-            contract_filter = df_filter.create_multiselect('contract')
-        with col6:
-            created_at_filter = df_filter.create_multiselect('created_at')
-        with col7:
-            industry_filter = df_filter.create_multiselect('industry')
-        with col8:
-            remote_filter = df_filter.create_multiselect('remote')
-
-        # Create a filtered dataframe using widget default / user inputs
-        filtered_df = df_filter.filter_dataframe(
-            fields=['rating', 'reviews_count', 'company_size',
-                    'created_at', 'industry', 'stack', 'remote', 'contract'],
-            start_rating=start_rating,
-            end_rating=end_rating,
-            start_reviews_count=start_reviews_count,
-            end_reviews_count=end_reviews_count,
-            start_company_size=start_company_size,
-            end_company_size=end_company_size,
-            created_at_filter=created_at_filter,
-            industry_filter=industry_filter,
-            stack_filter=stack_filter,
-            remote_filter=remote_filter,
-            contract_filter=contract_filter)
-
-        st.write(f'{len(filtered_df)} jobs')
-        create_relevant_jobs_st_df(filtered_df)  # Filtered dataframe
-        # else:
-        #     st.write(f'{len(df_filter.df)} jobs')
-        #     create_relevant_jobs_st_df(df_filter.df)  # Unfiltered dataframe
+            st.write(f'{len(filtered_df)} jobs')
+            create_relevant_jobs_st_df(filtered_df)  # Filtered dataframe
+        else:
+            st.write(f'{len(df_filter.df)} jobs')
+            create_relevant_jobs_st_df(df_filter.df)  # Unfiltered dataframe
         """
         - _is_same_glassdoor_: Indicates if the company name collected on Glassdoor is the same as in the job posting.
         If 0, manual verification is recommended.
