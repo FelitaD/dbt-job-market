@@ -31,7 +31,7 @@ all_jobs_stmt = """
     on c.company_name = j.company
     join `job_market.scores` s
     on j.id = s.id
-    order by total_score desc, created_at desc;
+    order by created_at desc, company, total_score desc;
 """
 
 relevant_jobs_stmt = """
@@ -42,5 +42,5 @@ relevant_jobs_stmt = """
     join `job_market.scores` s
     on j.id = s.id
     where is_relevant = 1
-    order by total_score desc, created_at desc;
+    order by created_at desc, company, total_score desc;
 """
