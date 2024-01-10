@@ -15,16 +15,16 @@ class WttjLinksSpider(scrapy.Spider):
     """
 
     name = "wttj_links"
-    start_urls = [
-        "https://www.welcometothejungle.com/fr/jobs?query=data%20engineer&page=1",
-        "https://www.welcometothejungle.com/fr/jobs?query=analytics%20engineer&page=1"
-    ]
+    # Website modified next page button which loads indefinitely.
+    # Build the number of pages we want to scrape:
+    data_engineer_urls = ["https://www.welcometothejungle.com/fr/jobs?query=data%20engineer&page={}".format(i) for i in range(1, 33)]
+    analytics_engineer_urls = ["https://www.welcometothejungle.com/fr/jobs?query=analytics%20engineer&page={}".format(i) for i in range(1, 4)]
+    start_urls = data_engineer_urls + analytics_engineer_urls
     links = set()
 
     BASE_URL = "https://www.welcometothejungle.com"
 
     # XPath to regularly update when spider breaks
-    next_page_xpath = '//*[@aria-label="Pagination"]//li[last()]'
     job_links_xpath = '//ol[@data-testid="search-results"]/div/li/div/div/div[2]/a'
 
     def start_requests(self):
@@ -48,16 +48,12 @@ class WttjLinksSpider(scrapy.Spider):
                     job_url = self.BASE_URL + job_link
                     self.links.add(job_url)
 
-                    ## For debugging
+                    # For debugging
                     # print('job_element', job_element)
                     # print('job_link', job_link)
                     # print('job_url', job_url)
                     # print('links', self.links)
-                    # print('\nScraped links count:', len(self.links), '\n')
-
-                next_locator = page.locator(self.next_page_xpath)
-                async with page.expect_navigation():
-                    await next_locator.click()
+                    print('\nScraped links count:', len(self.links), '\n')
 
             except TimeoutError:
                 print("Cannot find a next button on ", page.url)
