@@ -22,7 +22,7 @@ stg_job_postings as (
         case 
             when contract like '%CDI%' or contract like '%Permanent%' then 'Full Time'
             when contract like '%Alternance%' or contract like '%Stage%' or contract like '%Internships%' then 'Graduate program'
-            when contract like '%VIE%' or contract like '%CDD / Temporaire%' or contract like '%Autres%' then 'Other'
+            when contract like '%VIE%' or contract like '%CDD / Temporaire%' or contract like '%Autres%' or contract like '%Temps partiel%' then 'Other'
             when contract like 'N' then NULL
             else contract
         end as clean_contract,
@@ -39,10 +39,10 @@ stg_job_postings as (
         -- remote    
         case 
             when remote like '%total%' then 'total'
-            when remote like '%partiel%' or remote like '%régulier%' then 'partial'
+            when remote like '%partiel%' or remote like '%régulier%' or remote like '%fréquent%' then 'partial'
             when remote like '%occasionnel%' or remote like '%ponctuel%' then 'ponctual'
             when (remote like 'N' or remote IS NULL) and url like '%linkedin%' then 'total'
-            when remote like 'N' then NULL
+            when remote like 'N' or remote like '%Télétravail non autorisé%' then NULL
             else remote
         end as clean_remote,
 
