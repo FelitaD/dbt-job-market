@@ -27,8 +27,24 @@ Refactored version of [Job Radar 1.0](https://github.com/FelitaD/job-radar-1.0) 
     <img src="docs/job-radar-2.svg" width=600>
 </p>
   
+## Transformation
 
-## Running locally
+*dbt models lineage*
+![data_lineage](/Users/donor/PycharmProjects/job-radar-2.0/docs/data_lineage.png)
+
+- The first and main step of data transformation is to extract technologies from jobs descriptions.
+In the table `jobs` only those that have a technology (from `base_keywords`) are present.
+- From there, the `companies`' information is extracted from Glassdoor.
+- Multiple `scores` are calculated such as seniority, rating, relevancy.
+- Finally, the `sankey_data` table shows how the original jobs (`raw_job_postings`) are kept and categorised during transformation.
+
+## Running pipeline with Prefect deployment
+
+```bash
+python3 orchestration/ingestion_flow.py
+```
+
+## Running web app locally
 
 ```bash
 streamlit run home.py

@@ -10,7 +10,7 @@ from config.definitions import PROJECT_PATH
 
 def fetch_companies():
     """
-
+    Fetch companies that are not already present in database.
     """
     custom_bq_client = bigquery.Client()
 
@@ -19,7 +19,6 @@ def fetch_companies():
         connect_args={'client': custom_bq_client},
     )
     with engine.connect() as connection:
-        # We only want companies from listings that aren't already present in the companies table
         stmt = text(
             """
             select distinct(company) 
