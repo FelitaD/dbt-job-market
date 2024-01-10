@@ -34,7 +34,7 @@ Refactored version of [Job Radar 1.0](https://github.com/FelitaD/job-radar-1.0) 
 
 - The first and main step of data transformation is to extract technologies from jobs descriptions.
 In the table `jobs` only those that have a technology (from `base_keywords`) are present.
-- For these relevant jobs, the `companies`' information is extracted from Glassdoor.
+- From there, the `companies`' information is extracted from Glassdoor.
 - Multiple `scores` are calculated such as seniority, rating, relevancy.
 - Finally, the `sankey_data` table shows how the original jobs (`raw_job_postings`) are kept and categorised during transformation.
 
