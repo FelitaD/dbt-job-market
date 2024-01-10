@@ -13,7 +13,7 @@ from ingestion.scrapy.items import JobsCrawlerItem
 class WttjSpider(scrapy.Spider):
     """
     Spider to scrape jobs information on Welcome to the Jungle Website.
-    The individual pages are not rendered with Javascript so it only uses Scrapy.
+    The individual pages are not rendered with Javascript and only uses Scrapy.
     """
 
     name = "wttj"
@@ -35,37 +35,36 @@ class WttjSpider(scrapy.Spider):
         l.add_value(
             "title",
             response.xpath(
-                '//a[@data-testid="job-header-organization-link-logo"]/parent::div/h1/text()[2]'
+                '//h2/text()'
             ).get(),
         )
         l.add_value(
             "company",
             response.xpath(
-                '//a[@data-testid="job-header-organization-link-logo"]/parent::div/a/span/text()'
+                '//h2/parent::div/div/a/div/span/text()'
             ).get(),
         )
         l.add_value(
             "location",
             response.xpath(
-                '//*[@name="location"]/parent::span/following-sibling::span//text()'
+                '//h4/span[contains(text(),"Le lieu de travail")]/parent::h4/following-sibling::a//text()'
             ).get(),
         )
         l.add_value(
             "contract",
             response.xpath(
-                '//i[@name="contract"]/following-sibling::span/text()'
+                '//i[@name="contract"]/following-sibling::text()'
             ).get(),
         )
         l.add_value(
             "industry",
             response.xpath(
-                '//*[@name="tag"]/parent::span/following-sibling::span/text()'
+                '//div[@data-testid="job-company-tag"]//text()'
             ).get(),
         )
-        l.add_value('size', response.xpath('//*[@name="department"]/parent::span/following-sibling::span/text()').get())
         l.add_value(
             "text",
-            response.xpath("//h2/following-sibling::div//text()").getall(),
+            response.xpath('//div[@data-testid="job-section-description"]/div//p/text()').getall(),
             Join(),
         )
         l.add_value(
