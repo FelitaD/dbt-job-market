@@ -17,7 +17,7 @@ class WttjLinksSpider(scrapy.Spider):
     name = "wttj_links"
     # Website modified next page button which loads indefinitely.
     # Build the number of pages we want to scrape:
-    data_engineer_urls = ["https://www.welcometothejungle.com/fr/jobs?query=data%20engineer&page={}&refinementList%5Boffices.country_code%5D%5B%5D=FR&sortBy=mostRecent}".format(i) for i in range(1, 4)]
+    data_engineer_urls = ["https://www.welcometothejungle.com/fr/jobs?query=data%20engineer&page={}&refinementList%5Boffices.country_code%5D%5B%5D=FR&sortBy=mostRecent".format(i) for i in range(1, 4)]
     analytics_engineer_urls = ["https://www.welcometothejungle.com/fr/jobs?query=analytics%20engineer&page={}&refinementList%5Boffices.country_code%5D%5B%5D=FR&sortBy=mostRecent".format(i) for i in range(1, 4)]
     start_urls = data_engineer_urls + analytics_engineer_urls
     links = set()
