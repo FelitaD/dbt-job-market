@@ -17,8 +17,8 @@ class WttjLinksSpider(scrapy.Spider):
     name = "wttj_links"
     # Website modified next page button which loads indefinitely.
     # Build the number of pages we want to scrape:
-    data_engineer_urls = ["https://www.welcometothejungle.com/fr/jobs?query=data%20engineer&page={}".format(i) for i in range(1, 33)]
-    analytics_engineer_urls = ["https://www.welcometothejungle.com/fr/jobs?query=analytics%20engineer&page={}".format(i) for i in range(1, 4)]
+    data_engineer_urls = ["https://www.welcometothejungle.com/fr/jobs?query=data%20engineer&page={}&refinementList%5Boffices.country_code%5D%5B%5D=FR&sortBy=mostRecent}".format(i) for i in range(1, 4)]
+    analytics_engineer_urls = ["https://www.welcometothejungle.com/fr/jobs?query=analytics%20engineer&page={}&refinementList%5Boffices.country_code%5D%5B%5D=FR&sortBy=mostRecent".format(i) for i in range(1, 4)]
     start_urls = data_engineer_urls + analytics_engineer_urls
     links = set()
 
@@ -39,30 +39,25 @@ class WttjLinksSpider(scrapy.Spider):
         """Parse javascript rendered results page and obtain individual job page links."""
         page = response.meta["playwright_page"]
 
-        while True:
-            try:
-                job_elements = await page.query_selector_all(self.job_links_xpath)
+        try:
+            job_elements = await page.query_selector_all(self.job_links_xpath)
 
-                for job_element in job_elements:
-                    job_link = await job_element.get_attribute("href")
-                    job_url = self.BASE_URL + job_link
-                    self.links.add(job_url)
+            for job_element in job_elements:
+                job_link = await job_element.get_attribute("href")
+                job_url = self.BASE_URL + job_link
+                self.links.add(job_url)
 
-                    # For debugging
-                    # print('job_element', job_element)
-                    # print('job_link', job_link)
-                    # print('job_url', job_url)
-                    # print('links', self.links)
-                    print('\nScraped links count:', len(self.links), '\n')
+                # For debugging
+                # print('job_element', job_element)
+                # print('job_link', job_link)
+                # print('job_url', job_url)
+                # print('links', self.links)
+                print('\nScraped links count:', len(self.links), '\n')
 
-            except TimeoutError:
-                print("Cannot find a next button on ", page.url)
-                break
-
-            finally:
-                now = datetime.date.today()
-                with open(f'{PROJECT_PATH}/ingestion/scrapy/data/wttj_links_{now}.txt', "w+") as f:
-                    f.write(str(self.links))
+        finally:
+            now = datetime.date.today()
+            with open(f'{PROJECT_PATH}/ingestion/scrapy/data/wttj_links_{now}.txt', "w+") as f:
+                f.write(str(self.links))
 
         await page.close()
 
