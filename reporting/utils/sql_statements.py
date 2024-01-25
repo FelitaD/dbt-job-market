@@ -27,9 +27,9 @@ select * from `job_market.sankey_data`;
 all_jobs_stmt = """
     select * 
     from `job_market.companies` c
-    join `job_market.jobs` j 
+    left join `job_market.jobs` j 
     on c.company_name = j.company
-    join `job_market.scores` s
+    left join `job_market.scores` s
     on j.id = s.id
     order by created_at desc, company, total_score desc;
 """
@@ -39,8 +39,10 @@ relevant_jobs_stmt = """
     from `job_market.companies` c
     join `job_market.jobs` j 
     on c.company_name = j.company
-    join `job_market.scores` s
+    left join `job_market.apply` a
+    on a.job_id = j.id
+    left join `job_market.scores` s
     on j.id = s.id
     where is_relevant = 1
-    order by created_at desc, company, total_score desc;
+    order by total_score desc;
 """
